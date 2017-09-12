@@ -5,13 +5,20 @@
   
 
 
-<html class="theme-next mist use-motion" lang="zh-Hans">
+<html class="theme-next muse use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
 
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
 
 
 
@@ -107,7 +114,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Mist',
+    scheme: 'Muse',
     sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
     motion: true,
@@ -264,7 +271,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/11/测试/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/11/简单的Flex布局/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="司嘉年">
@@ -283,7 +290,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/09/11/测试/" itemprop="url">测试</a></h1>
+                <a class="post-title-link" href="/2017/09/11/简单的Flex布局/" itemprop="url">简单的Flex布局</a></h1>
         
 
         <div class="post-meta">
@@ -318,8 +325,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/全部/" itemprop="url" rel="index">
-                    <span itemprop="name">全部</span>
+                  <a href="/categories/CSS/" itemprop="url" rel="index">
+                    <span itemprop="name">CSS</span>
                   </a>
                 </span>
 
@@ -330,6 +337,17 @@
           
 
           
+            
+              <span class="post-comments-count">
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-comment-o"></i>
+              </span>
+              
+                <a href="/2017/09/11/简单的Flex布局/#SOHUCS" itemprop="discussionUrl">
+                  <span id="url::http://yoursite.com/2017/09/11/简单的Flex布局/" class="cy_cmt_count" data-xid="2017/09/11/简单的Flex布局/" itemprop="commentsCount" ></span>
+                </a>
+              
             
           
 
@@ -353,13 +371,21 @@
 
       
         
-          
-            <blockquote>
-<p>感觉自己萌萌哒</p>
-</blockquote>
-<p>从现在开始，要好好写博客了O(∩_∩)O哈哈哈~</p>
-
-          
+          <h2 id="图文并茂！8张Gif图学会Flexbox"><a href="#图文并茂！8张Gif图学会Flexbox" class="headerlink" title="图文并茂！8张Gif图学会Flexbox"></a>图文并茂！8张Gif图学会Flexbox</h2><p>Flexbox 实现了帮助我们脱离CSS苦海（例如垂直居中）的目标，但想要精通它却需要应对一些挑战。</p>
+<p>本次，我们将深入探讨flexbox中的5个常见的属性</p>
+<h2 id="属性-1：Display-Flex"><a href="#属性-1：Display-Flex" class="headerlink" title="属性#1：Display;Flex"></a>属性#1：Display;Flex</h2><p>以下是实例页面：</p>
+<p><img src="http://oljx0eyxv.bkt.clouddn.com/17-2-27/24597697-file_1488170425547_44c5.gif" alt=""></p>
+<p>我们可以看到，在灰色的容器中，包含了4中不同颜色与大小的div元素，每个元素都默认display:block,因此每个立方体都占据了一行的整个宽度。</p>
+<p>为了开始使用Flexbox布局，需要把容器变成Flex容器</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-id">#container</span>&#123;</div><div class="line">    <span class="attribute">display</span>:flex;</div><div class="line">    <span class="attribute">display</span>:-webkit-flex;       </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><img src="http://oljx0eyxv.bkt.clouddn.com/17-2-27/75422539-file_1488170893935_5b3c.gif" alt=""></p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/09/11/简单的Flex布局/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -512,6 +538,26 @@
 
 
         
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i> 访问用户：
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i> 访问次数：
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
 
         
       </div>
@@ -629,6 +675,10 @@
 
 
 
+  
+    <script id="cy_cmt_num" src="https://changyan.sohu.com/upload/plugins/plugins.list.count.js?clientId=cytd7XypY"></script>
+  
+
 
 
   
@@ -646,6 +696,9 @@
   
 
   
+  <script type="text/javascript" src="/js/src/js.cookie.js?v=5.1.1"></script>
+  <script type="text/javascript" src="/js/src/scroll-cookie.js?v=5.1.1"></script>
+
 
   
 
