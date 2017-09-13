@@ -6,17 +6,19 @@ tags:
 categories: CSS
 ---
 
-## 图文并茂！8张Gif图学会Flexbox
+# 图文并茂！8张Gif图学会Flexbox
 
 Flexbox 实现了帮助我们脱离CSS苦海（例如垂直居中）的目标，但想要精通它却需要应对一些挑战。
 
 本次，我们将深入探讨flexbox中的5个常见的属性
 
-## 属性#1：Display;Flex
+## 属性1：Display;Flex
 
 以下是实例页面：
 
 ![](http://oljx0eyxv.bkt.clouddn.com/17-2-27/24597697-file_1488170425547_44c5.gif)
+
+<!--more-->
 
 我们可以看到，在灰色的容器中，包含了4中不同颜色与大小的div元素，每个元素都默认display:block,因此每个立方体都占据了一行的整个宽度。
 
@@ -25,15 +27,13 @@ Flexbox 实现了帮助我们脱离CSS苦海（例如垂直居中）的目标，
 ```css
 #container{
     display:flex;
-    display:-webkit-flex;       
+    display:-webkit-flex;
 }
 ```
 
 ![](http://oljx0eyxv.bkt.clouddn.com/17-2-27/75422539-file_1488170893935_5b3c.gif)
 
-<!--more-->
-
-## 属性#2：Flex Direction
+## 属性2：Flex Direction
 
 Flexbox 容器有两根轴：主轴和垂直的交叉轴，默认情况如下：
 
@@ -58,7 +58,7 @@ Flexbox 容器有两根轴：主轴和垂直的交叉轴，默认情况如下：
 
 ![](http://oljx0eyxv.bkt.clouddn.com/17-2-27/1821376-file_1488171656075_f4e1.gif)
 
-## 属性#3：Justify Content
+## 属性3：Justify Content
 
 justify-content 属性定义了项目在主轴上的对齐方式。
 
@@ -74,11 +74,11 @@ justify-content 属性定义了项目在主轴上的对齐方式。
 
 justify-content属性包含了5个值供你使用
 
-> 1.Flex-start  
-> 2.Flex-end  
-> 3.Center  
-> 4.Space-between  
-> 5.Space-around  
+> 1.Flex-start
+> 2.Flex-end
+> 3.Center
+> 4.Space-between
+> 5.Space-around
 
 ![](http://oljx0eyxv.bkt.clouddn.com/17-2-27/38361387-file_1488171953078_8d0e.gif)
 
@@ -92,7 +92,7 @@ Space-around 使四方体两侧的间隔相等，这意味着四方体之间的�
 来源：知乎
 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
 
-## 属性#4：Align Items
+## 属性4：Align Items
 
 当你理解了 justify-content 属性，理解 Align Items 属性就变得轻而易举了。
 
@@ -108,7 +108,7 @@ justify-content 定义了项目在主轴的对齐方式，而 align-items 属性
     center
     stretch
     baseline
-    
+
 前三个值与 justify-content 属性中的值完全一致，没有太多需要解释的地方。
 
 但是，接下来两个值却有些不同。
@@ -129,7 +129,7 @@ Stretch 指的是如果项目未设置高度或设为 auto，项目将占满整�
 
 ![](http://oljx0eyxv.bkt.clouddn.com/17-2-27/71159336-file_1488172199806_14356.gif)
 
-## 属性#5：Align Self
+## 属性5：Align Self
 
 align-self 属性允许你对特定的项目有与其他项目不一样的对齐方式，它可覆盖 align-items 属性。虽然它的默认值为 auto，但它继承了父元素 align-items 的属性。除了 auto 外，其他都与 align-items 属性完全一致。
 
