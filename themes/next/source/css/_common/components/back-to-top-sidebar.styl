@@ -11,13 +11,11 @@
   the-transition();
     &:hover { opacity: 0.8; }
 
-  +tablet() {
-    fixbutton() if hexo-config('sidebar.onmobile');
-    hide() if not hexo-config('sidebar.onmobile');
-  }
   +mobile() {
-    fixbutton() if hexo-config('sidebar.onmobile');
-    hide() if not hexo-config('sidebar.onmobile');
+    display: none;
+  }
+  +tablet() {
+    display: none;
   }
 
   &.back-to-top-on {

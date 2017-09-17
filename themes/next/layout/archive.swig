@@ -2,7 +2,7 @@
 {% import '_macro/post-collapse.swig' as post_template %}
 {% import '_macro/sidebar.swig' as sidebar_template %}
 
-{% block title %}{{ __('title.archive') }} | {{ config.title }}{% endblock %}
+{% block title %} {{ __('title.archive') }} | {{ config.title }} {% endblock %}
 
 {% block page_class %} page-archive {% endblock %}
 
@@ -61,3 +61,13 @@
     </script>
   {% endif %}
 {% endblock %}
+<% if (!index){ %>
+<script>
+(function(){
+    var bp = document.createElement('script');
+    bp.src = '//push.zhanzhang.baidu.com/push.js';
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+<% } %>

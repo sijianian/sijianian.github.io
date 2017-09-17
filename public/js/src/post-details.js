@@ -118,7 +118,6 @@ $(document).ready(function () {
     item.addClass(activeTabClassName);
   });
 
-  // TOC item animation navigate & prevent #item selector in adress bar.
   $('.post-toc a').on('click', function (e) {
     e.preventDefault();
     var targetSelector = NexT.utils.escapeSelector(this.getAttribute('href'));

@@ -17,12 +17,11 @@
   }
 
   +tablet() {
-    hide() if not hexo-config('sidebar.onmobile');
+    display: none !important;
   }
   +mobile() {
-    hide() if not hexo-config('sidebar.onmobile');
+    display: none !important;
   }
-
 }
 
 .sidebar-inner {
@@ -37,7 +36,7 @@
 @import "site-state";
 @import "sidebar-feed-link";
 @import "sidebar-author-links";
-@import "sidebar-blogroll";
+@import "sidebar-blogroll.styl";
 @import "sidebar-nav";
 @import "sidebar-toc";
-@import "sidebar-dimmer" if hexo-config('sidebar.onmobile');
+
