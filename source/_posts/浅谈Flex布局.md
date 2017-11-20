@@ -1,14 +1,16 @@
 ---
-title: 简单的Flex布局
-date: 2017-09-11 10:02:35
+title: 浅谈Flex布局
+date: 2017-11-20 15:24:44
 tags:
 	- CSS
 categories: CSS
 ---
 
-# 图文并茂！8张GIF图学会Flexbox
+![](http://oi3tku7it.bkt.clouddn.com/17-11-20/96758831.jpg)
 
 Flexbox 实现了帮助我们脱离CSS苦海（例如垂直居中）的目标，但想要精通它却需要应对一些挑战。
+
+<!--more-->
 
 本次，我们将深入探讨flexbox中的5个常见的属性
 
@@ -17,8 +19,6 @@ Flexbox 实现了帮助我们脱离CSS苦海（例如垂直居中）的目标，
 以下是实例页面：
 
 ![](http://oljx0eyxv.bkt.clouddn.com/17-2-27/24597697-file_1488170425547_44c5.gif)
-
-<!--more-->
 
 我们可以看到，在灰色的容器中，包含了4中不同颜色与大小的div元素，每个元素都默认display:block,因此每个立方体都占据了一行的整个宽度。
 
