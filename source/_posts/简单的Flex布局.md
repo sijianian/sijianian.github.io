@@ -6,7 +6,7 @@ tags:
 categories: CSS
 ---
 
-# 图文并茂！8张Gif图学会Flexbox
+# 图文并茂！8张GIF图学会Flexbox
 
 Flexbox 实现了帮助我们脱离CSS苦海（例如垂直居中）的目标，但想要精通它却需要应对一些挑战。
 
