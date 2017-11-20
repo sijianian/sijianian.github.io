@@ -6,7 +6,7 @@ tags:
 categories: CSS
 ---
 
-![](http://oi3tku7it.bkt.clouddn.com/17-11-20/96758831.jpg)
+![](http://oljx0eyxv.bkt.clouddn.com/17-11-20/80214309.jpg)
 
 Flexbox 实现了帮助我们脱离CSS苦海（例如垂直居中）的目标，但想要精通它却需要应对一些挑战。
 
