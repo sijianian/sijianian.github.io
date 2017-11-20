@@ -408,7 +408,7 @@ vkontakte_api:
 leancloud_visitors:
   enable: true
   app_id: qXr8YqEqD2APXkITpOVX9zi9-gzGzoHsz
-  app_key: NJIoSbrKI0O82d3saU8RSScW
+  app_key: 6qQEYbJSqmd8nLOJBKybK0Ot
 
 # Show PV/UV of the website/page with busuanzi.
 # Get more information on http://ibruce.info/2015/04/04/busuanzi/
@@ -437,6 +437,7 @@ busuanzi_count:
 
 # Enable baidu push so that the blog will push the url to baidu automatically which is very helpful for SEO
 baidu_push: true
+baidu_analytics: 9bda50d8ad09c691b013c21b520dea45
 
 # Google Calendar
 # Share your recent schedule to others via calendar page
