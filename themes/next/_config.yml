@@ -297,9 +297,6 @@ mathjax:
 # Swiftype Search API Key
 #swiftype_key:
 
-# Baidu Analytics ID
-# baidu_analytics: 71ddec12fb1172387f0bd6399e834274
-
 # Duoshuo ShortName
 #duoshuo_shortname:
 
@@ -352,7 +349,7 @@ duoshuo_share: false
 #google_site_verification:
 
 # Google Analytics
-#google_analytics:
+google_analytics: 110022311-1
 
 # Yandex Webmaster tools verification setting
 # See: https://webmaster.yandex.ru/
@@ -559,8 +556,7 @@ images: images
 # Theme version
 version: 5.1.0
 
-reward_comment: 客官，赏一个嘛~
-# wechatpay: http://oova2i5xh.bkt.clouddn.com/wechat.jpg
-# alipay: http://oova2i5xh.bkt.clouddn.com/alipay.jpg
-
+reward_comment: 坚持原创技术分享，您的支持将鼓励我继续创作！
+wechatpay: http://oljx0eyxv.bkt.clouddn.com/17-11-21/84123236.jpg
+alipay: http://oljx0eyxv.bkt.clouddn.com/17-11-21/79723421.jpg
 
