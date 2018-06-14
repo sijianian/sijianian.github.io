@@ -2,13 +2,13 @@
 title: 深入理解this
 date: 2018-06-11 20:53:06
 tags:
-  - Javascript
-categories: Javascript
+  - JavaScript
+categories: JavaScript
 ---
 
 ![](https://static.skynian.cn/深入理解this-201861122106.jpg)
 
-this是JavaScript中的一个关键字，同时也是让人又爱又恨的特性。
+JavaScript 中 this 的指向一直是困扰我很久的问题，在使用中出错的机率也非常大。在面向对象语言中，它代表了当前对象的一个引用，而在 JS 中却经常让我觉得混乱，它不是固定不变的，而是随着它的执行环境的改变而改变。
 
 <!--more-->
 

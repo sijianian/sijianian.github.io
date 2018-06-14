@@ -32,7 +32,7 @@ $ hexo deploy
 
 More info: [Deployment](https://hexo.io/docs/deployment.html)
 
-### 缩写
+### quick
 
 ``` bash
 $ hexo d -g
