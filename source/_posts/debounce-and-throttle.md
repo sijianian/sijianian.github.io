@@ -1,5 +1,5 @@
 ---
-title: debounce and throttle
+title: 函数去抖和函数节流
 date: 2018-06-28 23:19:56
 tags:
   - JavaScript
