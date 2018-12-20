@@ -1,5 +1,5 @@
+--- # ---------------
 # html lang
-# ---------------
 language: en
 
 # Main menu navigation
@@ -20,7 +20,6 @@ favicon: /favicon.ico
 pwa:
   enable: false
   manifest:
-
 
 # Highlight theme
 # ---------------
@@ -56,33 +55,32 @@ mathjax:
   enable: true
   cdn: https://cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML
 
-
 # Toggle fireworks (IE >= 10)
 # ---------------
 fireworks: false
 
 # Analysis
 # ---------------
-baidu_analytics: 9bda50d8ad09c691b013c21b520dea45
+baidu_analytics: 96aa37ccd951cae93b8933a2366c5470
 
-# google_analytics: UA-110022311-1
+google_analytics: UA-110022311-1
 
 # stylesheets loaded in the <head>
 # ---------------
 stylesheets:
-- /css/index.css
+  - /css/index.css
 
 # scripts loaded in the end of the body
 # ---------------
 scripts:
-- /js/utils.js
-- /js/fancybox.js
-- /js/sidebar.js
-- /js/copy.js
-- /js/fireworks.js
-- /js/transition.js
-- /js/scroll.js
-- /js/head.js
+  - /js/utils.js
+  - /js/fancybox.js
+  - /js/sidebar.js
+  - /js/copy.js
+  - /js/fireworks.js
+  - /js/transition.js
+  - /js/scroll.js
+  - /js/head.js
 
 # cdn for third-party library
 # ---------------
@@ -133,19 +131,19 @@ slide:
   mouseWheel: false
   transition: slide
   transitionSpeed: default
-  parallaxBackgroundImage: ''
-  parallaxBackgroundSize: ''
+  parallaxBackgroundImage: ""
+  parallaxBackgroundSize: ""
   parallaxBackgroundHorizontal: null
   parallaxBackgroundVertical: null
 
 # QR_code:
-  # - itemlist:
-  #     img:
-  #     text:
+# - itemlist:
+#     img:
+#     text:
 
 # adv:
-  # enable: false
-  # info:
+# enable: false
+# info:
 
 # Share System
 # ---------------
@@ -154,8 +152,8 @@ addThis:
   #pubid:
 
 # sharejs:
-  # enable: false
-  # disabled_sites:
+# enable: false
+# disabled_sites:
 
 # Comments System
 # ---------------
@@ -165,15 +163,15 @@ disqus:
   #count:
 
 # laibili:
-  # enable: false
-  # uid:
+# enable: false
+# uid:
 
 # gitment
-  # enable: false
-  # owner:
-  # repo:
-  # client_id:
-  # client_secret:
+# enable: false
+# owner:
+# repo:
+# client_id:
+# client_secret:
 
 # gitalk:
 #   enable: false
@@ -220,13 +218,11 @@ busuanzi:
   page_pv: true
   page_pv_header: <i class="fa fa-file-o"></i>
   page_pv_footer:
-
-
 # Sidebar Settings
 # ---------------
 #links_title: Links
 #links:
-  #Name: url
+#Name: url
 
 # Follow Me
 # follow:
