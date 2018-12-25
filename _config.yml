@@ -94,3 +94,24 @@ algolia:
   apiKey: d74babb27b671212e73a76423f00fee2
   adminApiKey: 5a44bb0a47558dbe5e959f928de30418
   indexName: blog
+
+live2d:
+  enable: true
+  scriptFrom: local
+  pluginRootPath: live2dw/
+  pluginJsPath: lib/
+  pluginModelPath: assets/
+  tagMode: false
+  debug: false
+  model:
+    use: live2d-widget-model-shizuku
+  display:
+    position: right
+    width: 150
+    height: 300
+    hOffset: 0
+    vOffset: 30
+  react:
+    opacityDefault: 0.95
+  mobile:
+    show: false

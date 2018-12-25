@@ -8,13 +8,13 @@ categories: JavaCcript
 
 ![](https://static.skynian.cn/18-7-21/31724707.jpg)
 
-Web Components是一套不同的技术，允许您创建可重用的定制元素（它们的功能封装在您的代码之外）并且在您的web应用中使用它们。
+Web Components 是一套不同的技术，允许您创建可重用的定制元素（它们的功能封装在您的代码之外）并且在您的 web 应用中使用它们。
 
 <!--more-->
 
 ## 一个有趣的 UI 库
 
-某天，逛逛论坛的时候，发现了一个很有趣手绘风格的 U组件库。当然重点在于它是基于 Web Components 的实现。
+某天，逛逛论坛的时候，发现了一个很有趣手绘风格的 U 组件库。当然重点在于它是基于 Web Components 的实现。
 
 因为在此之前，对 Web Components 没有更多了解，这次趁着这次机会简单总结了一下这方面的知识。
 
@@ -30,46 +30,43 @@ Web Components are a new browser feature that provides a standard component mode
 
 摘自 [https://github.com/w3c/webcomponents](https://github.com/w3c/webcomponents)
 
-也就是说，Web Components 是 Web 组件模型标准，由浏览器提供原生特性支持，包括Shadow DOM，Custom Elements，HTML Imports 和 HTML Templates
+也就是说，Web Components 是 Web 组件模型标准，由浏览器提供原生特性支持，包括 Shadow DOM，Custom Elements，HTML Imports 和 HTML Templates
 
 ## 涉及规范
 
-- `Custom elements（自定义元素）`：一组JavaScript API，允许您定义custom elements及其行为，然后可以在您的用户界面中按照需要使用它们。
-[https://developer.mozilla.org/zh-CN/docs/Web/Web_Components/Using_custom_elements](https://developer.mozilla.org/zh-CN/docs/Web/Web_Components/Using_custom_elements)
-- `Shadow DOM（影子DOM）`：一组JavaScript API，用于将封装的“影子”DOM树附加到元素（与主文档DOM分开呈现）并控制其关联的功能。通过这种方式，您可以保持元素的功能私有，这样它们就可以被脚本化和样式化，而不用担心与文档的其他部分发生冲突。
+- `Custom elements（自定义元素）`：一组 JavaScript API，允许您定义 custom elements 及其行为，然后可以在您的用户界面中按照需要使用它们。
+  [https://developer.mozilla.org/zh-CN/docs/Web/Web_Components/Using_custom_elements](https://developer.mozilla.org/zh-CN/docs/Web/Web_Components/Using_custom_elements)
+- `Shadow DOM（影子DOM）`：一组 JavaScript API，用于将封装的“影子”DOM 树附加到元素（与主文档 DOM 分开呈现）并控制其关联的功能。通过这种方式，您可以保持元素的功能私有，这样它们就可以被脚本化和样式化，而不用担心与文档的其他部分发生冲突。
 - `HTML templates（HTML模板）`：`<template>` 和 `<slot>` 元素使您可以编写不在呈现页面中显示的标记模板。然后它们可以作为自定义元素结构的基础被多次重用。
 - `HTML Imports（HTML导入）`：一旦定义了自定义组件，最简单的重用它的方法就是使其定义细节保存在一个单独的文件中，然后使用导入机制将其导入到想要实际使用它的页面中。HTML 导入就是这样一种机制，尽管存在争议 — Mozilla 根本不同意这种方法，并打算在将来实现更合适的。
 
 ## 实现重点
 
 ```html
-// 从 video 说起，效果类似于
-// 含有该片段的HTML页面将呈现一个功能完整的视频播放器，带播放按钮，进度条，音量调节按钮等等
+// 从 video 说起，效果类似于 //
+含有该片段的HTML页面将呈现一个功能完整的视频播放器，带播放按钮，进度条，音量调节按钮等等
 
 <video src="./video.mp4" controls></video>
 
-<input
-    type="text"
-    value="test"
-    placeholder="placeholder">
+<input type="text" value="test" placeholder="placeholder" />
 ```
 
 - 核心是 组件封装
-- video、input 相当于浏览器的内置组件，组件视图结构及默认样式藏在 Shadow DOM里，组件逻辑被彻底藏了起来，仅暴露出 autoplay，oninput 等状态 / 行为 Hook 与外界通信
+- video、input 相当于浏览器的内置组件，组件视图结构及默认样式藏在 Shadow DOM 里，组件逻辑被彻底藏了起来，仅暴露出 autoplay，oninput 等状态 / 行为 Hook 与外界通信
 
 ![](https://static.skynian.cn/18-7-21/60213309.jpg)
 
 ## Shadom DOM
 
-1. 利用浏览器提供的Shadow DOM特性，我们可以创建自己的Shadow Root：
+1. 利用浏览器提供的 Shadow DOM 特性，我们可以创建自己的 Shadow Root：
 
 ```js
-document.body.innerHTML = '<div class="container"></div>'
+document.body.innerHTML = '<div class="container"></div>';
 
-let host = document.querySelector('.container')
-let root = host.createShadowRoot()
+let host = document.querySelector(".container");
+let root = host.createShadowRoot();
 
-root.innerHTML = '<p>How <em>you</em> doin?</p>'
+root.innerHTML = "<p>How <em>you</em> doin?</p>";
 ```
 
 2. 此时的节点结构是：
@@ -77,11 +74,11 @@ root.innerHTML = '<p>How <em>you</em> doin?</p>'
 ```html
 <div class="container">
   #shadow-root (open)
-    <p>How <em>you</em> doin?</p>
+  <p>How <em>you</em> doin?</p>
 </div>
 ```
 
-3. 可以对 Fragment 做 DOM 操作，相当于一个独立的HTML解析环境，不受外界干扰
+3. 可以对 Fragment 做 DOM 操作，相当于一个独立的 HTML 解析环境，不受外界干扰
 
 Shadow DOM 这款工具旨在构建基于组件的应用。因此，可为网络开发中的常见问题提供解决方案：
 
@@ -99,10 +96,10 @@ Shadow Dom 对于事件通过在冒泡阶段 target 的重定向来封装事件�
 
 ## 创建流程
 
-1. 使用 `ECMAScript 2015` 类语法创建一个类，来指定web组件的功能使用
+1. 使用 `ECMAScript 2015` 类语法创建一个类，来指定 web 组件的功能使用
 2. `CustomElementRegistry.define()` 方法注册您的新自定义元素 ，并向其传递要定义的元素名称、指定元素功能的类以及可选的，其所继承自的元素。
-3. 使用 `Element.attachShadow() `方法将一个shadow DOM 附加到自定义元素上。使用通常的 DOM 方法向shadow DOM 中添加子元素、事件监听器等等。
-4. 使用 `<template>` 和 `<slot>` 方法定义一个HTML 模板。再次使用常规 DOM 方法克隆模板并将其附加到您的 shadow DOM 中。
+3. 使用 `Element.attachShadow()`方法将一个 shadow DOM 附加到自定义元素上。使用通常的 DOM 方法向 shadow DOM 中添加子元素、事件监听器等等。
+4. 使用 `<template>` 和 `<slot>` 方法定义一个 HTML 模板。再次使用常规 DOM 方法克隆模板并将其附加到您的 shadow DOM 中。
 
 例子：[https://github.com/mdn/web-components-examples](https://github.com/mdn/web-components-examples)
 
@@ -114,7 +111,7 @@ Shadow Dom 对于事件通过在冒泡阶段 target 的重定向来封装事件�
 
 - `Polymer`: Google 推出的 web 组件库，支持数据的单向和双向绑定，兼容性较好，跨浏览器性能也较好；
 - `X-Tag`: 微软推出的开源库，支持 Web Components 规范，兼容 Web ComponentsAPI；
-- `Slim.js`: 轻量级的 web 组件库，专注于帮助开发者更好的编写原生web组件，而不依赖于其他框架，但是也提供了良好的拓展性，开发者可以自由拓展。
+- `Slim.js`: 轻量级的 web 组件库，专注于帮助开发者更好的编写原生 web 组件，而不依赖于其他框架，但是也提供了良好的拓展性，开发者可以自由拓展。
 
 ## Polymer 3.0
 
@@ -141,12 +138,12 @@ Polymer 能提供的特性
 
 [https://cn.vuejs.org/v2/guide/components-slots.html](https://cn.vuejs.org/v2/guide/components-slots.html)
 
-- 因为 Web Components 规范尚不成熟，且支持性并不乐观，不用polyfill 就无法投入生产，Vue 依靠构建工具跨过了环境兼容性问题，不依赖浏览器特性支持，但同时也就舍弃了 Shadow DOM 封装性等 Web Components 核心优势
+- 因为 Web Components 规范尚不成熟，且支持性并不乐观，不用 polyfill 就无法投入生产，Vue 依靠构建工具跨过了环境兼容性问题，不依赖浏览器特性支持，但同时也就舍弃了 Shadow DOM 封装性等 Web Components 核心优势
 - 另外，Web Components 是相对底层的组件规范，Vue 除了定义组件规范，还提供了组件通信，数据绑定等上层方案
 
 ## React 与 Web Components
 
-React 和 web组件 被用以解决不同问题。
+React 和 web 组件 被用以解决不同问题。
 
 Web 组件为可重用组件提供了强大的封装能力，而 React 则是提供了保持 DOM 和数据同步的声明式库。二者目标互补。
 

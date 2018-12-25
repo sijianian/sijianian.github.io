@@ -12,42 +12,42 @@ JavaScript 中 this 的指向一直是困扰我很久的问题，在使用中出
 
 <!--more-->
 
-如果没有彻底理解和掌握这个特性，可能真的会一次又一次踩坑，不要问我是怎么知道的o(╯□╰)o
+如果没有  彻底理解  和掌握这个特性，可能真的会一次又一次  踩坑，不要问我是怎么知道的 o(╯□╰)o
 
-可能this不是JS中最复杂的内容，但是它的细节也是蔚为大观。涉及到了函数、函数调用、eval、call/apply/bind、基本包装类型、构造函数实例化、严格模式等等。
+可能 this 不是 JS 中最复杂的内容，但是它的细节也是蔚为大观。涉及到了函数、函数调用、eval、call/apply/bind、基本包装类型、构造函数实例化、严格模式等等。
 
-与此同时ES6引入的箭头函数和class更是把this复杂化了。
+ 与此同时 ES6 引入的箭头函数和 class 更是把 this 复杂化了。
 
-其实网上关于this的介绍和总结很多，但是不乏会有很多错漏的地方，笔者写这篇博客也是为了做一次总结，同时巩固，更重要的是希望能出坑......
+其实网上关于 this 的介绍和总结很多，但是不乏会有很多错漏的地方，笔者  写这篇博客也是为了做一次总结，同时巩固，更重要的是希望能出坑......
 
-一个最基本的认知是，this的值会发生变化，但是有一个总的原则，那就是this指向的是调用函数的那个对象。
+ 一个最基本的认知是，this 的值会发生变化，但是有一个总的原则，那就是 this 指向的是调用函数的那个对象。
 
-## 情况一：纯粹的函数调用
+## 情况  一：纯粹的函数调用
 
-这是函数的最通常用法，属于全局性调用，因此this就代表着全局对象Global
+这是函数的最通常用法，属于全局性调用，因此 this 就代表着全局对象 Global
 
 ```js
 function func1() {
-  console.log(this === window) // true
+  console.log(this === window); // true
 }
-func1()
+func1();
 
 const func2 = function() {
-  console.log(this === window) // true
-}
-func2()
+  console.log(this === window); // true
+};
+func2();
 
 function func3() {
-  "use strict"
-  console.log(this) // undefined
+  "use strict";
+  console.log(this); // undefined
 }
 ```
 
-从上述代码中，我们可以看出，如果不是处于严格模式下，函数的上下文是window对象，严格模式下，函数上下文为undefined。
+从上述代码中，我们可以看出，如果不是处于严格模式下，函数的上下文是 window 对象，严格模式下，函数上下文为 undefined。
 
 ## 情况二：作为对象方法的调用
 
-函数还可以作为某个对象方法调用，这时this就指这个上级对象
+函数还可以作为某个对象方法调用，这时 this 就指这个上级对象
 
 ```js
 function test() {
@@ -60,48 +60,48 @@ o.m = test
 o.m() // 1
 ```
 
-其实，我们这时返回看情况一，实际上可以看出”func1()“，可以理解为“window.func1()”，所以例子中的函数上下文便是this。
+其实，我们这时返回看情况一，实际上可以看出”func1()“，可以理解为“window.func1()”，所以例子中的函数上下文便是 this。
 
 ## 情况三： 作为构造函数调用
 
-所谓构造函数，也就是通过这个函数生成一个新对象（object）。这个时候，this就是指这个新对象。
+所谓构造函数， 也就是通过这个函数生成一个新对象（object）。这个时候，this 就是指这个新对象。
 
 ```js
-function test(){
-  this.x = 1
+function test() {
+  this.x = 1;
 }
 
-let o = new test()
-laert(o.x) // 1
+let o = new test();
+laert(o.x); // 1
 ```
 
-运行结果为1，为了表明这时this对象不是全局对象，我对代码做一点改变：
+运行结果为 1，为了表明这时 this 对象不是全局对象，我对代码做一点改变：
 
 ```js
-let x = 2
+let x = 2;
 
 function test() {
-  this.x = 1
+  this.x = 1;
 }
 
-let o = new test()
+let o = new test();
 
-alert(x) // 2
+alert(x); // 2
 ```
 
-## 情况四： 使用apply()和call()方法进行调用
+## 情况四： 使用 apply()和 call()方法进行调用
 
-apply()和call()是函数对象中的方法，它的作用是改变函数的调用对象，可以利用任何一个函数都可以显式指定任何一个对象作为其函数上下文。
+apply()和 call()是函数对象中的方法，它的作用是改变函数的调用对象，可以利用任何一个函数都可以显式指定任何一个对象作为其函数上下文。
 
 通过 apply() 方法来调用函数，我们要给 apply() 传入两个参数：一个作为函数上下文对象，另一个作为函数参数所组成的数组。call() 方法的使用方式类似，唯一不同的是给函数传入的参数是一个参数列表，而不是单个数组。
 
 ```js
 function func() {
-    let result = 0;
-    for(let i = 0; i < arguments.length; i++) {
-        result += arguments[i];
-    }
-    this.result = result;
+  let result = 0;
+  for (let i = 0; i < arguments.length; i++) {
+    result += arguments[i];
+  }
+  this.result = result;
 }
 const obj1 = {};
 const obj2 = {};
@@ -124,9 +124,9 @@ ES6 中，箭头函数中始终会捕捉其所在上下文的 this 值，作为�
 
 ```js
 const obj = {
-    func: () => {
-        console.log(this === window); // true，非箭头函数时指向 obj
-    }
+  func: () => {
+    console.log(this === window); // true，非箭头函数时指向 obj
+  }
 };
 obj.func();
 ```
@@ -139,19 +139,18 @@ obj.func();
 
 ```js
 const obj1 = {
-    a: 1
+  a: 1
 };
 const obj2 = {
-    a: 2,
-    func: function() {
-        console.log(this.a);
-    }.bind(obj1)
+  a: 2,
+  func: function() {
+    console.log(this.a);
+  }.bind(obj1)
 };
 obj2.func(); // 1
 ```
 
 ECMAScript 5 引入了 `Function.prototype.bind`，其会创建一个绑定函数，当调用这个绑定函数时，函数上下文将会是 bind() 方法的第一个参数。上面的例子中，将 obj1 设置为函数上下文，所以利用 func 来调用函数时，函数的上下文为 obj1，而不是它的调用者 obj2。
-
 
 利用 Array 的 5 个方法改变函数上下文
 
@@ -163,17 +162,16 @@ ECMAScript 5 引入了 `Function.prototype.bind`，其会创建一个绑定函�
 `Array.prototype.map(callbackfn [, thisArg ])`
 `Array.prototype.filter(callbackfn [, thisArg ])`
 
-
 当调用以上 5 个方法时，传入的参数除了回调函数以外，还可以传入另外一个可选地参数，即函数上下文，代表回调函数中的函数上下文。如果省略该参数，则 callback 被调用时的 this 值，在非严格模式下为全局对象，在严格模式下传入 undefined。看下面的例子：
 
 ```js
 const arr = ["segmentfault"];
 const obj = {};
 arr.forEach(function(ele, ind) {
-    console.log(this === window); // true
+  console.log(this === window); // true
 });
 arr.forEach(function(ele, ind) {
-    console.log(this === obj);    // true
+  console.log(this === obj); // true
 }, obj);
 ```
 
@@ -181,16 +179,16 @@ arr.forEach(function(ele, ind) {
 
 ```js
 if (true) {
-    // this
+  // this
 }
 ```
 
 ```js
 const obj = {
-    someData: "a string"
+  someData: "a string"
 };
 function myFun() {
-    // this
+  // this
 }
 obj.staticFunction = myFun;
 obj.staticFunction();
@@ -198,9 +196,9 @@ obj.staticFunction();
 
 ```js
 const obj = {
-    myMethod : function () {
-        // this
-    }
+  myMethod: function() {
+    // this
+  }
 };
 const myFun = obj.myMethod;
 myFun();
@@ -208,10 +206,10 @@ myFun();
 
 ```js
 function myFun() {
-    // this
+  // this
 }
 const obj = {
-    someData: "a string"
+  someData: "a string"
 };
 myFun.call(obj);
 ```

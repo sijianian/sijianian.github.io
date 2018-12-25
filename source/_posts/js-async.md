@@ -6,7 +6,7 @@ tags:
 categories: JavaScript
 ---
 
-## JavaScript是单线程？
+## JavaScript 是单线程？
 
 - JS 引擎中负责解释和执行 JS 代码的线程只有一个（主）
 - AJAX 、处理 DOM 、定时器、读写......（工作线程）
@@ -33,7 +33,7 @@ categories: JavaScript
 
 **macro-tasks：** script (整体代码)，setTimeout，setInterval，setImmediate，I/O，UI
 
-**micro-tasks：** process.nextTick，Promises，Object.observe，MutationObserver（HTML5新特性）
+**micro-tasks：** process.nextTick，Promises，Object.observe，MutationObserver（HTML5 新特性）
 
 在一个事件循环里，
 
@@ -49,22 +49,22 @@ categories: JavaScript
 
 ```js
 setTimeout(function() {
-  console.log('timeout1')
-})
+  console.log("timeout1");
+});
 
-new Promise((resolve) => {
-  console.log('promise1')
+new Promise(resolve => {
+  console.log("promise1");
 
-  for(let i = 0; i < 1000; i++) {
-    i === 99 && resolve()
+  for (let i = 0; i < 1000; i++) {
+    i === 99 && resolve();
   }
 
-  console.log('promise2')
+  console.log("promise2");
 }).then(() => {
-  console.log('then1')
-})
+  console.log("then1");
+});
 
-console.log('glogal1')
+console.log("glogal1");
 ```
 
 答案:
@@ -79,35 +79,34 @@ timeout1
 
 ## 在线演示
 
-[地址](https://jakearchibald.com/2015/tasks-microtasks-queues-and-schedules/
-)
+[地址](https://jakearchibald.com/2015/tasks-microtasks-queues-and-schedules/)
 
 ![](https://static.skynian.cn/js-async-20186140952.png)
 
 ## 作用
 
-**Macrotasks:** 代表一些离散的独立的工作，task结束后，浏览器继续其他工作如页面重渲染和垃圾回收等
+**Macrotasks:** 代表一些离散的独立的工作，task 结束后，浏览器继续其他工作如页面重渲染和垃圾回收等
 
-**Microtasks:** 更新完成应用程序状态的较小任务，在UI重渲染之前执行某些任务，避免不必要的UI渲染
+**Microtasks:** 更新完成应用程序状态的较小任务，在 UI 重渲染之前执行某些任务，避免不必要的 UI 渲染
 
 ## Vue 中 MutationObserver
 
 [https://github.com/vuejs/vue/blob/9cfd63a7d08c1eba029c8bd7463b3047c3347826/src/core/util/env.js#L86-L95](https://github.com/vuejs/vue/blob/9cfd63a7d08c1eba029c8bd7463b3047c3347826/src/core/util/env.js#L86-L95)
 
 ```js
-let counter = 1
-let observer = new MutationObserver(nextTickHandler)
-let textNode = document.createTextNode(String(counter))
+let counter = 1;
+let observer = new MutationObserver(nextTickHandler);
+let textNode = document.createTextNode(String(counter));
 observer.observe(textNode, {
-    characterData: true
-})
+  characterData: true
+});
 timerFunc = () => {
-    counter = (counter + 1) % 2
-    textNode.data = String(counter)
-}
+  counter = (counter + 1) % 2;
+  textNode.data = String(counter);
+};
 ```
 
-## JS异步发展
+## JS 异步发展
 
 - Callback
 - Promise
@@ -198,23 +197,25 @@ new promise((resolve, reject) => {
 
 ```js
 // 定义
-var fetch = require('node-fetch')
+var fetch = require("node-fetch");
 
-function* gen(){
-  var url = 'https://api.github.com/users/github'
-  var result = yield fetch(url)
-  console.log(result.bio)
+function* gen() {
+  var url = "https://api.github.com/users/github";
+  var result = yield fetch(url);
+  console.log(result.bio);
 }
 
 // 使用
-var g = gen()
-var result = g.next()
+var g = gen();
+var result = g.next();
 
-result.value.then(function(data){
-  return data.json()
-}).then(function(data){
-  g.next(data)
-})
+result.value
+  .then(function(data) {
+    return data.json();
+  })
+  .then(function(data) {
+    g.next(data);
+  });
 ```
 
 ## Async
@@ -222,9 +223,9 @@ result.value.then(function(data){
 - 内置执行器
 - 更好的语义
 - 更广的适用性
-- 返回值是Promise
+- 返回值是 Promise
 
-## Rxjs(流Stream)
+## Rxjs(流 Stream)
 
 Reactive Extensions for JavaScript
 
@@ -232,7 +233,7 @@ Reactive Extensions for JavaScript
 
 Observables 与 Observer
 
-**订阅：** Observer 通过 Observable 提供的 subscribe() 方法订阅Observable
+**订阅：** Observer 通过 Observable 提供的 subscribe() 方法订阅 Observable
 **发布：** Observable 通过回调 next 方法向 Observer 发布事件
 
-[构建流式应用—RxJS详解(AlloyTeam)](http://www.alloyteam.com/2016/12/learn-rxjs/)
+[构建流式应用—RxJS 详解(AlloyTeam)](http://www.alloyteam.com/2016/12/learn-rxjs/)

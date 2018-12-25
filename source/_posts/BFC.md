@@ -9,13 +9,13 @@ categories: 布局
 
 ## 前言
 
-对于BFC的概念以及应用场景一直都不是很明白，今天着重去了解了一下，做了以下总结。
+对于 BFC 的概念以及应用场景一直都不是很明白，今天着重去了解了一下，做了以下总结。
 
 ## BFC 的定义
 
 Box 是 CSS 布局的对象和基本单位， 直观点来说，就是一个页面是由很多个 Box 组成的。
 
-元素的类型和 display 属性，决定了这个 Box 的类型。 不同类型的 Box， 会参与不同的 Formatting Context（一个决定如何渲染文档的容器），因此Box内的元素会以不同的方式渲染。让我们看看有哪些盒子：
+元素的类型和 display 属性，决定了这个 Box 的类型。 不同类型的 Box， 会参与不同的 Formatting Context（一个决定如何渲染文档的容器），因此 Box 内的元素会以不同的方式渲染。让我们看看有哪些盒子：
 
 `block-level`
 
@@ -66,12 +66,12 @@ Formatting context(格式化上下文) 是 W3C CSS2.1 规范中的一个概念�
 
 ```html
 <style>
-div {
-  width: 100px;
-  height: 100px;
-  background: lightblue;
-  margin: 100px;
-}
+  div {
+    width: 100px;
+    height: 100px;
+    background: lightblue;
+    margin: 100px;
+  }
 </style>
 <body>
   <div></div>
@@ -86,12 +86,8 @@ div {
 首先这不是 CSS 的 bug，我们可以理解为一种规范，如果想要避免外边距的重叠，可以将其放在不同的 BFC 容器中。
 
 ```html
-<div class="container">
-  <p></p>
-</div>
-<div class="container">
-  <p></p>
-</div>
+<div class="container"><p></p></div>
+<div class="container"><p></p></div>
 ```
 
 ```css
@@ -137,9 +133,13 @@ p {
 ![](https://static.skynian.cn/BFC-201863010303.jpg)
 
 ```html
-<div style="height: 100px;width: 100px;float: left;background: lightblue">我是一个左浮动的元素</div>
-<div style="width: 200px; height: 200px;background: #eee">我是一个没有设置浮动,
-也没有触发 BFC 元素, width: 200px; height:200px; background: #eee;</div>
+<div style="height: 100px;width: 100px;float: left;background: lightblue">
+  我是一个左浮动的元素
+</div>
+<div style="width: 200px; height: 200px;background: #eee">
+  我是一个没有设置浮动, 也没有触发 BFC 元素, width: 200px; height:200px;
+  background: #eee;
+</div>
 ```
 
 这时候其实第二个元素有部分被浮动元素所覆盖，(但是文本信息不会被浮动元素所覆盖) 如果想避免元素被覆盖，可触第二个元素的 BFC 特性，在第二个元素中加入 overflow: hidden，就会变成：
