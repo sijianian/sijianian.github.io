@@ -104,13 +104,13 @@ live2d:
   tagMode: false
   debug: false
   model:
-    use: live2d-widget-model-shizuku
+    use: live2d-widget-model-miku
   display:
     position: right
-    width: 150
-    height: 300
+    width: 70
+    height: 140
     hOffset: 0
-    vOffset: 30
+    vOffset: 10
   react:
     opacityDefault: 0.95
   mobile:
