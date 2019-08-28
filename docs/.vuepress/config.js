@@ -1,3 +1,5 @@
+const SparkMD5 = require('spark-md5')
+
 module.exports = {
   locales: {
     '/': {
@@ -57,6 +59,7 @@ module.exports = {
           admin: [
             'sijianian',
           ],
+          labels: ['Gitalk', 'Comment'],
           distractionFreeMode: false,
         },
       },
