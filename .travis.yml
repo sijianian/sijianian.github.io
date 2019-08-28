@@ -1,0 +1,14 @@
+sudo: true
+
+language: node_js
+
+node_js:
+  - "10"
+
+branches: master
+
+install:
+  - npm install
+
+script:
+  - ./deploy.sh
