@@ -52,7 +52,7 @@ module.exports = {
             '<%- frontmatter.title %>：<%-window.location.origin %><%- frontmatter.to.path || window.location.pathname %>',
           clientID: '7f4f5de62697a83f9e4a',
           clientSecret: process.env.GITALK_SECRET || '',
-          repo: 'blog',
+          repo: 'sijianian.github.io',
           owner: 'sijianian',
           admin: [
             'sijianian',
