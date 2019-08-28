@@ -46,7 +46,7 @@ module.exports = {
       {
         choosen: 'gitalk',
         options: {
-          id: '<%- frontmatter.commentid || frontmatter.permalink %>',
+          id: '<%- frontmatter.commentid || frontmatter.permalink || window.location.pathname %>',
           title: '「Comment」<%- frontmatter.title %>',
           body:
             '<%- frontmatter.title %>：<%-window.location.origin %><%- frontmatter.to.path || window.location.pathname %>',
