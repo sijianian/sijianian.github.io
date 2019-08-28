@@ -17,11 +17,13 @@ module.exports = {
       {
         text: 'Github',
         link: 'https://github.com/sijianian',
-      }
+      },
     ],
   },
   plugins: [
+    ['@vuepress/back-to-top'],
     ['vuepress-plugin-viewer'],
+    ['@vuepress/active-header-links'],
     [
       'vuepress-plugin-baidu-tongji',
       {
