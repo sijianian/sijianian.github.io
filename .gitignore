@@ -18,3 +18,4 @@ yarn-lock
 .happypack
 .cache-loader
 package-lock.json
+yarn.lock
