@@ -5,7 +5,9 @@ language: node_js
 node_js:
   - "10"
 
-branches: master
+branches:
+  except:
+    - master
 
 install:
   - npm install
