@@ -1,7 +1,7 @@
 language: node_js
 
 node_js:
-  - "10"
+  - stable
 
 branches:
   except:
@@ -11,4 +11,5 @@ install:
   - npm install
 
 script:
-  - ./deploy.sh
+  - chmod u+x deploy.sh
+  - bash ./deploy.sh
