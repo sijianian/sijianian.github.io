@@ -1,60 +1,1789 @@
-<!DOCTYPE html><html lang="zh-Hans"><head><meta name="generator" content="Hexo 3.8.0"><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="description" content=""><meta name="keywords" content=""><meta name="author" content="moke,undefined"><meta name="copyright" content="moke"><title>Write the code , Change the world | moke's blog</title><link rel="shortcut icon" href="/favicon.ico"><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css?version=1.5.4"><link rel="dns-prefetch" href="https://cdn.staticfile.org"><link rel="dns-prefetch" href="https://cdn.bootcss.com"><link rel="dns-prefetch" href="https://creativecommons.org"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.1.1/dist/instantsearch.min.css"><script src="https://cdn.jsdelivr.net/npm/instantsearch.js@2.1.1/dist/instantsearch.min.js" defer></script><link rel="dns-prefetch" href="https://hm.baidu.com"><script>var _hmt = _hmt || [];
-(function() {
-  var hm = document.createElement("script");
-  hm.src = "https://hm.baidu.com/hm.js?96aa37ccd951cae93b8933a2366c5470";
-  var s = document.getElementsByTagName("script")[0]; 
-  s.parentNode.insertBefore(hm, s);
-})();</script><link rel="dns-prefetch" href="https://www.google-analytics.com"><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+<!DOCTYPE html>
 
-ga('create', 'UA-110022311-1', 'auto');
-ga('send', 'pageview');</script><script>var GLOBAL_CONFIG = { 
-  root: '/',
-  algolia: {"appId":"B7HXH2JVZ8","apiKey":"d74babb27b671212e73a76423f00fee2","indexName":"blog","hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},
-  copy: {
-    success: '复制成功',
-    error: '复制错误',
-    noSupport: '浏览器不支持'
-  },
-  localSearch: undefined
-} </script></head><body><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div id="sidebar"><div class="author-info"><div class="author-info__avatar text-center"><img src="https://static.skynian.cn/README-2018611232116.jpg"></div><div class="author-info__name text-center">moke</div><div class="author-info__description text-center"></div><hr><div class="author-info-articles"><a class="author-info-articles__archives article-meta" href="/archives"><span class="pull-left">文章</span><span class="pull-right">18</span></a><a class="author-info-articles__tags article-meta" href="/tags"><span class="pull-left">标签</span><span class="pull-right">11</span></a><a class="author-info-articles__categories article-meta" href="/categories"><span class="pull-left">分类</span><span class="pull-right">7</span></a></div></div></div><nav class="https://static.skynian.cn/18-12-25/2092366.jpg" id="nav" style="background-image: url(https://static.skynian.cn/18-12-25/2092366.jpg)"><div id="page-header"><span class="pull-left"><a id="site-name" href="/">moke's blog</a></span><i class="fa fa-bars toggle-menu pull-right" aria-hidden="true"></i><span class="pull-right menus"><a class="site-page" href="/">Home</a><a class="site-page" href="/archives/">Archives</a><a class="site-page" href="/tags/">Tags</a><a class="site-page" href="/categories/">Categories</a></span></div><div id="site-info"><div id="site-title">moke's blog</div><div id="site-sub-title">Write the code , Change the world</div><div id="site-social-icons"> <a class="social-icon" href="https://github.com/sijianian" target="_blank"><i class="fa fa-github"></i></a><a class="social-icon search"><i class="fa fa-search"></i></a></div></div><div class="search-dialog" id="algolia-search"><div class="search-dialog__title" id="algolia-search-title">Algolia</div><div id="algolia-input-panel"><div id="algolia-search-input"></div></div><hr><div id="algolia-search-results"><div id="algolia-hits"></div><div id="algolia-pagination"></div><div id="algolia-stats"></div></div><span class="search-close-button"><i class="fa fa-times"></i></span></div><div class="search-mask"></div></nav><div id="content-outer"><div class="layout" id="content-inner"><div class="recent-post-item article-container"><a class="article-title" href="/2019/05/21/简析-Object-create-null/">简析 Object.create(null)</a><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2019-05-21</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fa fa-inbox article-meta__icon" aria-hidden="true"></i><a class="article-meta__categories" href="/categories/JavaScript/">JavaScript</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fa fa-tag article-meta__icon" aria-hidden="true"></i><a class="article-meta__tags" href="/tags/JavaScript/">JavaScript</a></span><div class="content">前言在阅读 Vue 和 Vuex 的源码中，我们会发现，作者都使用了 ==Object.create(null)== 来初始化一个新的对象。
-作为 ES5 继承中更优解的==组合寄生继承==中，也同样用 ==Object.create(prototype)== 来处理原型链。
-那么问题来了，我们为什 ...</div><a class="more" href="/2019/05/21/简析-Object-create-null/#more" style="margin-top: 14px">阅读更多</a><hr></div><div class="recent-post-item article-container"><a class="article-title" href="/2019/05/14/Facebook-应用审核/">Facebook 应用审核</a><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2019-05-14</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fa fa-inbox article-meta__icon" aria-hidden="true"></i><a class="article-meta__categories" href="/categories/其他/">其他</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fa fa-tag article-meta__icon" aria-hidden="true"></i><a class="article-meta__tags" href="/tags/经验/">经验</a><span class="article-meta__link">-</span><i class="fa fa-tag article-meta__icon" aria-hidden="true"></i><a class="article-meta__tags" href="/tags/Facebook/">Facebook</a></span><div class="content">背景小满营销有一个社交发件箱的功能，作用是整合几个社交平台，统一管理社交动态。
 
-由于 Facebook 平台 Api 机制的更新，https://developers.facebook.com/docs/apps/review/，导致在小满营销中无法发布 Facebook 个人内容。
-因此期望能够 ...</div><a class="more" href="/2019/05/14/Facebook-应用审核/#more" style="margin-top: 14px">阅读更多</a><hr></div><div class="recent-post-item article-container"><a class="article-title" href="/2019/01/07/移动适配总结/">移动适配总结</a><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2019-01-07</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fa fa-inbox article-meta__icon" aria-hidden="true"></i><a class="article-meta__categories" href="/categories/JavaScript/">JavaScript</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fa fa-tag article-meta__icon" aria-hidden="true"></i><a class="article-meta__tags" href="/tags/JavaScript/">JavaScript</a><span class="article-meta__link">-</span><i class="fa fa-tag article-meta__icon" aria-hidden="true"></i><a class="article-meta__tags" href="/tags/移动端/">移动端</a><span class="article-meta__link">-</span><i class="fa fa-tag article-meta__icon" aria-hidden="true"></i><a class="article-meta__tags" href="/tags/知识点/">知识点</a></span><div class="content">在 web 的世界中，无线和 PC 的响应式适配其实是两个世界……
-原本可能通过百分比/媒体查询等简单手段就可以解决常见的适配问题，但是对于页面有复杂结构或者视觉上有特殊要求的，就需要通过其他手段来解决了。
-zhi##
-</div><a class="more" href="/2019/01/07/移动适配总结/#more" style="margin-top: 14px">阅读更多</a><hr></div><div class="recent-post-item article-container"><a class="article-title" href="/2018/12/29/深浅拷贝/">深浅拷贝</a><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2018-12-29</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fa fa-inbox article-meta__icon" aria-hidden="true"></i><a class="article-meta__categories" href="/categories/JavaScript/">JavaScript</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fa fa-tag article-meta__icon" aria-hidden="true"></i><a class="article-meta__tags" href="/tags/JavaScript/">JavaScript</a></span><div class="content">前端日常开发中，经常会遇到的问题是：什么是浅拷贝？如何实现浅拷贝？什么事深拷贝？如何实现深拷贝？
-众所周知，对象类型在赋值的过程中其实是复制了地址，从而会导致改变了一方其他也都会被改变的情况。通常在开发中我们不希望出现这样的问题。这个时候，我们就可以使用浅拷贝来解决这个情况。
-1234567let  ...</div><a class="more" href="/2018/12/29/深浅拷贝/#more" style="margin-top: 14px">阅读更多</a><hr></div><div class="recent-post-item article-container"><a class="article-title" href="/2018/12/17/实现半像素边框/">实现半像素边框</a><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2018-12-17</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fa fa-inbox article-meta__icon" aria-hidden="true"></i><a class="article-meta__categories" href="/categories/布局/">布局</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fa fa-tag article-meta__icon" aria-hidden="true"></i><a class="article-meta__tags" href="/tags/布局/">布局</a><span class="article-meta__link">-</span><i class="fa fa-tag article-meta__icon" aria-hidden="true"></i><a class="article-meta__tags" href="/tags/CSS/">CSS</a></span><div class="content">思路普通的 1px 黑色实线边框
-123.border &#123;  border: 1px solid #000;&#125;
-半像素边框当然不是简单地把 1px 改为 0.5px（没测试过，可能会被解析成 1 或者 0），border-width 的值只能是自然数
-类似的，outline, b ...</div><a class="more" href="/2018/12/17/实现半像素边框/#more" style="margin-top: 14px">阅读更多</a><hr></div><div class="recent-post-item article-container"><a class="article-title" href="/2018/07/22/JS-简写技术/">JS 简写技术</a><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2018-07-22</time><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fa fa-tag article-meta__icon" aria-hidden="true"></i><a class="article-meta__tags" href="/tags/JavaScript/">JavaScript</a></span><div class="content">
-转载 19 个 JS 常用的简写技术
 
-三元操作符当想写 if…else 语句时，使用三元操作符来代替
-1234567const x = 20;let answer;if (x &gt; 10) &#123;  answer = "is greater";&#125; else &#123;  a ...</div><a class="more" href="/2018/07/22/JS-简写技术/#more" style="margin-top: 14px">阅读更多</a><hr></div><div class="recent-post-item article-container"><a class="article-title" href="/2018/07/19/浅谈-Web-Components/">浅谈 Web Components</a><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2018-07-19</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fa fa-inbox article-meta__icon" aria-hidden="true"></i><a class="article-meta__categories" href="/categories/JavaCcript/">JavaCcript</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fa fa-tag article-meta__icon" aria-hidden="true"></i><a class="article-meta__tags" href="/tags/JavaCcript/">JavaCcript</a></span><div class="content"><p><img src="https://static.skynian.cn/18-7-21/31724707.jpg" alt=""></p>
-<p>Web Components 是一套不同的技术，允许您创建可重用的定制元素（它们的功能封装在您的代码之外）并且在您的 web 应用中使用它们。</p></div><a class="more" href="/2018/07/19/浅谈-Web-Components/#more">阅读更多</a><hr></div><div class="recent-post-item article-container"><a class="article-title" href="/2018/07/07/浅析浏览器缓存/">浅析浏览器缓存</a><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2018-07-07</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fa fa-inbox article-meta__icon" aria-hidden="true"></i><a class="article-meta__categories" href="/categories/WEB/">WEB</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fa fa-tag article-meta__icon" aria-hidden="true"></i><a class="article-meta__tags" href="/tags/HTTP/">HTTP</a></span><div class="content">浏览器缓存是优化性能的一种方式，下面看看常见的 HTTP 缓存头，工作流程。
-当我们打开一个网站时，打开开发者工具 Network 面板，我们通常可以看到 from disk cache 缓存到硬盘，from memory cache 缓存到内存（chrome）这些字样，这个就是浏览器缓存。
-这个通 ...</div><a class="more" href="/2018/07/07/浅析浏览器缓存/#more" style="margin-top: 14px">阅读更多</a><hr></div><div class="recent-post-item article-container"><a class="article-title" href="/2018/06/30/BFC/">快速掌握 BFC 原理</a><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2018-06-30</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fa fa-inbox article-meta__icon" aria-hidden="true"></i><a class="article-meta__categories" href="/categories/布局/">布局</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fa fa-tag article-meta__icon" aria-hidden="true"></i><a class="article-meta__tags" href="/tags/布局/">布局</a><span class="article-meta__link">-</span><i class="fa fa-tag article-meta__icon" aria-hidden="true"></i><a class="article-meta__tags" href="/tags/CSS/">CSS</a></span><div class="content">前言对于 BFC 的概念以及应用场景一直都不是很明白，今天着重去了解了一下，做了以下总结。
-BFC 的定义Box 是 CSS 布局的对象和基本单位， 直观点来说，就是一个页面是由很多个 Box 组成的。
-元素的类型和 display 属性，决定了这个 Box 的类型。 不同类型的 Box， 会参与不 ...</div><a class="more" href="/2018/06/30/BFC/#more" style="margin-top: 14px">阅读更多</a><hr></div><div class="recent-post-item article-container"><a class="article-title" href="/2018/06/28/debounce-and-throttle/">函数去抖和函数节流</a><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2018-06-28</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fa fa-inbox article-meta__icon" aria-hidden="true"></i><a class="article-meta__categories" href="/categories/JavaScript/">JavaScript</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fa fa-tag article-meta__icon" aria-hidden="true"></i><a class="article-meta__tags" href="/tags/JavaScript/">JavaScript</a></span><div class="content">debounce，在项目中其实使用的频率挺高的，但是一直没有彻底理解应用场景和原理，这次就做一次简单的总结。
-函数防抖与节流是很相似的概念，但是他们的应用场景不太一样。
-我们先从概念上深刻理解它们。
-先说函数防抖，debounce。其概念其实是从机械开关和继电器的“去弹跳”（debounce）衍生  ...</div><a class="more" href="/2018/06/28/debounce-and-throttle/#more" style="margin-top: 14px">阅读更多</a><hr></div><nav id="pagination"><div class="pagination"><span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-chevron-right"></i></a></div></nav></div></div><footer><div class="layout" id="footer"><div class="copyright">&copy;2017 - 2019 By moke</div><div class="framework-info"><span>驱动 - </span><a href="http://hexo.io"><span>Hexo</span></a><span class="footer-separator">|</span><span>主题 - </span><a href="https://github.com/Molunerfinn/hexo-theme-melody"><span>Melody</span></a></div><div class="busuanzi"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_site_uv"><i class="fa fa-user"></i><span id="busuanzi_value_site_uv"></span><span></span></span><span class="footer-separator">|</span><span id="busuanzi_container_site_pv"><i class="fa fa-eye"></i><span id="busuanzi_value_site_pv"></span><span></span></span></div></div></footer><i class="fa fa-arrow-up" id="go-up" aria-hidden="true"></i><script src="/js/third-party/anime.min.js"></script><script src="/js/third-party/jquery.min.js"></script><script src="/js/third-party/jquery.fancybox.min.js"></script><script src="/js/third-party/velocity.min.js"></script><script src="/js/third-party/velocity.ui.min.js"></script><script src="/js/utils.js?version=1.5.4"></script><script src="/js/fancybox.js?version=1.5.4"></script><script src="/js/sidebar.js?version=1.5.4"></script><script src="/js/copy.js?version=1.5.4"></script><script src="/js/fireworks.js?version=1.5.4"></script><script src="/js/transition.js?version=1.5.4"></script><script src="/js/scroll.js?version=1.5.4"></script><script src="/js/head.js?version=1.5.4"></script><script src="/js/love.js"></script><script src="/js/search/algolia.js"></script><script type="text/x-mathjax-config">MathJax.Hub.Config({
-  tex2jax: {
-    inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-    processEscapes: true,
-    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+
+
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.3.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.3.0">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.3.0">
+  <link rel="mask-icon" href="/images/logo.svg?v=7.3.0" color="#222">
+
+<link rel="stylesheet" href="/css/main.css?v=7.3.0">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '7.3.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":true,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":true,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: 'B7HXH2JVZ8',
+      apiKey: 'd74babb27b671212e73a76423f00fee2',
+      indexName: 'blog',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: 'Copy',
+      copy_success: 'Copied',
+      copy_failure: 'Copy failed'
+    }
+  };
+</script>
+
+  <meta property="og:type" content="website">
+<meta property="og:title" content="moke&#39;s blog">
+<meta property="og:url" content="https://skynian.com/index.html">
+<meta property="og:site_name" content="moke&#39;s blog">
+<meta property="og:locale" content="zh-Hans">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="moke&#39;s blog">
+  <link rel="canonical" href="https://skynian.com/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: true,
+    isPost: false,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>moke's blog</title>
+  <meta name="generator" content="Hexo 3.9.0">
+  
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-110022311-1"></script>
+  <script>
+    var host = window.location.hostname;
+    if (host !== "localhost" || !true) {
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-110022311-1');
+    }
+  </script>
+
+
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?96aa37ccd951cae93b8933a2366c5470";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
   }
-});
-</script><script type="text/x-mathjax-config">MathJax.Hub.Queue(function() {
-  var all = MathJax.Hub.getAllJax(), i;
-  for (i=0; i < all.length; i += 1) {
-    all[i].SourceElement().parentNode.className += ' has-jax';
-  }
-});
-</script><script src="https://cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/miku.model.json"},"display":{"position":"right","width":70,"height":140,"hOffset":0,"vOffset":10},"react":{"opacityDefault":0.95},"mobile":{"show":false},"log":false});</script></body></html>
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">moke's blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">Write the code , Change the world</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+      
+        
+        <li class="menu-item menu-item-home">
+      
+    
+      
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-archives">
+      
+    
+      
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives<span class="badge">18</span></a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-tags">
+      
+    
+      
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>Tags<span class="badge">11</span></a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-categories">
+      
+    
+      
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>Categories<span class="badge">7</span></a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a href="javascript:;" class="popup-trigger">
+        
+          <i class="menu-item-icon fa fa-search fa-fw"></i> <br>Search</a>
+      </li>
+    
+  </ul>
+
+    
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="Searching..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <a class="book-mark-link book-mark-link-fixed" href="#"></a>
+
+  <a href="https://github.com/sijianian" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+  <div id="posts" class="posts-expand">
+        <article itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block home">
+    <link itemprop="mainEntityOfPage" href="https://skynian.com/2019/05/21/简析-Object-create-null/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="moke">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://static.skynian.cn/README-2018611232116.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="moke's blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+            
+            <a href="/2019/05/21/简析-Object-create-null/" class="post-title-link" itemprop="url">简析 Object.create(null)</a>
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              
+                
+              
+
+              <time title="Created: 2019-05-21 14:15:47 / Modified: 14:41:49" itemprop="dateCreated datePublished" datetime="2019-05-21T14:15:47+08:00">2019-05-21</time>
+            </span>
+          
+            
+
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/JavaScript/" itemprop="url" rel="index"><span itemprop="name">JavaScript</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在阅读 Vue 和 Vuex 的源码中，我们会发现，作者都使用了 ==Object.create(null)== 来初始化一个新的对象。</p>
+<p>作为 ES5 继承中更优解的==组合寄生继承==中，也同样用 ==Object.create(prototype)== 来处理原型链。</p>
+<p>那么问题来了，我们为什么不用更加简洁的 =={}== 呢？</p>
+<p>通过自己查找一些资料，总结在这里，温故知新。</p>
+<h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>首先，我们先照搬 MDN 上的定义:</p>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/create" target="_blank" rel="noopener">Object.create</a></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Object</span>.create(proto, [propertiesObject])</span><br></pre></td></tr></table></figure>
+<ul>
+<li>proto: 新创建对象的原型对象</li>
+<li>propertiesObject: 可选。要添加到新对象的可枚举（新添加的属性是其自身的属性，而不是其原型链上的）属性</li>
+</ul>
+<p>eg:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> car = &#123;</span><br><span class="line">  isSportsCar: <span class="literal">false</span>,</span><br><span class="line">  introduction: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">`Hi girl, this is a <span class="subst">$&#123;<span class="keyword">this</span>.name&#125;</span>.</span></span><br><span class="line"><span class="string">    Do you like to have a drink with me ? <span class="subst">$&#123;<span class="keyword">this</span>.isSportsCar&#125;</span>`</span>)</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> porsche = <span class="built_in">Object</span>.create(car, &#123;</span><br><span class="line">  <span class="comment">//color成为porsche的数据属性</span></span><br><span class="line">  <span class="comment">//颜色不喜欢，可以改色或贴膜，所以可修改</span></span><br><span class="line">  color: &#123;</span><br><span class="line">    writable: <span class="literal">true</span>,</span><br><span class="line">    configurable: <span class="literal">true</span>,</span><br><span class="line">    value: <span class="string">'yellow'</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">//type成为porsche的访问器属性</span></span><br><span class="line">  type: &#123;</span><br><span class="line">    <span class="comment">// writable、configurable等属性，不显式设置则默认为false</span></span><br><span class="line">    <span class="comment">// 想把普通车改成敞篷，成本有点大了，所以就设成不可配置吧</span></span><br><span class="line">    get: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="string">'convertible'</span></span><br><span class="line">    &#125;,</span><br><span class="line">    set: <span class="function"><span class="keyword">function</span>(<span class="params">value</span>) </span>&#123;</span><br><span class="line">      <span class="string">'change this car to'</span>, value</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">porsche.name = <span class="string">'Porsche 911'</span> <span class="comment">// "name"是"porsche"的属性, 而不是"car"的</span></span><br><span class="line">porsche.isSportsCar = <span class="literal">true</span> <span class="comment">// 继承的属性可以被覆写</span></span><br><span class="line"></span><br><span class="line">porsche.introduction()</span><br><span class="line"><span class="comment">// expected output: "Hi girl, this is a Porsche 911. Do you like to have a drink with me ? true"</span></span><br></pre></td></tr></table></figure>
+<p>其实很简单，只要过一下上面的例子，我们就能掌握了。</p>
+<h2 id="Object-create-、-…-的区别"><a href="#Object-create-、-…-的区别" class="headerlink" title="Object.create()、{…} 的区别"></a>Object.create()、{…} 的区别</h2><p>先看看我们经常使用的 {} 创建的对象那个是什么样子的：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = &#123; <span class="attr">b</span>: <span class="number">1</span> &#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(a)</span><br></pre></td></tr></table></figure>
+<p>在 chrome 控制台打印如下</p>
+<p><img src="https://static.skynian.cn/20190521143355.png" alt=""></p>
+<p>从上图中可以看到，新创建的对象继承了 ==Object== 自身的方法，如 ==hasOwnProperty==、==toString== 等，在新对象上面可以直接使用。</p>
+<p>再看看使用 ==Object.create()== 创建对象</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> o = <span class="built_in">Object</span>.create(<span class="literal">null</span>, &#123;</span><br><span class="line">  a: &#123;</span><br><span class="line">    writable: <span class="literal">true</span>,</span><br><span class="line">    configurable: <span class="literal">true</span>,</span><br><span class="line">    value: <span class="string">'1'</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;)</span><br><span class="line"><span class="built_in">console</span>.log(o)</span><br></pre></td></tr></table></figure>
+<p><img src="https://static.skynian.cn/20190521143632.png" alt=""></p>
+<p>可以看到，新创建的对象除了自身属性 a 之外，原型链上没有任何属性，也就是没有继承 Object 的任何东西，此时如果我们调用 o.toString()会报 Uncaught TypeError 的错误。</p>
+<p>大家可能会注意到，第一个参数使用了 null。也就是说将 null 设置成了新创建对象的原型，自然就不会有原型链上的属性。我们再把上面的例子改一改：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> o = <span class="built_in">Object</span>.create(</span><br><span class="line">  &#123;&#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    a: &#123;</span><br><span class="line">      writable: <span class="literal">true</span>,</span><br><span class="line">      configurable: <span class="literal">true</span>,</span><br><span class="line">      value: <span class="string">'1'</span>,</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;</span><br><span class="line">)</span><br><span class="line"><span class="built_in">console</span>.log(o)</span><br></pre></td></tr></table></figure>
+<p><img src="https://static.skynian.cn/20190521143801.png" alt=""></p>
+<p>我们看到，这样创建的对象和使用{}创建对象已经很相近了，但是还是有一点区别：多了一层 proto 嵌套。</p>
+<p>我们最后再来改一下：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> o = <span class="built_in">Object</span>.create(<span class="built_in">Object</span>.prototype, &#123;</span><br><span class="line">  a: &#123;</span><br><span class="line">    writable: <span class="literal">true</span>,</span><br><span class="line">    configurable: <span class="literal">true</span>,</span><br><span class="line">    value: <span class="string">'1'</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;)</span><br><span class="line"><span class="built_in">console</span>.log(o)</span><br></pre></td></tr></table></figure>
+<p><img src="https://static.skynian.cn/20190521143843.png" alt=""></p>
+<p>这次就和使用{}创建的对象一模一样了。至此，我相信大家已经对两者的区别十分清楚了。</p>
+<h2 id="Object-create-null-的使用场景"><a href="#Object-create-null-的使用场景" class="headerlink" title="Object.create(null)的使用场景"></a>Object.create(null)的使用场景</h2><p>再回到文章开头的问题，为什么很多源码作者会使用 Object.create(null)来初始化一个新对象呢？这是作者的习惯，还是一个最佳实践？</p>
+<p>其实都不是，这并不是作者不经思考随便用的，也不是 javascript 编程中的最佳实践，而是需要因地制宜，具体问题具体分析。</p>
+<p>我们进一步比较一下 Object.create(null)和{}创建控对象的区别：</p>
+<p>在 chrome 打印如下：</p>
+<p><img src="https://static.skynian.cn/20190521143946.png" alt=""></p>
+<p>从上图可以看到，使用 create 创建的对象，没有任何属性，显示 No properties，我们可以把它当作一个非常纯净的 map 来使用，我们可以自己定义 hasOwnProperty、toString 方法，不管是有意还是不小心，我们完全不必担心会将原型链上的同名方法覆盖掉。举个例子：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Demo1:</span></span><br><span class="line"><span class="keyword">let</span> a= &#123;...省略很多属性和方法...&#125;;</span><br><span class="line"><span class="comment">//如果想要检查a是否存在一个名为toString的属性，你必须像下面这样进行检查：</span></span><br><span class="line"><span class="keyword">if</span>(<span class="built_in">Object</span>.prototype.hasOwnProperty.call(a,<span class="string">'toString'</span>))&#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//为什么不能直接用a.hasOwnProperty('toString')?因为你可能给a添加了一个自定义的hasOwnProperty</span></span><br><span class="line"><span class="comment">//你无法使用下面这种方式来进行判断,因为原型上的toString方法是存在的：</span></span><br><span class="line"><span class="keyword">if</span>(a.toString)&#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//Demo2:</span></span><br><span class="line"><span class="keyword">let</span> a=<span class="built_in">Object</span>.create(<span class="literal">null</span>)</span><br><span class="line"><span class="comment">//你可以直接使用下面这种方式判断，因为存在的属性，都将定义在a上面，除非手动指定原型：</span></span><br><span class="line"><span class="keyword">if</span>(a.toString)&#123;&#125;</span><br></pre></td></tr></table></figure>
+<p>另一个使用 create(null)的理由是，在我们使用 for..in 循环的时候会遍历对象原型链上的属性，使用 create(null)就不必再对属性进行检查了，当然，我们也可以直接使用 Object.keys[]。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ul>
+<li>你需要一个非常干净且高度可定制的对象当作数据字典的时候</li>
+<li>想节省 hasOwnProperty 带来的一丢丢性能损失并且可以偷懒少些一点代码的时候</li>
+<li>组合寄生继承的时候</li>
+</ul>
+<p>用 Object.create(null)吧！其他时候，请用{}。</p>
+
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </div>
+  
+  
+  
+  </article>
+
+    
+        <article itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block home">
+    <link itemprop="mainEntityOfPage" href="https://skynian.com/2019/05/14/Facebook-应用审核/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="moke">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://static.skynian.cn/README-2018611232116.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="moke's blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+            
+            <a href="/2019/05/14/Facebook-应用审核/" class="post-title-link" itemprop="url">Facebook 应用审核</a>
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              
+                
+              
+
+              <time title="Created: 2019-05-14 14:30:05 / Modified: 14:30:58" itemprop="dateCreated datePublished" datetime="2019-05-14T14:30:05+08:00">2019-05-14</time>
+            </span>
+          
+            
+
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/其他/" itemprop="url" rel="index"><span itemprop="name">其他</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p><a href="https://crm.xiaoman.cn/marketing" target="_blank" rel="noopener">小满营销</a>有一个社交发件箱的功能，作用是整合几个社交平台，统一管理社交动态。</p>
+<p><img src="https://static.skynian.cn/20190513151408.png" alt=""></p>
+<p>由于 Facebook 平台 Api 机制的更新，<a href="https://note.youdao.com/" target="_blank" rel="noopener">https://developers.facebook.com/docs/apps/review/</a>，导致在小满营销中无法发布 Facebook 个人内容。</p>
+<p>因此期望能够通过 Facebook “公共主页” 的形式来发布社交内容。</p>
+<p>由于 Facebook 近来频频被爆出用户隐私暴露的问题，所以审核机制越来越严格。我们在申请和准备材料的过程中也是踩了不少坑，也解决了不少问题，所以对此做一份总结。如果后续有类似的问题，可能会有所帮助。</p>
+<h2 id="需要申请的权限"><a href="#需要申请的权限" class="headerlink" title="需要申请的权限"></a>需要申请的权限</h2><p><img src="https://static.skynian.cn/20190513152832.png" alt=""><br><img src="https://static.skynian.cn/20190513152910.png" alt=""></p>
+<p>我们的申请操作主要在 <a href="https://note.youdao.com/" target="_blank" rel="noopener">Facebook 开发者平台</a> 进行。</p>
+<p>我们需要实现的功能是管理用户的公共主页，和发布公共主页内容，所以需要申请的权限为 ==manage_pages== 和 ==publish_pages==。</p>
+<p>可以看到，这两个权限最终都需要公司或者个人验证，以及额外签署合同。不难得出，Facebook 对这两个权限是非常的谨慎。因此我们也需要严格按照 Facebook 的规范来准备材料和申请。</p>
+<h2 id="审核标准"><a href="#审核标准" class="headerlink" title="审核标准"></a>审核标准</h2><p><img src="https://static.skynian.cn/20190513154016.png" alt=""></p>
+<p>Facebook 的审核标准其实写得很清晰，如果严格按照上面的标准，理论上都能够成功。</p>
+<p>但是我们在这个过程中也多次失败，有一个很重要的原因是，没有遵守 <a href="https://developers.facebook.com/docs/facebook-login/userexperience/#buttondesign" target="_blank" rel="noopener">Facebook 品牌使用准则</a>。</p>
+<p>具体的内容可以进入到 Facebook 品牌使用准则进行查看</p>
+<p>这里需要留意的的是：</p>
+<ul>
+<li>Facebook 品牌的 logo</li>
+</ul>
+<p>在我们自己的应用中，不要对 Facebook 的 logo 进行加工，或者调整。在我们申请的过程中，因为小满营销中 Facebook 的 logo 颜色改成了非 Facebook 品牌推荐的颜色，导致申请失败。</p>
+<ul>
+<li>带有 Facebook logo 操作的一致性</li>
+</ul>
+<p>由于小满营销，前期有绑定雅虎邮箱的功能（已下线），因此在这里，点击带有 Facebook logo 的按钮会跳转到雅虎邮箱登录页，这样也是不允许的。</p>
+<ul>
+<li>用户需要明确知道，应用获取的是什么权限，作用是什么，用在什么地方。</li>
+</ul>
+<p>这里我们的处理是，用户在绑定 Facebook 账号的过程中，会弹窗显示权限内容和作用。</p>
+<p><img src="https://static.skynian.cn/20190513155801.png" alt=""></p>
+<h2 id="审核材料"><a href="#审核材料" class="headerlink" title="审核材料"></a>审核材料</h2><p><img src="https://static.skynian.cn/20190513160315.png" alt=""></p>
+<p>从上图中我们可以看到，我们需要准备的信息有：</p>
+<ul>
+<li>说明如何使用此权限或者功能<ul>
+<li>这里简单描述一下使用场景就好</li>
+</ul>
+</li>
+<li>展示平台如何使用这项权限或者功能（分步步骤）<ul>
+<li>这部分很重要，因为审核团队会依据这里面所给的步骤和信息，进行审核</li>
+<li>因为语言环境不同，所以最好准备两个版本</li>
+<li>网站需要在美国地区能够正常登陆</li>
+<li>需要提供能够直接测试的账号</li>
+</ul>
+</li>
+<li>测试应用<ul>
+<li>因为审核没有通过，所以我们是没有办法走通整个流程的</li>
+<li>Facebook 提供了测试应用，我们可以用这个来进行模拟、测试和录屏</li>
+</ul>
+</li>
+<li>录屏文件<ul>
+<li>包含内容<ul>
+<li>用户如何使用 Facebook 登录</li>
+<li>用户如何查看应用对此权限的使用</li>
+</ul>
+</li>
+<li>视频内容需要清晰可见</li>
+<li>使用测试应用来录屏</li>
+</ul>
+</li>
+</ul>
+<h2 id="测试应用"><a href="#测试应用" class="headerlink" title="测试应用"></a>测试应用</h2><h3 id="创建测试应用"><a href="#创建测试应用" class="headerlink" title="创建测试应用"></a>创建测试应用</h3><p><img src="https://static.skynian.cn/20190513163711.png" alt=""></p>
+<h3 id="管理员管理"><a href="#管理员管理" class="headerlink" title="管理员管理"></a>管理员管理</h3><p><img src="https://static.skynian.cn/20190513163813.png" alt=""></p>
+<h3 id="账号管理"><a href="#账号管理" class="headerlink" title="账号管理"></a>账号管理</h3><p><img src="https://static.skynian.cn/20190513163856.png" alt=""></p>
+<h2 id="审核反馈"><a href="#审核反馈" class="headerlink" title="审核反馈"></a>审核反馈</h2><p>在申请审核后，等待 3 天左右，如果没有通过，就会得到一条审核反馈。</p>
+<p>如果对审核的建议的内容不清楚的话，可以进行提问。</p>
+<p><img src="https://static.skynian.cn/20190513164209.png" alt=""></p>
+<p>但是因为 Facebook 工作人员反馈比较慢，所以建议还是不要依赖这个。</p>
+<p>做好的做法是，在提交疑问的同时，回顾一下我们的审核材料，提高审核效率。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ul>
+<li>参阅<a href="https://developers.facebook.com/docs/apps/review/submission-guidelines" target="_blank" rel="noopener">提交准则</a>，主要是 Facebook 官方要求执行的</li>
+<li>查看<a href="https://developers.facebook.com/docs/apps/review/?translation" target="_blank" rel="noopener">审核示例</a>，可以查阅一些实例</li>
+<li>可以结合我们总结的一些重点，提高审核效率</li>
+<li>因为审核时间比较久，并且失败的几率还是挺高的，我们需要做的是，耐心等候审核完成</li>
+</ul>
+
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </div>
+  
+  
+  
+  </article>
+
+    
+        <article itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block home">
+    <link itemprop="mainEntityOfPage" href="https://skynian.com/2019/01/07/移动适配总结/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="moke">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://static.skynian.cn/README-2018611232116.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="moke's blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+            
+            <a href="/2019/01/07/移动适配总结/" class="post-title-link" itemprop="url">移动适配总结</a>
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              
+                
+              
+
+              <time title="Created: 2019-01-07 12:03:37" itemprop="dateCreated datePublished" datetime="2019-01-07T12:03:37+08:00">2019-01-07</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-04-24 09:55:44" itemprop="dateModified" datetime="2019-04-24T09:55:44+08:00">2019-04-24</time>
+              </span>
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/JavaScript/" itemprop="url" rel="index"><span itemprop="name">JavaScript</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>在 web 的世界中，无线和 PC 的响应式适配其实是两个世界……</p>
+<p>原本可能通过百分比/媒体查询等简单手段就可以解决常见的适配问题，但是对于<strong>页面有复杂结构或者视觉上有特殊要求</strong>的，就需要通过其他手段来解决了。</p>
+<p>zhi##</p>
+
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </div>
+  
+  
+  
+  </article>
+
+    
+        <article itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block home">
+    <link itemprop="mainEntityOfPage" href="https://skynian.com/2018/12/29/深浅拷贝/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="moke">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://static.skynian.cn/README-2018611232116.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="moke's blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+            
+            <a href="/2018/12/29/深浅拷贝/" class="post-title-link" itemprop="url">深浅拷贝</a>
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              
+                
+              
+
+              <time title="Created: 2018-12-29 14:21:04" itemprop="dateCreated datePublished" datetime="2018-12-29T14:21:04+08:00">2018-12-29</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-04-24 09:55:44" itemprop="dateModified" datetime="2019-04-24T09:55:44+08:00">2019-04-24</time>
+              </span>
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/JavaScript/" itemprop="url" rel="index"><span itemprop="name">JavaScript</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>前端日常开发中，经常会遇到的问题是：什么是浅拷贝？如何实现浅拷贝？什么事深拷贝？如何实现深拷贝？</p>
+<p>众所周知，对象类型在赋值的过程中其实是复制了地址，从而会导致改变了一方其他也都会被改变的情况。通常在开发中我们不希望出现这样的问题。这个时候，我们就可以使用浅拷贝来解决这个情况。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = &#123;</span><br><span class="line">  age: <span class="number">1</span>,</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> b = a</span><br><span class="line">a.age = <span class="number">2</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(b.age) <span class="comment">// 2</span></span><br></pre></td></tr></table></figure>
+<h2 id="浅拷贝"><a href="#浅拷贝" class="headerlink" title="浅拷贝"></a>浅拷贝</h2><p>首先可以通过 <strong>Object.assign</strong> 来解决这个问题，很多人认为这个函数是用来深拷贝的。其实并不是，<strong>Object.assign</strong> 只会拷贝所有的属性值到新的对象中，如果属性值是对象的话，拷贝的是地址，所以并不是深拷贝。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = &#123;</span><br><span class="line">  age: <span class="number">1</span>,</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> b = <span class="built_in">Object</span>.assign(&#123;&#125;, a)</span><br><span class="line">a.age = <span class="number">2</span></span><br><span class="line"><span class="built_in">console</span>.log(b.age) <span class="comment">// 1</span></span><br></pre></td></tr></table></figure>
+<p>另外我们还可以通过展开运算符 <strong>…</strong> 来实现  浅拷贝</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = &#123;</span><br><span class="line">  age: <span class="number">1</span>,</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> b = &#123; ...a &#125;</span><br><span class="line">a.age = <span class="number">2</span></span><br><span class="line"><span class="built_in">console</span>.log(b.age)</span><br></pre></td></tr></table></figure>
+<p>通常浅拷贝就能解决大部分的问题了，但是当我们遇到如下的情况的时候，可能需要使用到深拷贝了</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = &#123;</span><br><span class="line">  age: <span class="number">1</span>,</span><br><span class="line">  jobs: &#123;</span><br><span class="line">    first: <span class="string">'FE'</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> b = &#123; ...a &#125;</span><br><span class="line">a.jobs.first = <span class="string">'native'</span></span><br><span class="line"><span class="built_in">console</span>.log(b.jobs.first)</span><br></pre></td></tr></table></figure>
+<p>浅拷贝只解决了第一层的问题，如果接下去的值中还有对象的话，那么就又回到了最开始的话题了，两者享有相同的地址。要解决这个问题，我们就得使用深拷贝了。</p>
+<h2 id="深拷贝"><a href="#深拷贝" class="headerlink" title="深拷贝"></a>深拷贝</h2><p>这个问题通常可以通过 <strong>JSON.parse(JSON.stringify(object))</strong> 来解决</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = &#123;</span><br><span class="line">  age: <span class="number">1</span>,</span><br><span class="line">  jobs: &#123;</span><br><span class="line">    first: <span class="string">'FE'</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> b = <span class="built_in">JSON</span>.parse(<span class="built_in">JSON</span>.stringify(a))</span><br><span class="line">a.jobs.first = <span class="string">'native'</span></span><br><span class="line"><span class="built_in">console</span>.log(b.jobs.first)</span><br></pre></td></tr></table></figure>
+<p>但是该方法也是有局限性的：</p>
+<ul>
+<li>会忽略 <strong>undefined</strong></li>
+<li>会忽略 <strong>symbol</strong></li>
+<li>不能序列化函数</li>
+<li>不能解决循环引用的问题</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> obj = &#123;</span><br><span class="line">  a: <span class="number">1</span>,</span><br><span class="line">  b: &#123;</span><br><span class="line">    c: <span class="number">2</span>,</span><br><span class="line">    d: <span class="number">3</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;</span><br><span class="line">obj.c = obj.b</span><br><span class="line">obj.e = obj.a</span><br><span class="line">obj.b.c = obj.c</span><br><span class="line">obj.b.d = obj.b</span><br><span class="line">obj.b.e = obj.b.c</span><br><span class="line"><span class="keyword">let</span> newObj = <span class="built_in">JSON</span>.parse(<span class="built_in">JSON</span>.stringify(obj))</span><br><span class="line"><span class="built_in">console</span>.log(newObj)</span><br></pre></td></tr></table></figure>
+<p>如果你有这么一个循环引用对象，你会发现并不能通过该方法实现深拷贝</p>
+<p><img src="https://static.skynian.cn/19-1-2/38398019.jpg" alt=""></p>
+<p>在遇到函数、<strong>undefined</strong> 或者 <strong>symbol</strong> 的时候，该对象也不能正常的序列化</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = &#123;</span><br><span class="line">  age: <span class="literal">undefined</span>,</span><br><span class="line">  sex: <span class="built_in">Symbol</span>(<span class="string">'male'</span>),</span><br><span class="line">  jobs: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;&#125;,</span><br><span class="line">  name: <span class="string">'yck'</span>,</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> b = <span class="built_in">JSON</span>.parse(<span class="built_in">JSON</span>.stringify(a))</span><br><span class="line"><span class="built_in">console</span>.log(b) <span class="comment">// &#123;name: "yck"&#125;</span></span><br></pre></td></tr></table></figure>
+<p>你会发现在上述情况中，该方法会忽略掉函数和 <strong>undefined</strong> 。</p>
+<p>但是在通常情况下，复杂数据都是可以序列化的，所以这个函数可以解决大部分问题。</p>
+<p>如果你所需拷贝的对象含有内置类型并且不包含函数，可以使用 <strong>MessageChannel</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">structuralClone</span>(<span class="params">obj</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="params">resolve</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> &#123; port1, port2 &#125; = <span class="keyword">new</span> MessageChannel()</span><br><span class="line">    port2.onmessage = <span class="function"><span class="params">ev</span> =&gt;</span> resolve(ev.data)</span><br><span class="line">    port1.postMessage(obj)</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">  a: <span class="number">1</span>,</span><br><span class="line">  b: &#123;</span><br><span class="line">    c: <span class="number">2</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">obj.b.d = obj.b</span><br><span class="line"></span><br><span class="line"><span class="comment">// 注意该方法是异步的</span></span><br><span class="line"><span class="comment">// 可以处理 undefined 和循环引用对象</span></span><br><span class="line"><span class="keyword">const</span> test = <span class="keyword">async</span> () =&gt; &#123;</span><br><span class="line">  <span class="keyword">const</span> clone = <span class="keyword">await</span> structuralClone(obj)</span><br><span class="line">  <span class="built_in">console</span>.log(clone)</span><br><span class="line">&#125;</span><br><span class="line">test()</span><br></pre></td></tr></table></figure>
+<p>当然你可能想自己来实现一个深拷贝，但是其实实现一个深拷贝是很困难的，需要我们考虑好多种边界情况，比如原型链如何处理、DOM 如何处理等等，所以这里我们实现的深拷贝只是简易版，并且我其实更推荐使用 lodash 的深拷贝函数。</p>
+<p><a href="https://link.juejin.im?target=https%3A%2F%2Flodash.com%2Fdocs%23cloneDeep" target="_blank" rel="noopener">lodash 的深拷贝函数</a></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">deepClone</span>(<span class="params">obj</span>) </span>&#123;</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">isObject</span>(<span class="params">o</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> (<span class="keyword">typeof</span> o === <span class="string">'object'</span> || <span class="keyword">typeof</span> o === <span class="string">'function'</span>) &amp;&amp; o !== <span class="literal">null</span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (!isObject(obj)) &#123;</span><br><span class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">'非对象'</span>)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">let</span> isArray = <span class="built_in">Array</span>.isArray(obj)</span><br><span class="line">  <span class="keyword">let</span> newObj = isArray ? [...obj] : &#123; ...obj &#125;</span><br><span class="line">  <span class="built_in">Reflect</span>.ownKeys(newObj).forEach(<span class="function"><span class="params">key</span> =&gt;</span> &#123;</span><br><span class="line">    newObj[key] = isObject(obj[key]) ? deepClone(obj[key]) : obj[key]</span><br><span class="line">  &#125;)</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> newObj</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> obj = &#123;</span><br><span class="line">  a: [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>],</span><br><span class="line">  b: &#123;</span><br><span class="line">    c: <span class="number">2</span>,</span><br><span class="line">    d: <span class="number">3</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> newObj = deepClone(obj)</span><br><span class="line">newObj.b.c = <span class="number">1</span></span><br><span class="line"><span class="built_in">console</span>.log(obj.b.c) <span class="comment">// 2</span></span><br></pre></td></tr></table></figure>
+
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </div>
+  
+  
+  
+  </article>
+
+    
+        <article itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block home">
+    <link itemprop="mainEntityOfPage" href="https://skynian.com/2018/12/17/实现半像素边框/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="moke">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://static.skynian.cn/README-2018611232116.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="moke's blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+            
+            <a href="/2018/12/17/实现半像素边框/" class="post-title-link" itemprop="url">实现半像素边框</a>
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              
+                
+              
+
+              <time title="Created: 2018-12-17 16:43:04" itemprop="dateCreated datePublished" datetime="2018-12-17T16:43:04+08:00">2018-12-17</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-04-24 09:55:44" itemprop="dateModified" datetime="2019-04-24T09:55:44+08:00">2019-04-24</time>
+              </span>
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/布局/" itemprop="url" rel="index"><span itemprop="name">布局</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>普通的 1px 黑色实线边框</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.border</span> &#123;</span><br><span class="line">  <span class="attribute">border</span>: <span class="number">1px</span> solid <span class="number">#000</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>半像素边框当然不是简单地把 1px 改为 0.5px（没测试过，可能会被解析成 1 或者 0），border-width 的值只能是自然数</p>
+<p>类似的，outline, box-shadow 等等也没有办法画出 0.5px 的细线</p>
+<p>常规思路是不可行的，我们可以用伪元素 + 缩放巧妙地实现，具体步骤如下：</p>
+<ul>
+<li>设置目标元素作为定位参照</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.thinner-border</span> &#123;</span><br><span class="line">  <span class="attribute">position</span>: relative;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>给目标元素添加一个伪元素 before 或者 after，并设置绝对定位</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.thinner-border</span><span class="selector-pseudo">:before</span> &#123;</span><br><span class="line">  <span class="attribute">content</span>: <span class="string">""</span>;</span><br><span class="line">  <span class="attribute">position</span>: absolute;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>给伪元素添上 1px 的边框</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.thinner-border</span><span class="selector-pseudo">:before</span> &#123;</span><br><span class="line">  <span class="attribute">border</span>: <span class="number">1px</span> solid red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>设置伪元素的宽高为目标元素的 2 倍</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.thinner-border</span><span class="selector-pseudo">:before</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">200%</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">200%</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>缩小 0.5 倍（变回目标元素的大小）</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.thinner-border</span><span class="selector-pseudo">:before</span> &#123;</span><br><span class="line">  <span class="attribute">transform-origin</span>: <span class="number">0</span> <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">transform</span>: <span class="built_in">scale</span>(0.5, 0.5);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>把 border 包进来</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.thinner-border</span><span class="selector-pseudo">:before</span> &#123;</span><br><span class="line">  <span class="attribute">box-sizing</span>: border-box;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>简言之就是先放大再缩回来，border-box 是关键，否则边框不会一起缩放</p>
+
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </div>
+  
+  
+  
+  </article>
+
+    
+        <article itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block home">
+    <link itemprop="mainEntityOfPage" href="https://skynian.com/2018/07/22/JS-简写技术/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="moke">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://static.skynian.cn/README-2018611232116.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="moke's blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+            
+            <a href="/2018/07/22/JS-简写技术/" class="post-title-link" itemprop="url">JS 简写技术</a>
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              
+                
+              
+
+              <time title="Created: 2018-07-22 22:21:25" itemprop="dateCreated datePublished" datetime="2018-07-22T22:21:25+08:00">2018-07-22</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-04-24 09:55:44" itemprop="dateModified" datetime="2019-04-24T09:55:44+08:00">2019-04-24</time>
+              </span>
+            
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <blockquote>
+<p>转载 <a href="https://juejin.im/post/5948db9661ff4b006c061b2b" target="_blank" rel="noopener">19 个 JS 常用的简写技术</a></p>
+</blockquote>
+<h2 id="三元操作符"><a href="#三元操作符" class="headerlink" title="三元操作符"></a>三元操作符</h2><p>当想写 if…else 语句时，使用三元操作符来代替</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> x = <span class="number">20</span>;</span><br><span class="line"><span class="keyword">let</span> answer;</span><br><span class="line"><span class="keyword">if</span> (x &gt; <span class="number">10</span>) &#123;</span><br><span class="line">  answer = <span class="string">"is greater"</span>;</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  answer = <span class="string">"is lesser"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>简写：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> answer = <span class="function"><span class="params">x</span> =&gt;</span> (<span class="number">10</span> ? <span class="string">"is greater"</span> : <span class="string">"is lesser"</span>);</span><br></pre></td></tr></table></figure>
+<p>也可以嵌套 if 语句</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> big = x &gt; <span class="number">10</span> ? <span class="string">"greater 10"</span> : x;</span><br></pre></td></tr></table></figure>
+<h2 id="短路求值简写方式"><a href="#短路求值简写方式" class="headerlink" title="短路求值简写方式"></a>短路求值简写方式</h2><p>当给一个变量分配另一个值的时候，想确定源值是不是 null,undefined 或空值。可以撰写一个多重条件的 if 语句</p>
+<p>测试 ing</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (temp !== <span class="literal">null</span> || temp !== <span class="literal">undefined</span> || temp !== <span class="string">""</span>) &#123;</span><br><span class="line">  <span class="keyword">let</span> temp2 = temp;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>或者可以使用短路求值方法：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> temp2 = temp || <span class="string">"new"</span>;</span><br></pre></td></tr></table></figure>
+<h2 id="声明变量简写方法"><a href="#声明变量简写方法" class="headerlink" title="声明变量简写方法"></a>声明变量简写方法</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> x;</span><br><span class="line"><span class="keyword">let</span> y;</span><br><span class="line"><span class="keyword">let</span> z = <span class="number">3</span>;</span><br></pre></td></tr></table></figure>
+<p>简写方法:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> x,</span><br><span class="line">  y,</span><br><span class="line">  z = <span class="number">3</span>;</span><br></pre></td></tr></table></figure>
+<h2 id="if-存在条件简写方法"><a href="#if-存在条件简写方法" class="headerlink" title="if 存在条件简写方法"></a>if 存在条件简写方法</h2><pre><code>if(likeJavaScript===true)
+</code></pre><p>简写：</p>
+<pre><code>if(likeJavaScript)
+</code></pre><p>只有 likeJavaScript 是真值的时候，二者语句才相等</p>
+<p>如果判断值不是真值，则可以这样</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a;</span><br><span class="line"><span class="keyword">if</span> (a !== <span class="literal">true</span>) &#123;</span><br><span class="line">  <span class="comment">//do something...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>简写：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a;</span><br><span class="line"><span class="keyword">if</span> (!a) &#123;</span><br><span class="line">  <span class="comment">//do something</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="JS-循环简写方法"><a href="#JS-循环简写方法" class="headerlink" title="JS 循环简写方法"></a>JS 循环简写方法</h2><pre><code>for (let i=0;i&lt;allImgs.length;i++)
+</code></pre><p>简写：</p>
+<pre><code>for(let index in allImgs)
+</code></pre><p>也可以使用 Array.forEach</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">logArrayElements</span>(<span class="params">element,index,array</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'a['</span>+index+<span class="string">']='</span>+element);</span><br><span class="line">&#125;</span><br><span class="line">[<span class="number">2.5</span><span class="number">.9</span>].forEach(logArrayElements);</span><br></pre></td></tr></table></figure>
+<h2 id="短路评价"><a href="#短路评价" class="headerlink" title="短路评价"></a>短路评价</h2><p>给一个变量分配的值是通过判断其值是否为 null 或者 undefined，则可以：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> dbhost;</span><br><span class="line"><span class="keyword">if</span> (process.env.DB_HOST) &#123;</span><br><span class="line">  dbHost = process.env.DB_HOST;</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  dbHost = <span class="string">"localhost"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>简写:</p>
+<pre><code>const dbHost=process.env.DB_HOST||&apos;localhost&apos;
+</code></pre><h2 id="十进制指数"><a href="#十进制指数" class="headerlink" title="十进制指数"></a>十进制指数</h2><p>当需要写数字带有很多零时(如 10000000)，可以采用指数(1e7)来代替这个数字：</p>
+<pre><code>for(let i=0;i&lt;10000;i++){}
+</code></pre><p>简写：</p>
+<pre><code>for(let i=0;i&lt;1e7;i++){}
+</code></pre><h2 id="对象属性简写"><a href="#对象属性简写" class="headerlink" title="对象属性简写"></a>对象属性简写</h2><p>如果属性名与 key 名相同，则可以采用 es6 的方法：</p>
+<pre><code>const obj={x:x,y:y}
+</code></pre><p>简写：</p>
+<pre><code>const obj={x,y};
+</code></pre><h2 id="箭头函数简写"><a href="#箭头函数简写" class="headerlink" title="箭头函数简写"></a>箭头函数简写</h2><p>传统函数编写方法很容易让人理解和编写，但是当嵌套在另一个函数中，则这些优势就荡然无存</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sayHello</span>(<span class="params">name</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"hello"</span>, name);</span><br><span class="line">&#125;</span><br><span class="line">setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"Loaden"</span>);</span><br><span class="line">&#125;, <span class="number">2000</span>);</span><br><span class="line">list.forEach(<span class="function"><span class="keyword">function</span>(<span class="params">item</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(item);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>简写：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sayHello = <span class="function"><span class="params">nae</span> =&gt;</span> <span class="built_in">console</span>.log(<span class="string">"Hello"</span>, name);</span><br><span class="line"></span><br><span class="line">setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> <span class="built_in">console</span>.log(<span class="string">"Loaden"</span>), <span class="number">2000</span>);</span><br><span class="line"></span><br><span class="line">list.forEach(<span class="function"><span class="params">item</span> =&gt;</span> <span class="built_in">console</span>.log(item));</span><br></pre></td></tr></table></figure>
+<h2 id="隐式返回值简写"><a href="#隐式返回值简写" class="headerlink" title="隐式返回值简写"></a>隐式返回值简写</h2><p>经常使用 return 语句来返回最终结果，一个单独语句的箭头函数能隐试返回其值（函数必须省略{}为了省略 return 关键字）</p>
+<p>为返回多行语句（例如对象字面表达式)，则需要使用()包围函数体</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">calcCircumference</span>(<span class="params">diameter</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="built_in">Math</span>.PI * diameter;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> func = <span class="function"><span class="keyword">function</span> <span class="title">func</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> &#123; <span class="attr">foo</span>: <span class="number">1</span> &#125;;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>简写：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">calcCircumference = <span class="function"><span class="params">diameter</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">Math</span>.PI * diameter;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">var</span> func = <span class="function"><span class="params">()</span> =&gt;</span> (&#123; <span class="attr">foo</span>: <span class="number">1</span> &#125;);</span><br></pre></td></tr></table></figure>
+<h2 id="默认参数值"><a href="#默认参数值" class="headerlink" title="默认参数值"></a>默认参数值</h2><p>为了给函数中参数传递默认值，通常使用 if 语句来编写，但是使用 es6 定义默认值，则会很简洁：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">valume</span>(<span class="params">l, w, h</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (w === <span class="literal">undefined</span>) w = <span class="number">3</span>;</span><br><span class="line">  <span class="keyword">if</span> (h === <span class="literal">undefined</span>) h = <span class="number">4</span>;</span><br><span class="line">  <span class="keyword">return</span> l * w * h;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>简写：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">volume = <span class="function">(<span class="params">l, w = <span class="number">3</span>, h = <span class="number">4</span></span>) =&gt;</span> l * w * h;</span><br><span class="line">volume(<span class="number">2</span>);</span><br></pre></td></tr></table></figure>
+<h2 id="模板字符串"><a href="#模板字符串" class="headerlink" title="模板字符串"></a>模板字符串</h2><p>传统的 JS 语言，输出模板通常是这样写的</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> welcome = <span class="string">"you have logged in as"</span> + first + <span class="string">"  "</span> + last + <span class="string">"."</span>;</span><br><span class="line"><span class="keyword">const</span> db = <span class="string">"http://"</span> + host + <span class="string">":"</span> + port + <span class="string">"/"</span> + database;</span><br></pre></td></tr></table></figure>
+<p>es6 可以使用反引号和\${}简写：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> welcome = <span class="string">`you have logged in as <span class="subst">$&#123;first&#125;</span> <span class="subst">$&#123;last&#125;</span>`</span>;</span><br><span class="line"><span class="keyword">const</span> db = <span class="string">`http://<span class="subst">$&#123;host&#125;</span>/<span class="subst">$&#123;database&#125;</span>`</span>;</span><br></pre></td></tr></table></figure>
+<h2 id="结构赋值简写方法"><a href="#结构赋值简写方法" class="headerlink" title="结构赋值简写方法"></a>结构赋值简写方法</h2><p>在 web 框架中，经常需要从组件和 API 之间来回传递数组或对象字面形式的数据，然后需要解构它</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> observable = <span class="built_in">require</span>(<span class="string">"mobx/observable"</span>);</span><br><span class="line"><span class="keyword">const</span> action = <span class="built_in">require</span>(<span class="string">"mobx/action"</span>);</span><br><span class="line"><span class="keyword">const</span> runInAction = <span class="built_in">require</span>(<span class="string">"mobx/runInAction"</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> store = <span class="keyword">this</span>.props.store;</span><br><span class="line"><span class="keyword">const</span> form = <span class="keyword">this</span>.props.form;</span><br><span class="line"><span class="keyword">const</span> loading = <span class="keyword">this</span>.props.loading;</span><br><span class="line"><span class="keyword">const</span> errors = <span class="keyword">this</span>.props.errors;</span><br><span class="line"><span class="keyword">const</span> entity = <span class="keyword">this</span>.props.entity;</span><br></pre></td></tr></table></figure>
+<p>简写：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; observable, action, runInAction &#125; <span class="keyword">from</span> <span class="string">"mobx"</span>;</span><br><span class="line"><span class="keyword">const</span> &#123; store, form, loading, errors, entity &#125; = <span class="keyword">this</span>.props;</span><br></pre></td></tr></table></figure>
+<p>也可以分配变量名：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> &#123; store, form, loading, errors, <span class="attr">entity</span>: contact &#125; = <span class="keyword">this</span>.props;</span><br></pre></td></tr></table></figure>
+<h2 id="多行字符串简写"><a href="#多行字符串简写" class="headerlink" title="多行字符串简写"></a>多行字符串简写</h2><p>需要输出多行字符串，需要使用+来拼接：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> lorem =</span><br><span class="line">  <span class="string">"Lorem ipsum dolor sit amet, consectetur\n\t"</span> +</span><br><span class="line">  <span class="string">"adipisicing elit, sed do eiusmod tempor incididunt\n\t"</span> +</span><br><span class="line">  <span class="string">"ut labore et dolore magna aliqua. Ut enim ad minim\n\t"</span> +</span><br><span class="line">  <span class="string">"veniam, quis nostrud exercitation ullamco laboris\n\t"</span> +</span><br><span class="line">  <span class="string">"nisi ut aliquip ex ea commodo consequat. Duis aute\n\t"</span> +</span><br><span class="line">  <span class="string">"irure dolor in reprehenderit in voluptate velit esse.\n\t"</span>;</span><br></pre></td></tr></table></figure>
+<p>使用反引号，则可以达到简写作用：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> lorem = <span class="string">`Lorem ipsum dolor sit amet, consectetur</span></span><br><span class="line"><span class="string">    adipisicing elit, sed do eiusmod tempor incididunt</span></span><br><span class="line"><span class="string">    ut labore et dolore magna aliqua. Ut enim ad minim</span></span><br><span class="line"><span class="string">    veniam, quis nostrud exercitation ullamco laboris</span></span><br><span class="line"><span class="string">    nisi ut aliquip ex ea commodo consequat. Duis aute</span></span><br><span class="line"><span class="string">    irure dolor in reprehenderit in voluptate velit esse.`</span>;</span><br></pre></td></tr></table></figure>
+<h2 id="扩展运算符简写"><a href="#扩展运算符简写" class="headerlink" title="扩展运算符简写"></a>扩展运算符简写</h2><p>扩展运算符有几种用例让 JS 代码更加有效使用，可以用来代替某个数组函数</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//joining arrays</span></span><br><span class="line"><span class="keyword">const</span> odd = [<span class="number">1</span>, <span class="number">3</span>, <span class="number">5</span>];</span><br><span class="line"><span class="keyword">const</span> nums = [<span class="number">2</span>, <span class="number">4</span>, <span class="number">6</span>].concat(odd);</span><br><span class="line"><span class="comment">//cloning arrays</span></span><br><span class="line"><span class="keyword">const</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>];</span><br><span class="line"><span class="keyword">const</span> arr2 = arr.slice();</span><br></pre></td></tr></table></figure>
+<p>简写:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// joining arrays</span></span><br><span class="line"><span class="keyword">const</span> odd = [<span class="number">1</span>, <span class="number">3</span>, <span class="number">5</span>];</span><br><span class="line"><span class="keyword">const</span> nums = [<span class="number">2</span>, <span class="number">4</span>, <span class="number">6</span>, ...odd];</span><br><span class="line"><span class="built_in">console</span>.log(nums); <span class="comment">// [ 2, 4, 6, 1, 3, 5 ]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// cloning arrays</span></span><br><span class="line"><span class="keyword">const</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>];</span><br><span class="line"><span class="keyword">const</span> arr2 = [...arr];</span><br></pre></td></tr></table></figure>
+<p>不像 concat()函数，可以使用扩展运算符在一个数组中任意处插入另一个数组</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> odd = [<span class="number">1</span>, <span class="number">3</span>, <span class="number">5</span>];</span><br><span class="line"><span class="keyword">const</span> nums = [<span class="number">2</span>, ...odd, <span class="number">4</span>, <span class="number">6</span>];</span><br></pre></td></tr></table></figure>
+<p>也可以使用扩展运算符解构</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> &#123; a, b, ...z &#125; = &#123; <span class="attr">a</span>: <span class="number">1</span>, <span class="attr">b</span>: <span class="number">2</span>, <span class="attr">c</span>: <span class="number">3</span>, <span class="attr">d</span>: <span class="number">4</span> &#125;;</span><br><span class="line"><span class="built_in">console</span>.log(a); <span class="comment">// 1</span></span><br><span class="line"><span class="built_in">console</span>.log(b); <span class="comment">// 2</span></span><br><span class="line"><span class="built_in">console</span>.log(z); <span class="comment">// &#123; c: 3, d: 4 &#125;</span></span><br></pre></td></tr></table></figure>
+<h2 id="强制参数简写"><a href="#强制参数简写" class="headerlink" title="强制参数简写"></a>强制参数简写</h2><p>JS 中如果没有向函数参数传递值，则参数为 undefined。为了增强参数赋值，可以使用 if 语句来抛出异常，或使用强制参数简写方法</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">bar</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (bar === <span class="literal">undefined</span>) &#123;</span><br><span class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">"Missing parameter!"</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> bar;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>简写：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">mandatory = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">"Missing parameter!"</span>);</span><br><span class="line">&#125;;</span><br><span class="line">foo = <span class="function">(<span class="params">bar = mandatory(</span>)) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> bar;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="Array-find-简写"><a href="#Array-find-简写" class="headerlink" title="Array.find 简写"></a>Array.find 简写</h2><p>想从数组中查找某个值，则需要循环在 ES6 中，find()函数能实现同样效果</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> pets = [</span><br><span class="line">  &#123; <span class="attr">type</span>: <span class="string">"Dog"</span>, <span class="attr">name</span>: <span class="string">"Max"</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">type</span>: <span class="string">"Cat"</span>, <span class="attr">name</span>: <span class="string">"Karl"</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">type</span>: <span class="string">"Dog"</span>, <span class="attr">name</span>: <span class="string">"Tommy"</span> &#125;</span><br><span class="line">];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">findDog</span>(<span class="params">name</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; pets.length; ++i) &#123;</span><br><span class="line">    <span class="keyword">if</span> (pets[i].type === <span class="string">"Dog"</span> &amp;&amp; pets[i].name === name) &#123;</span><br><span class="line">      <span class="keyword">return</span> pets[i];</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>简写：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pet = pets.find(<span class="function"><span class="params">pet</span> =&gt;</span> pet.type === <span class="string">"Dog"</span> &amp;&amp; pet.name === <span class="string">"Tommy"</span>);</span><br><span class="line"><span class="built_in">console</span>.log(pet);</span><br></pre></td></tr></table></figure>
+<h2 id="Object-key-简写"><a href="#Object-key-简写" class="headerlink" title="Object[key]简写"></a>Object[key]简写</h2><p>考虑一个验证函数</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">validate</span>(<span class="params">values</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (!values.first) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">  <span class="keyword">if</span> (!values.last) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">  <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(validate(&#123; <span class="attr">first</span>: <span class="string">"Bruce"</span>, <span class="attr">last</span>: <span class="string">"Wayne"</span> &#125;));</span><br></pre></td></tr></table></figure>
+<p>假设当需要不同域和规则来验证，能否编写一个通用函数在运行时确认</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 对象验证规则</span></span><br><span class="line"><span class="keyword">const</span> schema = &#123;</span><br><span class="line">  first: &#123;</span><br><span class="line">    required: <span class="literal">true</span></span><br><span class="line">  &#125;,</span><br><span class="line">  last: &#123;</span><br><span class="line">    required: <span class="literal">true</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 通用验证函数</span></span><br><span class="line"><span class="keyword">const</span> validate = <span class="function">(<span class="params">schema, values</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">for</span> (field <span class="keyword">in</span> schema) &#123;</span><br><span class="line">    <span class="keyword">if</span> (schema[field].required) &#123;</span><br><span class="line">      <span class="keyword">if</span> (!values[field]) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(validate(schema, &#123; <span class="attr">first</span>: <span class="string">"Bruce"</span> &#125;)); <span class="comment">// false</span></span><br><span class="line"><span class="built_in">console</span>.log(validate(schema, &#123; <span class="attr">first</span>: <span class="string">"Bruce"</span>, <span class="attr">last</span>: <span class="string">"Wayne"</span> &#125;)); <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+<h2 id="双重非位运算简写"><a href="#双重非位运算简写" class="headerlink" title="双重非位运算简写"></a>双重非位运算简写</h2><p>有一个有效用于双重非运算操作符。可以用来代替 Math.floor()，其优势在于运行更快</p>
+<pre><code>Math.floor(4.9)===4
+</code></pre><p>简写</p>
+<pre><code>~~4.9===4
+</code></pre>
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </div>
+  
+  
+  
+  </article>
+
+    
+        <article itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block home">
+    <link itemprop="mainEntityOfPage" href="https://skynian.com/2018/07/19/浅谈-Web-Components/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="moke">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://static.skynian.cn/README-2018611232116.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="moke's blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+            
+            <a href="/2018/07/19/浅谈-Web-Components/" class="post-title-link" itemprop="url">浅谈 Web Components</a>
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              
+                
+              
+
+              <time title="Created: 2018-07-19 11:26:10" itemprop="dateCreated datePublished" datetime="2018-07-19T11:26:10+08:00">2018-07-19</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-04-24 09:55:44" itemprop="dateModified" datetime="2019-04-24T09:55:44+08:00">2019-04-24</time>
+              </span>
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/JavaCcript/" itemprop="url" rel="index"><span itemprop="name">JavaCcript</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><img src="https://static.skynian.cn/18-7-21/31724707.jpg" alt=""></p>
+<p>Web Components 是一套不同的技术，允许您创建可重用的定制元素（它们的功能封装在您的代码之外）并且在您的 web 应用中使用它们。</p>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2018/07/19/浅谈-Web-Components/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </div>
+  
+  
+  
+  </article>
+
+    
+        <article itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block home">
+    <link itemprop="mainEntityOfPage" href="https://skynian.com/2018/07/07/浅析浏览器缓存/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="moke">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://static.skynian.cn/README-2018611232116.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="moke's blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+            
+            <a href="/2018/07/07/浅析浏览器缓存/" class="post-title-link" itemprop="url">浅析浏览器缓存</a>
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              
+                
+              
+
+              <time title="Created: 2018-07-07 17:35:44" itemprop="dateCreated datePublished" datetime="2018-07-07T17:35:44+08:00">2018-07-07</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-04-24 09:55:44" itemprop="dateModified" datetime="2019-04-24T09:55:44+08:00">2019-04-24</time>
+              </span>
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/WEB/" itemprop="url" rel="index"><span itemprop="name">WEB</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>浏览器缓存是优化性能的一种方式，下面看看常见的 HTTP 缓存头，工作流程。</p>
+<p>当我们打开一个网站时，打开开发者工具 Network 面板，我们通常可以看到 from disk cache 缓存到硬盘，from memory cache 缓存到内存（chrome）这些字样，这个就是浏览器缓存。</p>
+<p>这个通常是怎么设置的呢，就是我们这里要介绍的 HTTP 缓存头。</p>
+<h2 id="Expires"><a href="#Expires" class="headerlink" title="Expires"></a>Expires</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Expires: Fri, 11 Jun 2021 11:33:01 GMT</span><br></pre></td></tr></table></figure>
+<p>Expires 的值是绝对时间，格林尼治时间，显示的也是服务器的时间</p>
+<p>不推荐 Expires，主要原因是：</p>
+<p>它设置的是绝对时间，如果系统时钟错了，或者不同时区之类的原因，缓存也会出错<br>优先级较低，会被覆盖，当然可用作兼容考虑</p>
+<h2 id="Cache-Control"><a href="#Cache-Control" class="headerlink" title="Cache-Control"></a>Cache-Control</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Cache-Control: public, max-age=6400</span><br></pre></td></tr></table></figure>
+<p>Cache-Control 是相对时间，优先级高于 Expires，没有上面 Expires 的问题。但是，文件修改后，如果我是希望不要缓存的，不要等待 Cache-Control 设定的值，这种情况下：</p>
+<p>一方面，可以通过给资源每次修改加版本号或随机数</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;link rel=&quot;stylesheet&quot; href=&quot;styles.css?version=1.0&quot;&gt;</span><br></pre></td></tr></table></figure>
+<p>另一方面可以使用 Last-Modified 和 Etag 协商缓存来解决。接下来就讲讲这两个。</p>
+<h2 id="Last-Modified-和-If-Modified-Since"><a href="#Last-Modified-和-If-Modified-Since" class="headerlink" title="Last-Modified 和 If-Modified-Since"></a>Last-Modified 和 If-Modified-Since</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Last-Modified: Fri, 22 Jul 2016 01:47:00 GMT</span><br></pre></td></tr></table></figure>
+<p>Last-Modified 文件最后修改的时间，浏览器会缓存这个时间。</p>
+<p>与 Last-Modified 配合的请求头是 If-Modified-Since，就是缓存的 Last-Modified 的时间，那么是如何配合的呢？</p>
+<p>举个例子，每次当浏览器刷新的时候，当 Cache-Control 的时间已过的时候，询问下服务器 Last-Modified 是什么，然后和上次缓存到浏览器的 Last-Modified，也就是放在了请求头的 If-Modified-Since 作比较</p>
+<p>如果相同，服务器会返回 304，即请求已被允许，而文档的内容（自上次访问以来或者根据请求的条件）并没有改变，不用更新文件，使用浏览器缓存。<br>如果不同，服务器会返回 200，即会重新请求更新过的资源</p>
+<h2 id="Etag-和-If-None-Match"><a href="#Etag-和-If-None-Match" class="headerlink" title="Etag 和 If-None-Match"></a>Etag 和 If-None-Match</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Etag: xxxx</span><br></pre></td></tr></table></figure>
+<p>在上面的例子中，只考虑了服务器文件修改时间，但是有时候，打开文件可能没有修改任何内容，而修改时间发生了变化，这个就造成了本应该继续缓存的文件，需要重新请求，这是不合理的，这时候就出现了 Etag。</p>
+<p>Etag 的值是文件的 Hash 值，文件内容是否变化可以通过文件的 Hash 值准确地判断。</p>
+<p>对应 Last-Modified 和 If-Modified-Since 的配合机制，Etag 和 If-None-Match 是同样的协商。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>最常用的浏览器缓存就是这样做的，当然还有更多内容，不同的设定的值等等，如果想了解浏览器缓存更详细的信息，可以参考文章：</p>
+<p><a href="http://www.imweb.io/topic/5795dcb6fb312541492eda8c" target="_blank" rel="noopener">HTTP 缓存控制小结</a></p>
+<p><a href="https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/http-caching" target="_blank" rel="noopener">Google 开发者文档：HTTP 缓存</a></p>
+
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </div>
+  
+  
+  
+  </article>
+
+    
+        <article itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block home">
+    <link itemprop="mainEntityOfPage" href="https://skynian.com/2018/06/30/BFC/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="moke">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://static.skynian.cn/README-2018611232116.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="moke's blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+            
+            <a href="/2018/06/30/BFC/" class="post-title-link" itemprop="url">快速掌握 BFC 原理</a>
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              
+                
+              
+
+              <time title="Created: 2018-06-30 10:09:01" itemprop="dateCreated datePublished" datetime="2018-06-30T10:09:01+08:00">2018-06-30</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-04-24 09:55:44" itemprop="dateModified" datetime="2019-04-24T09:55:44+08:00">2019-04-24</time>
+              </span>
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/布局/" itemprop="url" rel="index"><span itemprop="name">布局</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>对于 BFC 的概念以及应用场景一直都不是很明白，今天着重去了解了一下，做了以下总结。</p>
+<h2 id="BFC-的定义"><a href="#BFC-的定义" class="headerlink" title="BFC 的定义"></a>BFC 的定义</h2><p>Box 是 CSS 布局的对象和基本单位， 直观点来说，就是一个页面是由很多个 Box 组成的。</p>
+<p>元素的类型和 display 属性，决定了这个 Box 的类型。 不同类型的 Box， 会参与不同的 Formatting Context（一个决定如何渲染文档的容器），因此 Box 内的元素会以不同的方式渲染。让我们看看有哪些盒子：</p>
+<p><code>block-level</code></p>
+<p>box:display 属性为 block, list-item, table 的元素，会生成 block-level box。并且参与 block fomatting context；</p>
+<p><code>inline-level</code></p>
+<p>box:display 属性为 inline, inline-block, inline-table 的元素，会生成 inline-level box。并且参与 inline formatting context；</p>
+<p>run-in box: css3 中才有， 这儿先不讲了。</p>
+<h2 id="常见定位方案"><a href="#常见定位方案" class="headerlink" title="常见定位方案"></a>常见定位方案</h2><p>在讲 BFC 之前，我们先来了解一下常见的定位方案，定位方案是控制元素的布局，有三种常见方案:</p>
+<h3 id="普通流-normal-flow"><a href="#普通流-normal-flow" class="headerlink" title="普通流 (normal flow)"></a>普通流 (normal flow)</h3><p>在普通流中，元素按照其在 HTML 中的先后位置至上而下布局，在这个过程中，行内元素水平排列，直到当行被占满然后换行，块级元素则会被渲染为完整的一个新行，除非另外指定，否则所有元素默认都是普通流定位，也可以说，普通流中元素的位置由该元素在 HTML 文档中的位置决定。</p>
+<h3 id="浮动-float"><a href="#浮动-float" class="headerlink" title="浮动 (float)"></a>浮动 (float)</h3><p>在浮动布局中，元素首先按照普通流的位置出现，然后根据浮动的方向尽可能的向左边或右边偏移，其效果与印刷排版中的文本环绕相似。</p>
+<h3 id="绝对定位-absolute-positioning"><a href="#绝对定位-absolute-positioning" class="headerlink" title="绝对定位 (absolute positioning)"></a>绝对定位 (absolute positioning)</h3><p>在绝对定位布局中，元素会整体脱离普通流，因此绝对定位元素不会对其兄弟元素造成影响，而元素具体的位置由绝对定位的坐标决定。</p>
+<h2 id="BFC-的概念"><a href="#BFC-的概念" class="headerlink" title="BFC 的概念"></a>BFC 的概念</h2><p>Formatting context(格式化上下文) 是 W3C CSS2.1 规范中的一个概念。它是页面中的一块渲染区域，并且有一套渲染规则，它决定了其子元素将如何定位，以及和其他元素的关系和相互作用。</p>
+<p><code>那么 BFC 是什么呢？BFC 即 Block Formatting Contexts (块级格式化上下文)，它属于上述定位方案的普通流。</code></p>
+<p>具有 BFC 特性的元素可以看作是隔离了的独立容器，容器里面的元素不会在布局上影响到外面的元素，并且 BFC 具有普通容器所没有的一些特性。通俗一点来讲，可以把 BFC 理解为一个封闭的大箱子，箱子内部的元素无论如何翻江倒海，都不会影响到外部。</p>
+<h2 id="触发-BFC"><a href="#触发-BFC" class="headerlink" title="触发 BFC"></a>触发 BFC</h2><p>只要元素满足下面任一条件即可触发 BFC 特性：</p>
+<ul>
+<li>body 根元素浮动元素：float 除 none 以外的值</li>
+<li>绝对定位元素：position (absolute、fixed)</li>
+<li>display 为 inline-block、table-cells、flex</li>
+<li>overflow 除了 visible 以外的值 (hidden、auto、scroll)</li>
+</ul>
+<h2 id="BFC-特性及应用"><a href="#BFC-特性及应用" class="headerlink" title="BFC 特性及应用"></a>BFC 特性及应用</h2><ol>
+<li>同一个 BFC 下外边距会发生折叠</li>
+</ol>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">  div &#123;</span></span><br><span class="line"><span class="undefined">    width: 100px;</span></span><br><span class="line"><span class="undefined">    height: 100px;</span></span><br><span class="line"><span class="undefined">    background: lightblue;</span></span><br><span class="line"><span class="undefined">    margin: 100px;</span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><img src="https://static.skynian.cn/BFC-2018630102818.jpg" alt=""></p>
+<p>从效果上看，因为两个 div 元素都处于同一个 BFC 容器下 (这里指 body 元素) 所以第一个 div 的下边距和第二个 div 的上边距发生了重叠，所以两个盒子之间距离只有 100px，而不是 200px。</p>
+<p>首先这不是 CSS 的 bug，我们可以理解为一种规范，如果想要避免外边距的重叠，可以将其放在不同的 BFC 容器中。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"container"</span>&gt;</span><span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"container"</span>&gt;</span><span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">overflow</span>: hidden;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">p</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">  <span class="attribute">background</span>: lightblue;</span><br><span class="line">  <span class="attribute">margin</span>: <span class="number">100px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://static.skynian.cn/BFC-2018630102853.jpg" alt=""></p>
+<ol start="2">
+<li>BFC 可以包含浮动的元素（清除浮动）</li>
+</ol>
+<p>我们都知道，浮动的元素会脱离普通文档流，来看下下面一个例子</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"border: 1px solid #000;"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"width: 100px;height: 100px;background: #eee;float: left;"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><img src="https://static.skynian.cn/BFC-2018630102917.jpg" alt=""></p>
+<p>由于容器内元素浮动，脱离了文档流，所以容器只剩下 2px 的边距高度。如果使触发容器的 BFC，那么容器将会包裹着浮动元素。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"border: 1px solid #000;overflow: hidden"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"width: 100px;height: 100px;background: #eee;float: left;"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><img src="https://static.skynian.cn/BFC-2018630102941.jpg" alt=""></p>
+<ol start="3">
+<li>BFC 可以阻止元素被浮动元素覆盖</li>
+</ol>
+<p>先来看一个文字环绕效果：</p>
+<p><img src="https://static.skynian.cn/BFC-201863010303.jpg" alt=""></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"height: 100px;width: 100px;float: left;background: lightblue"</span>&gt;</span></span><br><span class="line">  我是一个左浮动的元素</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"width: 200px; height: 200px;background: #eee"</span>&gt;</span></span><br><span class="line">  我是一个没有设置浮动, 也没有触发 BFC 元素, width: 200px; height:200px;</span><br><span class="line">  background: #eee;</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>这时候其实第二个元素有部分被浮动元素所覆盖，(但是文本信息不会被浮动元素所覆盖) 如果想避免元素被覆盖，可触第二个元素的 BFC 特性，在第二个元素中加入 overflow: hidden，就会变成：</p>
+<p><img src="https://static.skynian.cn/BFC-2018630103021.jpg" alt=""></p>
+<p>这个方法可以用来实现两列自适应布局，效果不错，这时候左边的宽度固定，右边的内容自适应宽度(去掉上面右边内容的宽度)。</p>
+
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </div>
+  
+  
+  
+  </article>
+
+    
+        <article itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block home">
+    <link itemprop="mainEntityOfPage" href="https://skynian.com/2018/06/28/debounce-and-throttle/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="moke">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://static.skynian.cn/README-2018611232116.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="moke's blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+            
+            <a href="/2018/06/28/debounce-and-throttle/" class="post-title-link" itemprop="url">函数去抖和函数节流</a>
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              
+                
+              
+
+              <time title="Created: 2018-06-28 23:19:56" itemprop="dateCreated datePublished" datetime="2018-06-28T23:19:56+08:00">2018-06-28</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-04-24 09:55:44" itemprop="dateModified" datetime="2019-04-24T09:55:44+08:00">2019-04-24</time>
+              </span>
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/JavaScript/" itemprop="url" rel="index"><span itemprop="name">JavaScript</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>debounce，在项目中其实使用的频率挺高的，但是一直没有彻底理解应用场景和原理，这次就做一次简单的总结。</p>
+<p>函数防抖与节流是很相似的概念，但是他们的应用场景不太一样。</p>
+<p>我们先从概念上深刻理解它们。</p>
+<h2 id="先说函数防抖，debounce。"><a href="#先说函数防抖，debounce。" class="headerlink" title="先说函数防抖，debounce。"></a>先说函数防抖，debounce。</h2><p>其概念其实是从机械开关和继电器的“去弹跳”（debounce）衍生 出来的，基本思路就是把多个信号合并为一个信号。</p>
+<p>单反也有相似的概念，在拍照的时候手如果拿不稳晃的时候拍照一般手机是拍不出好照片的，因此智能手机是在你按一下时连续拍许多张， 能过合成手段，生成一张。翻译成 JS 就是，事件内的 N 个动作会变忽略，只有事件后<code>由程序触发</code>的动作只是有效。</p>
+<p>实现思路如下，将目标方法（动作）包装在 setTimeout 里面，然后这个方法是一个事件的回调函数，如果这个回调一直执行，那么这些动作就一直不执行。为什么不执行呢，我们搞了一个 clearTimeout，这样 setTimeout 里的方法就不会执行！ 为什么要 clearTimeout 呢，我们就需要将事件内的连续动作删掉嘛！待到用户不触发这事件了。那么 setTimeout 就自然会执行这个方法。</p>
+<p>那么这个方法用在什么地方呢，就是用于 input 输入框架的格式验证，假如只是验证都是字母也罢了，太简单了，不怎么耗性能，如果是验证是否身份证，这性能消耗大，你可以隔 170ms 才验证一次。这时就需要这个东西。或者你这个是自动完全，需要将已有的输入数据往后端拉一个列表，频繁的交互，后端肯定耗不起，这时也需要这个，如隔 350ms。</p>
+<blockquote>
+<p>简单实现</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">debounce</span>(<span class="params">func, delay</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> timeout;</span><br><span class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"清除"</span>, timeout, e.target.value);</span><br><span class="line">    clearTimeout(timeout);</span><br><span class="line">    <span class="keyword">let</span> context = <span class="keyword">this</span>,</span><br><span class="line">      args = <span class="built_in">arguments</span>;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"新的"</span>, timeout, e.target.value);</span><br><span class="line">    timeout = setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">"----"</span>);</span><br><span class="line">      func.apply(context, args);</span><br><span class="line">    &#125;, delay);</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> validate = debounce(<span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"change"</span>, e.target.value, <span class="keyword">new</span> <span class="built_in">Date</span>() - <span class="number">0</span>);</span><br><span class="line">&#125;, <span class="number">380</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 绑定监听</span></span><br><span class="line"><span class="built_in">document</span>.querySelector(<span class="string">"input"</span>).addEventListener(<span class="string">"input"</span>, validate);</span><br></pre></td></tr></table></figure>
+<p>这个保证了正常的用户每输入 1，2 个字符就能触发一次。如果用户是输入法狂魔，也可以狠制他每输入 3 ～ 6 个字符触发一次。</p>
+<p>这个方法的重点是，它在用户不触发事件的时，才触发动作，并且抑制了本来在事件中要执行的动作。</p>
+<p>其他应用场合：提交按钮的点击事件。</p>
+<h2 id="再看节流，throttle。"><a href="#再看节流，throttle。" class="headerlink" title="再看节流，throttle。"></a>再看节流，throttle。</h2><p>节流的概念可以想象一下水坝，你建了水坝在河道中，不能让水流动不了，你只能让水流慢些。换言之，你不能让用户的方法都不执行。如果这样干，就是 debounce 了。为了让用户的方法在某个时间段内只执行一次，我们需要保存上次执行的时间点与定时器。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">throttle</span>(<span class="params">fn, threshhold</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> timeout;</span><br><span class="line">  <span class="keyword">let</span> start = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line">  <span class="keyword">let</span> threshhold = threshhold || <span class="number">160</span>;</span><br><span class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> context = <span class="keyword">this</span>,</span><br><span class="line">      args = <span class="built_in">arguments</span>,</span><br><span class="line">      curr = <span class="keyword">new</span> <span class="built_in">Date</span>() - <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    clearTimeout(timeout); <span class="comment">//总是干掉事件回调</span></span><br><span class="line">    <span class="keyword">if</span> (curr - start &gt;= threshhold) &#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">"now"</span>, curr, curr - start); <span class="comment">//注意这里相减的结果，都差不多是160左右</span></span><br><span class="line">      fn.apply(context, args); <span class="comment">//只执行一部分方法，这些方法是在某个时间段内执行一次</span></span><br><span class="line">      start = curr;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="comment">// 让方法在脱离事件后也能执行一次</span></span><br><span class="line">      timeout = setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        fn.apply(context, args);</span><br><span class="line">      &#125;, threshhold);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> mousemove = throttle(<span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(e.pageX, e.pageY);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 绑定监听</span></span><br><span class="line"><span class="built_in">document</span>.querySelector(<span class="string">"#panel"</span>).addEventListener(<span class="string">"mousemove"</span>, mousemove);</span><br></pre></td></tr></table></figure>
+<p>函数节流会用在比 input, keyup 更频繁触发的事件中，如 resize, touchmove, mousemove, scroll。throttle 会强制函数以固定的速率执行。因此这个方法比较适合应用于动画相关的场景。</p>
+<blockquote>
+<p> 函数抖动和节流视图</p>
+</blockquote>
+<p><img src="https://static.skynian.cn/debounce-and-throttle-2018628233717.png" alt="debounce-and-throttle-2018628233717"></p>
+
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </div>
+  
+  
+  
+  </article>
+
+    
+  </div>
+
+  
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+  </nav>
+
+
+          </div>
+          
+
+        </div>
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc" data-target="post-toc-wrap">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image"
+      src="https://static.skynian.cn/README-2018611232116.jpg"
+      alt="moke">
+  <p class="site-author-name" itemprop="name">moke</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+  <nav class="site-state motion-element">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">18</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-categories">
+        
+          
+            <a href="/categories/">
+          
+        
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">categories</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+          
+            <a href="/tags/">
+          
+        
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-name">tags</span>
+        </a>
+      </div>
+    
+  </nav>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://github.com/sijianian" title="GitHub &rarr; https://github.com/sijianian" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+    
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">moke</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.9.0</div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.3.0</div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-user"></i>
+    </span>
+    <span class="site-uv" title="Total Visitors">
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    </span>
+  
+    <span class="post-meta-divider">|</span>
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-eye"></i>
+    </span>
+    <span class="site-pv" title="Total Views">
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+  <script size="300" alpha="0.6" zIndex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
+  <script src="/lib/jquery/index.js?v=3.4.1"></script>
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+<script src="/js/utils.js?v=7.3.0"></script><script src="/js/motion.js?v=7.3.0"></script>
+<script src="/js/schemes/muse.js?v=7.3.0"></script>
+<script src="/js/next-boot.js?v=7.3.0"></script><script src="/js/bookmark.js?v=7.3.0"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+  <script src="/js/local-search.js?v=7.3.0"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+</body>
+</html>
