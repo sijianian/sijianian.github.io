@@ -21,6 +21,7 @@ module.exports = {
     ],
   },
   plugins: [
+    require('./plugins/router'),
     ['@vuepress/back-to-top'],
     ['vuepress-plugin-viewer'],
     ['@vuepress/active-header-links'],
@@ -46,7 +47,8 @@ module.exports = {
       {
         choosen: 'gitalk',
         options: {
-          id: '<%- frontmatter.commentid || frontmatter.permalink || window.location.pathname %>',
+          id:
+            '<%- frontmatter.commentid || frontmatter.permalink || window.location.pathname %>',
           title: '「Comment」<%- frontmatter.title %>',
           body:
             '<%- frontmatter.title %>：<%-window.location.origin %><%- frontmatter.to.path || window.location.pathname %>',
@@ -54,9 +56,7 @@ module.exports = {
           clientSecret: process.env.GITALK_SECRET || '',
           repo: 'sijianian.github.io',
           owner: 'sijianian',
-          admin: [
-            'sijianian',
-          ],
+          admin: ['sijianian'],
           labels: ['Gitalk', 'Comment'],
           distractionFreeMode: false,
         },
