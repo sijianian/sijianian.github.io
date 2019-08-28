@@ -1,3 +1,7 @@
 [submodule "themes/melody"]
 	path = themes/melody
 	url = https://github.com/sijianian/hexo-theme-melody.git
+
+[submodule "themes/next"]
+	path = themes/next
+	url = https://github.com/theme-next/hexo-theme-next.git
