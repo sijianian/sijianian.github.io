@@ -50,8 +50,8 @@ module.exports = {
           title: '「Comment」<%- frontmatter.title %>',
           body:
             '<%- frontmatter.title %>：<%-window.location.origin %><%- frontmatter.to.path || window.location.pathname %>',
-          clientID: 'b0efdbb428dad27edaa0',
-          clientSecret: '1e5c9240b001565b15eb6b7ca6739dc44c16419a',
+          clientID: '7f4f5de62697a83f9e4a',
+          clientSecret: process.env.GITALK_SECRET || '',
           repo: 'blog',
           owner: 'sijianian',
           admin: [
