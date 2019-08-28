@@ -14,6 +14,10 @@ module.exports = {
         text: '最新',
         link: '/guide/',
       },
+      {
+        text: 'Github',
+        link: 'https://github.com/sijianian',
+      }
     ],
   },
   plugins: [
