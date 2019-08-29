@@ -69,11 +69,15 @@ let x,
 
 ## if 存在条件简写方法
 
-    if(likeJavaScript===true)
+```js
+  if(likeJavaScript===true)
+```
 
 简写：
 
-    if(likeJavaScript)
+```js
+  if(likeJavaScript)
+```
 
 只有 likeJavaScript 是真值的时候，二者语句才相等
 
@@ -97,11 +101,15 @@ if (!a) {
 
 ## JS 循环简写方法
 
-    for (let i=0;i<allImgs.length;i++)
+```js
+for (let i=0;i<allImgs.length;i++)
+```
 
 简写：
 
-    for(let index in allImgs)
+```js
+for(let index in allImgs)
+```
 
 也可以使用 Array.forEach
 
@@ -127,27 +135,37 @@ if (process.env.DB_HOST) {
 
 简写:
 
-    const dbHost=process.env.DB_HOST||'localhost'
+```js
+const dbHost = process.env.DB_HOST || 'localhost'
+```
 
 ## 十进制指数
 
 当需要写数字带有很多零时(如 10000000)，可以采用指数(1e7)来代替这个数字：
 
-    for(let i=0;i<10000;i++){}
+```js
+for (let i = 0; i < 10000; i++) {}
+```
 
 简写：
 
-    for(let i=0;i<1e7;i++){}
+```js
+for (let i = 0; i < 1e7; i++) {}
+```
 
 ## 对象属性简写
 
 如果属性名与 key 名相同，则可以采用 es6 的方法：
 
-    const obj={x:x,y:y}
+```js
+const obj = { x: x, y: y }
+```
 
 简写：
 
-    const obj={x,y};
+```js
+const obj = { x, y }
+```
 
 ## 箭头函数简写
 
@@ -427,8 +445,12 @@ console.log(validate(schema, { first: 'Bruce', last: 'Wayne' })) // true
 
 有一个有效用于双重非运算操作符。可以用来代替 Math.floor()，其优势在于运行更快
 
-    Math.floor(4.9)===4
+```js
+Math.floor(4.9) === 4
+```
 
 简写
 
-    ~~4.9===4
+```js
+~~4.9 === 4
+```

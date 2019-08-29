@@ -1,12 +1,12 @@
 ---
-title: 浅谈JavaScript异步
+title: 浅谈 JavaScript 异步
 date: 2018-06-13 23:38:17
 tags:
   - JavaScript
 categories: JavaScript
 ---
 
-## JavaScript 是单线程？
+## JavaScript 是单线程?
 
 - JS 引擎中负责解释和执行 JS 代码的线程只有一个（主）
 - AJAX 、处理 DOM 、定时器、读写......（工作线程）

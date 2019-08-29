@@ -57,8 +57,8 @@ export default {
             filename: execs ? execs['1'] : '',
           }
         })
-        .sort((a, b) => b.updateTimestamp - a.updateTimestamp)
         .sort((a, b) => a.path.indexOf('javascript') || b.path.indexOf('javascript'))
+        .sort((a, b) => b.updateTimestamp - a.updateTimestamp)
         .slice(0, num)
     },
     handleLoadMore() {

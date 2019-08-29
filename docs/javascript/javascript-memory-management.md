@@ -194,7 +194,7 @@ ES6 中引入 WeakSet 和 WeakMap 两个新的概念, 来解决引用造成的�
 
 我认为，只要我们投入更多的精力和关注，实现实时的、低垃圾收集的 Javascript 应用还是很有可能的。毕竟，对于可交互性要求较高的游戏或应用来说，实时性和低垃圾收集，两者都是至关重要。
 
-## 参考
+## 参考 😬
 
 [Barret Lee JavaScript 垃圾回收机制](http://www.cnblogs.com/hustskyking/archive/2013/04/27/garbage-collection.html)
 

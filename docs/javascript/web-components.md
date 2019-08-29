@@ -2,8 +2,8 @@
 title: 浅谈 Web Components
 date: 2018-07-19 11:26:10
 tags:
-  - JavaCcript
-categories: JavaCcript
+  - JavaScript
+categories: JavaScript
 ---
 
 ![](https://static.skynian.cn/18-7-21/31724707.jpg)
