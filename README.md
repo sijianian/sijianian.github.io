@@ -1,8 +1,4 @@
-<div slign="center" class="show-in-github">
-  <img src="https://static.skynian.cn/18-12-25/2092366.jpg">
-</div>
-
-<br>
+![](https://static.skynian.cn/18-12-25/2092366.jpg)
 
 <div align="center" class="show-in-github">
   <a href="https://skynian.com/">
@@ -18,8 +14,6 @@
     <img src="https://img.shields.io/badge/About-前端 | 算法 | 工具-fa8c16.svg?style=popout-square">
   </a>
 </div>
-
-<br>
 
 ## 🌈 Personal blog
 
