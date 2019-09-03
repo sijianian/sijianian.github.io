@@ -8,11 +8,11 @@ categories: JavaScript
 
 ## 前言
 
-在阅读 Vue 和 Vuex 的源码中，我们会发现，作者都使用了 ==Object.create(null)== 来初始化一个新的对象。
+在阅读 Vue 和 Vuex 的源码中，我们会发现，作者都使用了 **Object.create(null)** 来初始化一个新的对象。
 
-作为 ES5 继承中更优解的==组合寄生继承==中，也同样用 ==Object.create(prototype)== 来处理原型链。
+作为 ES5 继承中更优解的**组合寄生继承**中，也同样用 **Object.create(prototype)** 来处理原型链。
 
-那么问题来了，我们为什么不用更加简洁的 =={}== 呢？
+那么问题来了，我们为什么不用更加简洁的 **{}** 呢？
 
 通过自己查找一些资料，总结在这里，温故知新。
 
@@ -84,9 +84,9 @@ console.log(a)
 
 ![](https://static.skynian.cn/20190521143355.png)
 
-从上图中可以看到，新创建的对象继承了 ==Object== 自身的方法，如 ==hasOwnProperty==、==toString== 等，在新对象上面可以直接使用。
+从上图中可以看到，新创建的对象继承了 **Object** 自身的方法，如 **hasOwnProperty**、**toString** 等，在新对象上面可以直接使用。
 
-再看看使用 ==Object.create()== 创建对象
+再看看使用 **Object.create()** 创建对象
 
 ```js
 let o = Object.create(null, {
