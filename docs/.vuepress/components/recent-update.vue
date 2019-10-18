@@ -50,10 +50,14 @@ export default {
         .filter(({ path }) => !FILTER_LIST.includes(path))
         .map(post => {
           const execs = re.exec(post.relativePath)
+          const { frontmatter, lastUpdated } = post
+          const { date } = frontmatter
+          const currentDate = date || lastUpdated
+
           return {
             ...post,
-            updateTimestamp: new Date(post.lastUpdated).getTime(),
-            formatDay: dayjs(post.lastUpdated).format('YYYY-MM-DD'),
+            updateTimestamp: new Date(currentDate).getTime(),
+            formatDay: dayjs(currentDate).format('YYYY-MM-DD'),
             filename: execs ? execs['1'] : '',
           }
         })
