@@ -1,4 +1,8 @@
 module.exports = {
+  markdown: {
+    anchor: { permalink: true },
+    toc: { includeLevel: [1, 2] },
+  },
   locales: {
     '/': {
       lang: 'zh-CN',
