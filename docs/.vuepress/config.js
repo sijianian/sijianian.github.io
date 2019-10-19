@@ -19,6 +19,28 @@ module.exports = {
         link: '/guide/',
       },
       {
+        text: '前端',
+        items: [
+          {
+            text: 'JS 基础',
+            link: '/docs/js-base',
+          },
+          {
+            text: 'JS 进阶',
+            link: '/docs/js-advance',
+          }
+        ],
+      },
+      {
+        text: '算法',
+        items: [
+          {
+            text: 'leetcode',
+            link: '/algorithm/leetcode'
+          }
+        ],
+      },
+      {
         text: 'Github',
         link: 'https://github.com/sijianian',
       },
