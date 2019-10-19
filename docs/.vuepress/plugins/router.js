@@ -1,18 +1,10 @@
 const jsMd5 = require('js-md5')
-const routePfx = '/passages/'
 
 module.exports = {
   extendPageData($page) {
-    const { frontmatter } = $page
+    const { frontmatter = {} } = $page
+    const { permalink } = frontmatter
 
-    if (!frontmatter || JSON.stringify(frontmatter) === '{}') {
-      return
-    }
-
-    if (frontmatter.permalink) {
-      frontmatter.permalink = `${routePfx}${frontmatter.permalink}`
-    }
-
-    frontmatter.commentid = frontmatter.permalink || jsMd5($page.path)
+    frontmatter.commentid = jsMd5(permalink || $page.path)
   },
 }
