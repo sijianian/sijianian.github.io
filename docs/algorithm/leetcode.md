@@ -186,3 +186,102 @@ const isPalindrome = x =>
     .reverse()
     .join('')
 ```
+
+## [11] 盛最多水的容器
+
+```js
+// 暴力法
+/**
+ * @param {number[]} height
+ * @return {number}
+ */
+const maxArea1 = height => {
+  let maxArea = 0
+
+  for (let i = 0; i < height.length; i++) {
+    for (let j = i + 1; j < height.length; j++) {
+      maxArea = Math.max(maxArea, Math.min(height[i], height[j]) * (j - i))
+    }
+  }
+
+  return maxArea
+}
+
+// 双指针法
+const maxArea = height => {
+  let maxArea = 0
+  let left = 0
+  let right = height.length - 1
+
+  for (let i = 0; i < height.length; i++) {
+    maxArea = Math.max(
+      maxArea,
+      Math.min(height[left], height[right]) * (right - left)
+    )
+
+    if (height[left] < height[right]) {
+      left++
+    } else {
+      right--
+    }
+  }
+
+  return maxArea
+}
+```
+
+## [13] 罗马数字转整数
+
+```js
+/**
+ * @param {string} s
+ * @return {number}
+ */
+const map = {
+  I: 1,
+  V: 5,
+  X: 10,
+  L: 50,
+  C: 100,
+  D: 500,
+  M: 1000,
+}
+
+const romanToInt = function(s) {
+  let value = 0
+
+  for (let i = 0; i < s.length; i++) {
+    if (map[s[i]] < map[s[i + 1]]) {
+      value -= map[s[i]]
+    } else {
+      value += map[s[i]]
+    }
+  }
+
+  return value
+}
+```
+
+## [14] 最长公共前缀
+
+```js
+/**
+ * @param {string[]} strs
+ * @return {string}
+ */
+const longestCommonPrefix = strs => {
+  if (!strs || strs.length === 0) {
+    return ''
+  }
+
+  return strs.reduce((pre, next) => {
+    let i = 0
+
+    while (pre[i] && next[i] && pre[i] === next[i]) {
+      i++
+    }
+
+    return pre.slice(0, i)
+  })
+}
+```
