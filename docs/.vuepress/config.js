@@ -13,11 +13,11 @@ module.exports = {
   themeConfig: {
     sidebar: 'auto',
     lastUpdated: '最后更新时间',
-    repo: "sijianian/sijianian.github.io",
+    repo: 'sijianian/sijianian.github.io',
     docsDir: 'docs',
     docsBranch: 'vuepress',
     editLinks: true,
-    editLinkText: "在 GitHub 上编辑此页",
+    editLinkText: '在 GitHub 上编辑此页',
     nav: [
       {
         text: '最新',
@@ -33,7 +33,7 @@ module.exports = {
           {
             text: 'JS 进阶',
             link: '/docs/js-advance',
-          }
+          },
         ],
       },
       {
@@ -41,13 +41,9 @@ module.exports = {
         items: [
           {
             text: 'leetcode',
-            link: '/algorithm/leetcode'
-          }
+            link: '/algorithm/leetcode',
+          },
         ],
-      },
-      {
-        text: 'Github',
-        link: 'https://github.com/sijianian',
       },
     ],
   },
