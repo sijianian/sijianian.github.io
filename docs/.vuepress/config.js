@@ -70,6 +70,10 @@ module.exports = {
         text: '前端',
         items: [
           {
+            text: 'JS 专题',
+            link: '/javascript/',
+          },
+          {
             text: 'JS 基础',
             link: '/docs/js-base/',
           },
@@ -94,6 +98,19 @@ module.exports = {
       },
     ],
     sidebar: {
+      '/javascript/': [
+        '/javascript/',
+        '/javascript/manual-implementation-call-apply-bind',
+        '/javascript/event-emitter',
+        '/javascript/debounce-throttle',
+        '/javascript/deep-shallow-clone',
+        '/javascript/instanceof',
+        '/javascript/new',
+        '/javascript/promise',
+        '/javascript/inherit',
+        '/javascript/router',
+        '/javascript/curry',
+      ],
       '/algorithm/': [
         '/algorithm/',
         '/algorithm/complexity',
