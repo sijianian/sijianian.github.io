@@ -10,43 +10,6 @@ module.exports = {
       description: 'Write the code , Change the world',
     },
   },
-  themeConfig: {
-    sidebar: 'auto',
-    lastUpdated: '最后更新时间',
-    repo: 'sijianian/sijianian.github.io',
-    docsDir: 'docs',
-    docsBranch: 'vuepress',
-    editLinks: true,
-    editLinkText: '在 GitHub 上编辑此页',
-    nav: [
-      {
-        text: '最新',
-        link: '/guide/',
-      },
-      {
-        text: '前端',
-        items: [
-          {
-            text: 'JS 基础',
-            link: '/docs/js-base',
-          },
-          {
-            text: 'JS 进阶',
-            link: '/docs/js-advance',
-          },
-        ],
-      },
-      {
-        text: '算法',
-        items: [
-          {
-            text: 'leetcode',
-            link: '/algorithm/leetcode',
-          },
-        ],
-      },
-    ],
-  },
   plugins: [
     require('./plugins/router'),
     ['@vuepress/back-to-top'],
@@ -90,4 +53,52 @@ module.exports = {
       },
     ],
   ],
+  themeConfig: {
+    sidebar: 'auto',
+    lastUpdated: '最后更新时间',
+    repo: 'sijianian/sijianian.github.io',
+    docsDir: 'docs',
+    docsBranch: 'vuepress',
+    editLinks: true,
+    editLinkText: '在 GitHub 上编辑此页',
+    nav: [
+      {
+        text: '最新',
+        link: '/guide/',
+      },
+      {
+        text: '前端',
+        items: [
+          {
+            text: 'JS 基础',
+            link: '/docs/js-base/',
+          },
+          {
+            text: 'JS 进阶',
+            link: '/docs/js-advance/',
+          },
+        ],
+      },
+      {
+        text: '算法',
+        items: [
+          {
+            text: '算法分类',
+            link: '/algorithm/',
+          },
+          {
+            text: 'leetcode',
+            link: '/algorithm/leetcode',
+          },
+        ],
+      },
+    ],
+    sidebar: {
+      '/algorithm/': [
+        '/algorithm/',
+        '/algorithm/complexity',
+        '/algorithm/sort',
+      ],
+    },
+  },
 }
