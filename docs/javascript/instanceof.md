@@ -1,5 +1,5 @@
 ---
-title: instanceof
+title: Instanceof
 ---
 
 ```js

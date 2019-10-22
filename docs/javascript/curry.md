@@ -1,5 +1,5 @@
 ---
-title: curry
+title: Curry
 ---
 
 ```js

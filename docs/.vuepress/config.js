@@ -70,15 +70,15 @@ module.exports = {
         text: '前端',
         items: [
           {
-            text: 'JS 专题',
+            text: 'JavaScript 专题',
             link: '/javascript/',
           },
           {
-            text: 'JS 基础',
+            text: 'JavaScript 基础',
             link: '/docs/js-base/',
           },
           {
-            text: 'JS 进阶',
+            text: 'JavaScript 进阶',
             link: '/docs/js-advance/',
           },
         ],
@@ -100,6 +100,7 @@ module.exports = {
     sidebar: {
       '/javascript/': [
         '/javascript/',
+        '/javascript/tool',
         '/javascript/manual-implementation-call-apply-bind',
         '/javascript/event-emitter',
         '/javascript/debounce-throttle',

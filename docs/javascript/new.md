@@ -1,5 +1,5 @@
 ---
-title: new
+title: New
 ---
 
 ```js
