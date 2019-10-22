@@ -3,7 +3,14 @@ title: 工具函数
 sidebarDepth: 5
 ---
 
-> 转载
+- 第一部分：数组
+- 第二部分：函数
+- 第三部分：字符串
+- 第四部分：对象
+- 第五部分：数字
+- 第六部分：浏览器操作及其它
+
+> 转载自
 
 - [127 Helpful JavaScript Snippets You Can Learn in 30 Seconds or Less — Part 1 of 6](https://medium.com/better-programming/127-helpful-javascript-snippets-you-can-learn-in-30-seconds-or-less-part-1-of-6-bc2bc890dfe5)
 - [30 seconds of code](https://github.com/30-seconds/30-seconds-of-code)
@@ -337,10 +344,753 @@ const nestedComments = nest(comments) // [{ id: 1, parent_id: null, children: [.
 
 ## 函数
 
+### 1、attempt: 捕获函数运行异常
+
+该代码段执行一个函数，返回结果或捕获的错误对象。
+
+```js
+const attempt = (fn, ...args) => {
+  try {
+    return fn(...args)
+  } catch (e) {
+    return e instanceof Error ? e : new Error(e)
+  }
+}
+
+const elements = attempt(function(selector) {
+  return document.querySelectorAll(selector)
+}, '>_>')
+if (elements instanceof Error) {
+  elements = [] // elements = []
+}
+```
+
+### 2、defer: 推迟执行
+
+此代码段延迟了函数的执行，直到清除了当前调用堆栈。
+
+```js
+const defer = (fn, ...args) => setTimeout(fn, 1, ...args)
+
+defer(console.log, 'a'), console.log('b') // logs 'b' then 'a'
+```
+
+### 3、runPromisesInSeries: 运行多个 Promise
+
+```js
+const runPromisesInSeries = ps =>
+  ps.reduce((p, next) => p.then(next), Promise.resolve())
+
+const delay = d => new Promise(r => setTimeout(r, d))
+runPromisesInSeries([() => delay(1000), () => delay(2000)] //依次执行每个Promises ，总共需要3秒钟才能完成
+```
+
+### 4、timeTaken: 计算函数执行时间
+
+```js
+const timeTaken = callback => {
+  console.time('timeTaken')
+  const r = callback()
+  console.timeEnd('timeTaken')
+  return r
+}
+
+timeTaken(() => Math.pow(2, 10)) // 1024, (logged): timeTaken: 0.02099609375ms
+```
+
+### 5、createEventHub: 简单的发布 / 订阅模式
+
+创建一个发布/订阅（发布-订阅）事件集线，有 emit，on 和 off 方法。
+
+1. 使用 Object.create(null)创建一个空的 hub 对象
+2. emit，根据 event 参数解析处理程序数组，然后.forEach()通过传入数据作为参数来运行每个处理程序
+3. on，为事件创建一个数组（若不存在则为空数组），然后.push()将处理程序添加到该数组
+4. off，用.findIndex()在事件数组中查找处理程序的索引，并使用.splice()删除
+
+```js
+class MyEventHub {
+  constructor() {
+    this.hub = Object.create(null)
+  }
+
+  on(event, handler) {
+    if (!this.hub[event]) {
+      this.hub[event] = []
+    }
+
+    this.hub[event].push(handler)
+  }
+
+  off(event, handler) {
+    const index = (this.hub[event] || []).findIndex(h => h === handler)
+
+    if (~index) {
+      this.hub[event].splice(i, 1)
+    }
+
+    if (this.hub[event].length === 0) {
+      delete this.hub[event]
+    }
+  }
+
+  emit(event, data) {
+    ;(this.hub[event] || []).forEach(handler => handler(data))
+  }
+}
+```
+
+用法
+
+```js
+const handler = data => console.log(data)
+const hub = new MyEventHub()
+let increment = 0
+
+// 订阅，监听不同事件
+hub.on('message', handler)
+hub.on('message', () => console.log('Message event fired'))
+hub.on('increment', () => increment++)
+
+// 发布：发出事件以调用所有订阅给它们的处理程序，并将数据作为参数传递给它们
+hub.emit('message', 'hello world') // 打印 'hello world' 和 'Message event fired'
+hub.emit('message', { hello: 'world' }) // 打印 对象 和 'Message event fired'
+hub.emit('increment') // increment = 1
+
+// 停止订阅
+hub.off('message', handler)
+```
+
+### 6、memoize: 缓存函数
+
+通过实例化一个 Map 对象来创建一个空的缓存。
+
+通过检查输入值的函数输出是否已缓存，返回存储一个参数的函数，该参数将被提供给已记忆的函数；如果没有，则存储并返回它。
+
+```js
+const memoize = fn => {
+  const cache = new Map()
+  const cached = function(val) {
+    return cache.has(val)
+      ? cache.get(val)
+      : cache.set(val, fn.call(this, val)) && cache.get(val)
+  }
+
+  cached.cache = cache
+
+  return cached
+}
+```
+
+Vue 源码版本
+
+```js
+/**
+ * Create a cached version of a pure function.
+ */
+export function cached<F: Function>(fn: F): F {
+  const cache = Object.create(null)
+  return (function cachedFn(str: string) {
+    const hit = cache[str]
+    return hit || (cache[str] = fn(str))
+  }: any)
+}
+```
+
+### 7、once: 只调用一次的函数
+
+```js
+const once = fn => {
+  let called = false
+  return function() {
+    if (!called) {
+      called = true
+      fn.apply(this, arguments)
+    }
+  }
+}
+```
+
+### 8、flattenObject: 以键的路径扁平化对象
+
+使用递归。
+
+1. 利用 Object.keys(obj)联合 Array.prototype.reduce()，以每片叶子节点转换为扁平的路径节点。
+2. 如果键的值是一个对象，则函数使用调用适当的自身 prefix 以创建路径 Object.assign()。
+3. 否则，它将适当的前缀键值对添加到累加器对象。
+4. prefix 除非您希望每个键都有一个前缀，否则应始终省略第二个参数。
+
+```js
+const flattenObject = (obj, prefix = '') =>
+  Object.keys(obj).reduce((acc, k) => {
+    const pre = prefix.length ? `${prefix}.` : ''
+
+    if (typeof obj[k] === 'object') {
+      acc = {
+        ...acc,
+        ...flattenObject(obj[k], pre + k),
+      }
+    } else {
+      acc[pre + k] = obj[k]
+    }
+
+    return acc
+  }, {})
+
+flattenObject({ a: { b: { c: 1 } }, d: 1 }) // { 'a.b.c': 1, d: 1 }
+```
+
+### 9、unFlattenObject: 以键的路径展开独享
+
+与上面相反
+
+```js
+const unflattenObject = obj =>
+  Object.keys(obj).reduce((acc, k) => {
+    if (k.indexOf('.') !== -1) {
+      const keys = k.split('.')
+
+      acc = {
+        ...acc,
+        ...JSON.parse(
+          '{' +
+            keys
+              .map((v, i) => (i !== keys.length - 1 ? `"${v}":{` : `"${v}":`))
+              .join('') +
+            obj[k] +
+            '}'.repeat(keys.length)
+        ),
+      }
+    } else {
+      acc[k] = obj[k]
+    }
+
+    return acc
+  }, {})
+
+unflattenObject({ 'a.b.c': 1, d: 1 }) // { a: { b: { c: 1 } }, d: 1 }
+```
+
+这个的用途，在做 Tree 组件或复杂表单时取值非常舒服。
+
 ## 字符串
+
+### 1、byteSize: 返回字符串的字节长度
+
+```js
+const byteSize = str => new Blob([str]).size
+
+byteSize('😀') // 4
+byteSize('Hello World') // 11
+```
+
+### 2、capitalize: 首字母大写
+
+```js
+const capitalize = ([first, ...rest]) =>
+  `${first.toUpperCase()}${rest.join('')}`
+
+capitalize('fooBar') // 'FooBar'
+capitalize('fooBar', true) // 'Foobar'
+```
+
+### 3、capitalizeEveryWord: 每个单词首字母大写
+
+```js
+const capitalizeEveryWord = str =>
+  str.replace(/\b[a-z]/g, char => char.toUpperCase())
+
+capitalizeEveryWord('hello world!') // 'Hello World!'
+```
+
+### 4、deCapitalize: 首字母小写
+
+```js
+const deCapitalize = ([first, ...rest]) => first.toLowerCase() + rest.join('')
+
+deCapitalize('FooBar') // 'fooBar'
+deCapitalize('FooBar') // 'fooBar'
+```
+
+### 5、luhnCheck: 银行卡号码校验（luhn 算法）
+
+Luhn 算法的实现，用于验证各种标识号，例如信用卡号，IMEI 号，国家提供商标识号等。
+
+与 String.prototype.split('')结合使用，以获取数字数组。获得最后一个数字。实施 luhn 算法。如果被整除，则返回，否则返回。
+
+```js
+const luhnCheck = num => {
+  let arr = (num + '')
+    .split('')
+    .reverse()
+    .map(x => parseInt(x))
+  let lastDigit = arr.splice(0, 1)[0]
+  let sum = arr.reduce(
+    (acc, val, i) => (i % 2 !== 0 ? acc + val : acc + ((val * 2) % 9) || 9),
+    0
+  )
+  sum += lastDigit
+  return sum % 10 === 0
+}
+```
+
+e.g.
+
+```js
+luhnCheck('4485275742308327') // true
+luhnCheck(6011329933655299) //  false
+luhnCheck(123456789) // false
+```
+
+补充：银行卡号码的校验规则：
+
+关于 luhn 算法，可以参考以下文章：
+
+[银行卡号码校验算法（Luhn 算法，又叫模 10 算法）](https://www.cnblogs.com/cc11001100/p/9357177.html)
+
+银行卡号码的校验采用 Luhn 算法，校验过程大致如下：
+
+1. 从右到左给卡号字符串编号，最右边第一位是 1，最右边第二位是 2，最右边第三位是 3….
+2. 从右向左遍历，对每一位字符 t 执行第三个步骤，并将每一位的计算结果相加得到一个数 s。
+3. 对每一位的计算规则：如果这一位是奇数位，则返回 t 本身，如果是偶数位，则先将 t 乘以 2 得到一个数 n，如果 n 是一位数（小于 10），直接返回 n，否则将 n 的个位数和十位数相加返回。
+4. 如果 s 能够整除 10，则此号码有效，否则号码无效。
+
+因为最终的结果会对 10 取余来判断是否能够整除 10，所以又叫做模 10 算法。
+
+当然，还是库比较香: [bankcardinfo](https://github.com/navyxie/bankcardinfo)
+
+### 6、splitLines: 将多行字符串拆分为行数组
+
+使用 String.prototype.split()和正则表达式匹配换行符并创建一个数组。
+
+```js
+const splitLines = str => str.split(/\r?\n/)
+
+splitLines('This\nis a\nmultiline\nstring.\n') // ['This', 'is a', 'multiline', 'string.' , '']
+```
+
+### 7、stripHTMLTags: 删除字符串中的 HTMl 标签
+
+从字符串中删除 HTML / XML 标签。
+
+使用正则表达式从字符串中删除 HTML / XML 标记。
+
+```js
+const stripHTMLTags = str => str.replace(/<[^>]*>/g, '')
+
+stripHTMLTags('<p><em>lorem</em> <strong>ipsum</strong></p>') // 'lorem ipsum'
+```
 
 ## 对象
 
+### 1、dayOfYear: 当前日期天数
+
+```js
+const dayOfYear = date =>
+  Math.floor((date - new Date(date.getFullYear(), 0, 0)) / 1000 / 60 / 60 / 24)
+
+dayOfYear(new Date()) // 285
+```
+
+### 2、forOwn: 迭代属性并执行回调
+
+```js
+const forOwn = (obj, fn) =>
+  Object.keys(obj).forEach(key => fn(obj[key], key, obj))
+
+forOwn({ foo: 'bar', a: 1 }, v => console.log(v)) // 'bar', 1
+```
+
+### 3、Get Time From Date: 返回当前 24 消失制时间的字符串
+
+```js
+const getColonTimeFromDate = date => date.toTimeString().slice(0, 8)
+
+getColonTimeFromDate(new Date()) // "08:38:00"
+```
+
+### 4、Get Days Between Dat: 返回日期间的天数
+
+```js
+const getDaysDiffBetweenDates = (dateInitial, dateFinal) =>
+  (dateFinal - dateInitial) / (1000 * 3600 * 24)
+
+getDaysDiffBetweenDates(new Date('2019-01-01'), new Date('2019-10-14')) // 286
+```
+
+### 5、is: 检查值是否为特定类型
+
+```js
+const is = (type, val) => ![, null].includes(val) && val.constructor === type
+
+is(Array, [1]) // true
+is(ArrayBuffer, new ArrayBuffer()) // true
+is(Map, new Map()) // true
+is(RegExp, /./g) // true
+is(Set, new Set()) // true
+is(WeakMap, new WeakMap()) // true
+is(WeakSet, new WeakSet()) // true
+is(String, '') // true
+is(String, new String('')) // true
+is(Number, 1) // true
+is(Number, new Number(1)) // true
+is(Boolean, true) // true
+is(Boolean, new Boolean(true)) // true
+```
+
+### 6、isAfterDate: 检查是否在某日期后
+
+```js
+const isAfterDate = (dateA, dateB) => dateA > dateB
+
+isAfterDate(new Date(2010, 10, 21), new Date(2010, 10, 20)) // true
+```
+
+### 7、isBeforeDate: 检查是否在某日期前
+
+```js
+const isBeforeDate = (dateA, dateB) => dateA < dateB
+
+isBeforeDate(new Date(2010, 10, 20), new Date(2010, 10, 21)) // true
+```
+
+### 8、tomorrow: 获取明天的字符串格式时间
+
+```js
+const tomorrow = () => {
+  let t = new Date()
+  t.setDate(t.getDate() + 1)
+  return t.toISOString().split('T')[0]
+}
+
+tomorrow() // 2019-10-15 (如果明天是2019-10-15)
+```
+
+### 9、equals: 全等判断
+
+在两个变量之间进行深度比较以确定它们是否全等。
+
+此代码段精简的核心在于 Array.prototype.every()的使用。
+
+```js
+const equals = (a, b) => {
+  if (a === b) return true
+  if (a instanceof Date && b instanceof Date) return a.getTime() === b.getTime()
+  if (!a || !b || (typeof a !== 'object' && typeof b !== 'object'))
+    return a === b
+  if (a.prototype !== b.prototype) return false
+  let keys = Object.keys(a)
+  if (keys.length !== Object.keys(b).length) return false
+  return keys.every(k => equals(a[k], b[k]))
+}
+```
+
+e.g.
+
+```js
+equals(
+  { a: [2, { e: 3 }], b: [4], c: 'foo' },
+  { a: [2, { e: 3 }], b: [4], c: 'foo' }
+) // true
+```
+
 ## 数字
 
+### 1、randomIntegerInRange: 生成指定范围内的随机整数
+
+```js
+const randomIntegerInRange = (min, max) =>
+  Math.floor(Math.random() * (max - min + 1)) + min
+
+randomIntegerInRange(0, 5) // 3
+```
+
+### 2、randomNumberInRange: 生成随机范围内的随机小数
+
+```js
+const randomNumberInRange = (min, max) => Math.random() * (max - min) + min
+
+randomNumberInRange(2, 10) // 6.0211363285087005
+```
+
+### 3、round: 四舍五入到指定位数
+
+```js
+const round = (n, decimals = 0) =>
+  Number(`${Math.round(`${n}e${decimals}`)}e-${decimals}`)
+
+round(1.005, 2) // 1.01
+```
+
+### 4、sum: 计算数组或多个数字的总和
+
+```js
+const sum = (...arr) => [...arr].reduce((acc, val) => acc + val, 0)
+
+sum(1, 2, 3, 4) // 10
+sum(...[1, 2, 3, 4]) // 10
+```
+
+### 5、toCurrency: 简单的货币单位转换
+
+```js
+const toCurrency = (n, curr, LanguageFormat = undefined) =>
+  Intl.NumberFormat(LanguageFormat, {
+    style: 'currency',
+    currency: curr,
+  }).format(n)
+
+toCurrency(123456.789, 'EUR') // €123,456.79
+toCurrency(123456.789, 'USD', 'en-us') // $123,456.79
+toCurrency(123456.789, 'USD', 'fa') // ۱۲۳٬۴۵۶٫۷۹
+toCurrency(322342436423.2435, 'JPY') // ¥322,342,436,423
+```
+
 ## 浏览器操作及其他
+
+### 1、bottomVisible: 检查页面底部是否可见
+
+```js
+const bottomVisible = () =>
+  document.documentElement.clientHeight + window.scrollY >=
+  (document.documentElement.scrollHeight ||
+    document.documentElement.clientHeight)
+
+bottomVisible() // true
+```
+
+### 2、Create Directory: 检查创建目录
+
+代码段调用 fs 模块的 existsSync()检查目录是否存在，如果不存在，则 mkdirSync()创建该目录。
+
+```js
+const fs = require('fs')
+const createDirIfNotExists = dir =>
+  !fs.existsSync(dir) ? fs.mkdirSync(dir) : undefined
+
+createDirIfNotExists('test')
+```
+
+### 3、currentURL: 返回当前链接 URL
+
+```js
+const currentURL = () => window.location.href
+
+currentURL() // 'https://juejin.im'
+```
+
+### 4、distance: 返回两点之间的距离
+
+该代码段通过计算欧几里得距离来返回两点之间的距离。
+
+```js
+const distance = (x0, y0, x1, y1) => Math.hypot(x1 - x0, y1 - y0)
+
+distance(1, 1, 2, 3) // 2.23606797749979
+```
+
+### 5、elementContains: 检查是否包含子元素
+
+此代码段检查父元素是否包含子元素。
+
+```js
+const elementContains = (parent, child) =>
+  parent !== child && parent.contains(child)
+
+elementContains(document.querySelector('head'), document.querySelector('title')) // true
+elementContains(document.querySelector('body'), document.querySelector('body')) // false
+```
+
+### 6、getStyle: 返回指定元素的生效样式
+
+```js
+const getStyle = (el, ruleName) => getComputedStyle(el)[ruleName]
+
+getStyle(document.querySelector('p'), 'font-size') // '16px'
+```
+
+### 7、getType: 返回值或变量的类型名
+
+```js
+const getType = v =>
+  v === undefined
+    ? 'undefined'
+    : v === null
+    ? 'null'
+    : v.constructor.name.toLowerCase()
+
+getType(new Set([1, 2, 3])) // 'set'
+getType([1, 2, 3]) // 'array'
+```
+
+### 8、hasClass: 检验指定元素的类名
+
+```js
+const hasClass = (el, className) => el.classList.contains(className)
+
+hasClass(document.querySelector('p.special'), 'special') // true
+```
+
+### 9、hide: 隐藏所有的指定标签
+
+```js
+const hide = (...el) => [...el].forEach(e => (e.style.display = 'none'))
+
+hide(document.querySelectorAll('img')) // 隐藏所有<img>标签
+```
+
+### 10、httpsRedirect: HTTP 跳转 HTTPS
+
+```js
+const httpsRedirect = () => {
+  if (location.protocol !== 'https:')
+    location.replace('https://' + location.href.split('//')[1])
+}
+
+httpsRedirect() // 若在`http://www.baidu.com`, 则跳转到`https://www.baidu.com`
+```
+
+### 11、insertAfter: 在指定元素之后插入新元素
+
+```js
+const insertAfter = (el, htmlString) =>
+  el.insertAdjacentHTML('afterend', htmlString)
+
+// <div id="myId">...</div> <p>after</p>
+insertAfter(document.getElementById('myId'), '<p>after</p>')
+```
+
+### 12、isBrowser: 检查是否为浏览器环境
+
+此代码段可用于确定当前运行时环境是否为浏览器。这有助于避免在服务器（节点）上运行前端模块时出错。
+
+```js
+const isBrowser = () => ![typeof window, typeof document].includes('undefined')
+
+isBrowser() // true (browser)
+isBrowser() // false (Node)
+```
+
+### 13、isBrowserTab: 检查当前标签是否活动
+
+```js
+const isBrowserTabFocused = () => !document.hidden
+
+isBrowserTabFocused() // true
+```
+
+### 15、nodeListToArray: 转换 nodeList 为数组
+
+```js
+const nodeListToArray = nodeList => [...nodeList]
+
+nodeListToArray(document.childNodes) // [ <!DOCTYPE html>, html ]
+```
+
+### 16、Random Hexadecimal Color Code: 随机十六进制颜色
+
+```js
+const randomHexColorCode = () => {
+  let n = (Math.random() * 0xfffff * 1000000).toString(16)
+  return '#' + n.slice(0, 6)
+}
+
+randomHexColorCode() // "#e34155"
+```
+
+### 17、scrollToTop: 平滑滚动至顶部
+
+该代码段可用于平滑滚动到当前页面的顶部。
+
+```js
+const scrollToTop = () => {
+  const c = document.documentElement.scrollTop || document.body.scrollTop
+  if (c > 0) {
+    window.requestAnimationFrame(scrollToTop)
+    window.scrollTo(0, c - c / 8)
+  }
+}
+
+scrollToTop()
+```
+
+### 18、smoothScroll: 滚动到指定元素区域
+
+该代码段可将指定元素平滑滚动到浏览器窗口的可见区域。
+
+```js
+const smoothScroll = element =>
+  document.querySelector(element).scrollIntoView({
+    behavior: 'smooth',
+  })
+
+smoothScroll('#fooBar')
+smoothScroll('.fooBar')
+```
+
+### 19、detectDeviceType: 检测移动/ PC 设备
+
+```js
+const detectDeviceType = () =>
+  /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+    navigator.userAgent
+  )
+    ? 'Mobile'
+    : 'Desktop'
+```
+
+### 20、getScrollPosition: 返回当前的滚动位置
+
+默认参数为 window ，pageXOffset(pageYOffset)为第一选择，没有则用 scrollLeft(scrollTop)
+
+```js
+const getScrollPosition = (el = window) => ({
+  x: el.pageXOffset !== undefined ? el.pageXOffset : el.scrollLeft,
+  y: el.pageYOffset !== undefined ? el.pageYOffset : el.scrollTop,
+})
+
+getScrollPosition() // {x: 0, y: 200}
+```
+
+### 21、size: 获取不同类型变量的字节长度
+
+这个的实现非常巧妙，利用 Blob 类文件对象的特性，获取对象的长度。
+
+另外，多重三元运算符，是真香。
+
+```js
+const size = val =>
+  Array.isArray(val)
+    ? val.length
+    : val && typeof val === 'object'
+    ? val.size || val.length || Object.keys(val).length
+    : typeof val === 'string'
+    ? new Blob([val]).size
+    : 0
+
+size([1, 2, 3, 4, 5]) // 5
+size('size') // 4
+size({ one: 1, two: 2, three: 3 }) // 3
+```
+
+### 22、escapeHTML: 转义 HTML
+
+当然是用来防 XSS 攻击啦。
+
+```js
+const escapeHTML = str =>
+  str.replace(
+    /[&<>'"]/g,
+    tag =>
+      ({
+        '&': '&amp;',
+        '<': '&lt;',
+        '>': '&gt;',
+        "'": '&#39;',
+        '"': '&quot;',
+      }[tag] || tag)
+  )
+
+escapeHTML('<a href="#">Me & you</a>') // '&lt;a href=&quot;#&quot;&gt;Me &amp; you&lt;/a&gt;'
+```
+
+![](https://static.skynian.cn/20191023004553.png)
