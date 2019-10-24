@@ -70,6 +70,10 @@ module.exports = {
         text: '前端',
         items: [
           {
+            text: '知识体系',
+            link: '/docs/fe-system/',
+          },
+          {
             text: 'JavaScript 专题',
             link: '/javascript/',
           },
