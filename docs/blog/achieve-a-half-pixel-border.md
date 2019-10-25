@@ -1,6 +1,7 @@
 ---
 layout: css3
 title: 实现半像素边框
+sidebar: auto
 date: 2018-12-17 16:43:04
 tags:
   - 布局

@@ -1,5 +1,6 @@
 ---
 title: JavaScript 内存管理浅谈
+sidebar: auto
 date: 2018-06-22 11:24:57
 tags:
   - JavaScript

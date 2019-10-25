@@ -1,5 +1,6 @@
 ---
 title: 浅谈 JavaScript 异步
+sidebar: auto
 date: 2018-06-13 23:38:17
 tags:
   - JavaScript

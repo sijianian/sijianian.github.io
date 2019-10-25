@@ -1,5 +1,6 @@
 ---
 title: 深入理解 this
+sidebar: auto
 date: 2018-06-11 20:53:06
 tags:
   - JavaScript

@@ -1,5 +1,6 @@
 ---
 title: 现代 JavaScript 与 CSS 滚动实现简析
+sidebar: auto
 date: 2018-06-18 17:20:13
 tags:
   - JavaScript

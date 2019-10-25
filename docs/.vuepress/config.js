@@ -54,7 +54,6 @@ module.exports = {
     ],
   ],
   themeConfig: {
-    sidebar: 'auto',
     lastUpdated: '最后更新时间',
     repo: 'sijianian/sijianian.github.io',
     docsDir: 'docs',

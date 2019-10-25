@@ -1,5 +1,6 @@
 ---
 title: 浅谈 Web Components
+sidebar: auto
 date: 2018-07-19 11:26:10
 tags:
   - JavaScript
@@ -24,7 +25,7 @@ Web Components 是一套不同的技术，允许您创建可重用的定制元�
 
 ![image](https://static.skynian.cn/18-7-19/73652975.jpg)
 
-## What ?
+## What?
 
 Web Components are a new browser feature that provides a standard component model for the Web, consisting of several pieces: Shadow DOM, Custom Elements, HTML Imports and HTML Templates.
 

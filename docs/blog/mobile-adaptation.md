@@ -1,5 +1,6 @@
 ---
 title: 移动适配总结
+sidebar: auto
 date: 2019-01-07 12:03:37
 tags:
   - JavaScript

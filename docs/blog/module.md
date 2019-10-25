@@ -1,5 +1,6 @@
 ---
 title: 前端模块化
+sidebar: auto
 date: 2018-06-17 12:25:39
 tags:
   - JavaScript

@@ -1,5 +1,6 @@
 ---
 title: 为什么 Vue 组件中的 data 必须是函数
+sidebar: auto
 date: 2018-06-20 20:52:58
 tags:
   - Vue
