@@ -14,6 +14,8 @@ categories:
 
 这个通常是怎么设置的呢，就是我们这里要介绍的 HTTP 缓存头。
 
+<!-- more -->
+
 ## Expires
 
 ```

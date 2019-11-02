@@ -15,7 +15,7 @@ categories:
 
 我们可以通过在线的抽象语法转换器了解大概，[在线转换器](https://astexplorer.net)
 
-<!--more-->
+<!-- more -->
 
 如图：
 

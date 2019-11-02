@@ -9,6 +9,8 @@ categories:
 
 > 转载 [19 个 JS 常用的简写技术](https://juejin.im/post/5948db9661ff4b006c061b2b)
 
+<!-- more -->
+
 ## 三元操作符
 
 当想写 if...else 语句时，使用三元操作符来代替

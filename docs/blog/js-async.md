@@ -14,7 +14,7 @@ categories:
 - 对于耗时或者时间不确定的操作，使用异步
 - HTML5 Web Worker 多线程
 
-<!--more-->
+<!-- more -->
 
 ## 异步执行机制
 

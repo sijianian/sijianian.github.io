@@ -7,8 +7,6 @@ categories:
   - 博客
 ---
 
-## 前言
-
 在阅读 Vue 和 Vuex 的源码中，我们会发现，作者都使用了 **Object.create(null)** 来初始化一个新的对象。
 
 作为 ES5 继承中更优解的**组合寄生继承**中，也同样用 **Object.create(prototype)** 来处理原型链。
@@ -16,6 +14,8 @@ categories:
 那么问题来了，我们为什么不用更加简洁的 **{}** 呢？
 
 通过自己查找一些资料，总结在这里，温故知新。
+
+<!-- more -->
 
 ## 定义
 
@@ -27,7 +27,7 @@ categories:
 Object.create(proto, [propertiesObject])
 ```
 
-- proto: 新创建对象的原型对象
+- prototype: 新创建对象的原型对象
 - propertiesObject: 可选。要添加到新对象的可枚举（新添加的属性是其自身的属性，而不是其原型链上的）属性
 
 eg:

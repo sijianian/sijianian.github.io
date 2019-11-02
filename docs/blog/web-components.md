@@ -7,11 +7,9 @@ categories:
   - 博客
 ---
 
-![](https://static.skynian.cn/18-7-21/31724707.jpg)
-
 Web Components 是一套不同的技术，允许您创建可重用的定制元素（它们的功能封装在您的代码之外）并且在您的 web 应用中使用它们。
 
-<!--more-->
+<!-- more -->
 
 ## 一个有趣的 UI 库
 
