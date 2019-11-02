@@ -2,7 +2,7 @@
 home: true
 bgImage: https://static.skynian.cn/18-12-25/2092366.jpg
 bgImageStyle: {
-  height: '420px',
+  height: '350px',
   backgroundPosition: 'top',
   backgroundSize: 'auto',
 }
