@@ -1,23 +1,25 @@
 ---
 title: 命令行实现龟兔赛跑
-sidebar: auto
+date: 2019-11-03 23:59:17
 categories:
+  - Node
+tags:
   - Node
 ---
 
+<!-- more -->
+
 ## 前言
 
-[chalk-animation](https://github.com/bokub/chalk-animation)是一个非常有意思的 Node 命令行动画库
+![](https://static.skynian.cn/20191102113824.png)
 
-> e.g.
+[chalk-animation](https://github.com/bokub/chalk-animation)是一个非常有意思的 Node 命令行动画库，如下所示
 
-![](https://static.skynian.cn/20191102113333.png)
+![](https://static.skynian.cn/20191102235655.gif)
 
 看起来非常的花里胡哨，但是我喜欢！_(:з」∠)_
 
 我们可以用这个库来实现一个小小的龟兔赛跑动画
-
-![](https://static.skynian.cn/20191102113824.png)
 
 ## 使用到的 ES6 语法特性
 
