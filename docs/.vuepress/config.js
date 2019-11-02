@@ -28,7 +28,7 @@ module.exports = {
       },
     },
     lastUpdated: '最后更新时间',
-    repo: 'sijianian/sijianian.github.io',
+    repo: 'sijianian',
     docsDir: 'docs',
     docsBranch: 'vuepress',
     editLinks: true,
