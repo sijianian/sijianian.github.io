@@ -35,6 +35,11 @@ module.exports = {
     editLinkText: '在 GitHub 上编辑此页',
     nav: [
       {
+        text: 'TimeLine',
+        link: '/timeLine/',
+        icon: 'reco-date',
+      },
+      {
         text: '前端',
         items: [
           {
