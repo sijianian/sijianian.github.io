@@ -1,6 +1,6 @@
 ---
 title: 命令行实现龟兔赛跑
-sideBar: auto
+sidebar: auto
 ---
 
 ## 前言
