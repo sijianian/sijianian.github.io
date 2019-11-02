@@ -1,6 +1,8 @@
 ---
 title: 常见的 HTTP 头部
 categories:
+tags:
+  - HTTP
   - 博客
 ---
 
