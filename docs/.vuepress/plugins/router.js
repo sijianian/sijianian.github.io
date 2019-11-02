@@ -5,7 +5,7 @@ module.exports = {
     const { frontmatter = {}, lastUpdated = '' } = $page
     let { permalink = '', date = '' } = frontmatter
 
-    frontmatter.commentid = jsMd5(permalink || $page.path)
+    frontmatter.commentId = jsMd5(permalink || $page.path)
     date = date || lastUpdated
     if (date) {
       frontmatter.date = new Date(date)
