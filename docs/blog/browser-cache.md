@@ -1,11 +1,11 @@
 ---
 title: 浅析浏览器缓存
-sidebar: auto
 date: 2018-07-07 17:35:44
 tags:
   - HTTP
-categories:
   - WEB
+categories:
+  - 博客
 ---
 
 浏览器缓存是优化性能的一种方式，下面看看常见的 HTTP 缓存头，工作流程。

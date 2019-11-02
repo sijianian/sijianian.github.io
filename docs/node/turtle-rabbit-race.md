@@ -1,6 +1,8 @@
 ---
 title: 命令行实现龟兔赛跑
 sidebar: auto
+categories:
+  - Node
 ---
 
 ## 前言

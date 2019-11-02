@@ -1,5 +1,7 @@
 ---
 title: 常见的 HTTP 头部
+categories:
+  - 博客
 ---
 
 ## Request Header

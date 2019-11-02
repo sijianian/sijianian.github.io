@@ -1,5 +1,9 @@
 ---
 title: 前端路由
+categories:
+  - JS 基础
+tags:
+  - JavaScript
 ---
 
 ## hash 路由

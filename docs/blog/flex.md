@@ -1,10 +1,10 @@
 ---
 title: 浅谈 flex 布局
-sidebar: auto
 date: 2017-11-20 15:24:44
 tags:
   - CSS
-categories: CSS
+categories:
+  - 博客
 ---
 
 ![](https://static.skynian.cn/flex-2018613142131.png)

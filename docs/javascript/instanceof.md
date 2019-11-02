@@ -1,5 +1,9 @@
 ---
 title: Instanceof
+categories:
+  - JS 基础
+tags:
+  - JavaScript
 ---
 
 ```js

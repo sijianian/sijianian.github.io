@@ -1,10 +1,10 @@
 ---
 title: 函数去抖和函数节流
-sidebar: auto
 date: 2018-06-28 23:19:56
 tags:
   - JavaScript
-categories: JavaScript
+categories:
+  - 博客
 ---
 
 debounce，在项目中其实使用的频率挺高的，但是一直没有彻底理解应用场景和原理，这次就做一次简单的总结。

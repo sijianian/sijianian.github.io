@@ -1,5 +1,9 @@
 ---
 title: Curry
+categories:
+  - JS 基础
+tags:
+  - JavaScript
 ---
 
 ```js

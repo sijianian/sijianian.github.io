@@ -1,5 +1,9 @@
 ---
 title: EventEmitter
+categories:
+  - JS 基础
+tags:
+  - JavaScript
 ---
 
 > 讲解: [https://juejin.im/post/5c199c0ae51d452f6028a072](https://juejin.im/post/5c199c0ae51d452f6028a072)

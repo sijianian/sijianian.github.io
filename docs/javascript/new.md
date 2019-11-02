@@ -1,5 +1,9 @@
 ---
 title: New
+categories:
+  - JS 基础
+tags:
+  - JavaScript
 ---
 
 ```js

@@ -1,11 +1,11 @@
 ---
 title: 现代 JavaScript 与 CSS 滚动实现简析
-sidebar: auto
 date: 2018-06-18 17:20:13
 tags:
   - JavaScript
   - CSS
-categories: 优化
+categories:
+  - 博客
 ---
 
 ## 页面滚动条引发的抖动出发

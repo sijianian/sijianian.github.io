@@ -1,12 +1,12 @@
 ---
 title: 移动适配总结
-sidebar: auto
 date: 2019-01-07 12:03:37
 tags:
   - JavaScript
   - 移动端
   - 知识点
-categories: JavaScript
+categories:
+  - 博客
 ---
 
 在 web 的世界中，无线和 PC 的响应式适配其实是两个世界......

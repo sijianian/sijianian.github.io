@@ -1,6 +1,8 @@
 ---
 title: 前端知识体系
 sidebar: 'auto'
+categories:
+  - 文档
 ---
 
 > 转载：[Conardli 前端知识体系](http://www.conardli.top/blog/article/%E7%BB%BC%E5%90%88/%E3%80%90%E8%87%AA%E6%A3%80%E3%80%91%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86%E6%B8%85%E5%8D%95.html)

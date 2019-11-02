@@ -1,10 +1,10 @@
 ---
 title: 浅谈 Web Components
-sidebar: auto
 date: 2018-07-19 11:26:10
 tags:
   - JavaScript
-categories: JavaScript
+categories:
+  - 博客
 ---
 
 ![](https://static.skynian.cn/18-7-21/31724707.jpg)

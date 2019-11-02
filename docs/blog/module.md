@@ -1,10 +1,10 @@
 ---
 title: 前端模块化
-sidebar: auto
 date: 2018-06-17 12:25:39
 tags:
   - JavaScript
-categories: JavaScript
+categories:
+  - 博客
 ---
 
 模块化的开发方式可以提高代码复用率，方便进行代码的管理。通常一个文件就是一个模块，有自己的作用域，只向外暴露特定的变量和函数。目前流行的 js 模块化规范有 CommonJS、AMD、CMD 以及 ES6 的模块系统。参见阮一峰老师的文章 [module-loader](https://note.youdao.com/)。

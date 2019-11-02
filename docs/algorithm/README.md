@@ -1,5 +1,6 @@
 ---
 title: 算法专题
+sidebar: false
 ---
 
 ## 复杂度

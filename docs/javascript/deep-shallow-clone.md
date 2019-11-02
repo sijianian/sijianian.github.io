@@ -1,5 +1,9 @@
 ---
 title: 深浅拷贝
+categories:
+  - JS 基础
+tags:
+  - JavaScript
 ---
 
 ## 浅拷贝

@@ -1,10 +1,10 @@
 ---
 title: 简析 Object.create(null)
-sidebar: auto
 date: 2019-05-21 14:15:47
 tags:
   - JavaScript
-categories: JavaScript
+categories:
+  - 博客
 ---
 
 ## 前言

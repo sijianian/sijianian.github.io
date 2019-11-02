@@ -1,10 +1,10 @@
 ---
 title: 深浅拷贝
-sidebar: auto
 date: 2018-12-29 14:21:04
 tags:
   - JavaScript
-categories: JavaScript
+categories:
+  - 博客
 ---
 
 前端日常开发中，经常会遇到的问题是：什么是浅拷贝？如何实现浅拷贝？什么事深拷贝？如何实现深拷贝？

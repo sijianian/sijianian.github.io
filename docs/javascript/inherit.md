@@ -1,5 +1,9 @@
 ---
 title: 继承相关
+categories:
+  - JS 基础
+tags:
+  - JavaScript
 ---
 
 ## 组合继承

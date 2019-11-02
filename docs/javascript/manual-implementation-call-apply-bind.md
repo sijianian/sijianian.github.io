@@ -1,5 +1,9 @@
 ---
 title: 手动实现 call、apply、bind
+categories:
+  - JS 基础
+tags:
+  - JavaScript
 ---
 
 ## call

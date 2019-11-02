@@ -1,5 +1,7 @@
 ---
 title: 排序
+categories:
+  - 算法
 ---
 
 ## 公用函数

@@ -1,12 +1,11 @@
 ---
 title: Facebook 应用审核
-sidebar: auto
 date: 2019-05-14 14:30:05
 tags:
   - 经验
   - Facebook
 categories:
-  - 其他
+  - 博客
 ---
 
 ## 背景

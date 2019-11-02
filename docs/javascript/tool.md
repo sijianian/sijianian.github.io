@@ -1,5 +1,9 @@
 ---
 title: 工具函数
+categories:
+  - JS 基础
+tags:
+  - JavaScript
 sidebarDepth: 5
 ---
 

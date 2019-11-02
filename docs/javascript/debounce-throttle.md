@@ -1,5 +1,9 @@
 ---
 title: 防抖与节流
+categories:
+  - JS 基础
+tags:
+  - JavaScript
 ---
 
 ## 防抖

@@ -1,11 +1,11 @@
 ---
 title: JavaScript 内存管理浅谈
-sidebar: auto
 date: 2018-06-22 11:24:57
 tags:
   - JavaScript
   - 优化
-categories: JavaScript
+categories:
+  - 博客
 ---
 
 最近一直在回溯自己的的前端知识体系，发现，工作一段时间后，再去回顾之前的知识，体会真的不一样。

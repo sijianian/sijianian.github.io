@@ -1,10 +1,10 @@
 ---
 title: 深入理解 this
-sidebar: auto
 date: 2018-06-11 20:53:06
 tags:
   - JavaScript
-categories: JavaScript
+categories:
+  - 博客
 ---
 
 ![](https://static.skynian.cn/深入理解this-201861122106.jpg)

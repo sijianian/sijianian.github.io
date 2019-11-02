@@ -1,9 +1,10 @@
 ---
 title: JS 简写技术
-sidebar: auto
 date: 2018-07-22 22:21:25
 tags:
   - JavaScript
+categories:
+  - 博客
 ---
 
 > 转载 [19 个 JS 常用的简写技术](https://juejin.im/post/5948db9661ff4b006c061b2b)

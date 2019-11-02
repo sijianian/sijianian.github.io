@@ -1,10 +1,10 @@
 ---
 title: 抽象语法树 Abstract syntax tree
 date: 2018-06-17 16:59:17
-sidebar: auto
 tags:
   - JavaScript
-categories: JavaScript
+categories:
+  - 博客
 ---
 
 因为最近在了解 Webpack、 gulp 等打包工具的相关知识，并且一个核心的概念是抽象语法树。所以就收集相关资料，当做一个简单的记录。

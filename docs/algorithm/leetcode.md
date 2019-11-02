@@ -1,5 +1,7 @@
 ---
 title: leetcode
+categories:
+  - 算法
 ---
 
 ## [1] 两数之和
