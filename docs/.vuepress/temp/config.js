@@ -1,32 +1,16 @@
 module.exports = {
-  title: "moke's blog",
-  description: 'Write the code , Change the world',
-  head: [
-    [
-      'meta',
-      {
-        name: 'viewport',
-        content: 'width=device-width,initial-scale=1,user-scalable=no',
-      },
-    ],
-  ],
-  theme: 'reco',
-  themeConfig: {
-    author: 'moke',
-    type: 'blog',
-    themePicker: false,
-    GAID: 'UA-110022311-1',
-    sidebar: 'auto',
-    blogConfig: {
-      category: {
-        location: 1,
-        text: '分类',
-      },
-      tag: {
-        location: 2,
-        text: '标签',
-      },
+  locales: {
+    '/': {
+      lang: 'zh-CN',
+      title: "moke's blog",
+      description: 'Write the code , Change the world',
     },
+  },
+  markdown: {
+    anchor: { permalink: true },
+    toc: { includeLevel: [1, 2] },
+  },
+  themeConfig: {
     lastUpdated: '最后更新时间',
     repo: 'sijianian/sijianian.github.io',
     docsDir: 'docs',
@@ -34,6 +18,10 @@ module.exports = {
     editLinks: true,
     editLinkText: '在 GitHub 上编辑此页',
     nav: [
+      {
+        text: '最新',
+        link: '/guide/',
+      },
       {
         text: '前端',
         items: [
@@ -69,6 +57,27 @@ module.exports = {
         ],
       },
     ],
+    sidebar: {
+      '/javascript/': [
+        '/javascript/',
+        '/javascript/tool',
+        '/javascript/manual-implementation-call-apply-bind',
+        '/javascript/event-emitter',
+        '/javascript/debounce-throttle',
+        '/javascript/deep-shallow-clone',
+        '/javascript/instanceof',
+        '/javascript/new',
+        '/javascript/promise',
+        '/javascript/inherit',
+        '/javascript/router',
+        '/javascript/curry',
+      ],
+      '/algorithm/': [
+        '/algorithm/',
+        '/algorithm/complexity',
+        '/algorithm/sort',
+      ],
+    },
   },
   plugins: [
     require('./plugins/router'),
@@ -81,6 +90,7 @@ module.exports = {
         hm: '96aa37ccd951cae93b8933a2366c5470',
       },
     ],
+    ['@vuepress/google-analytics', { ga: 'UA-110022311-1' }],
     [
       '@vuepress/pwa',
       {
