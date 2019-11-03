@@ -23,6 +23,20 @@ categories:
 
 > 回溯算法适合由多个步骤组成的问题，并且每个步骤都有多个选项
 
+## leetcode
+
+[39.组合总和](https://leetcode-cn.com/problems/combination-sum/)
+
+[40.组合总和 II](https://leetcode-cn.com/problems/combination-sum-ii/)
+
+[46.全排列](https://leetcode-cn.com/problems/permutations/)
+
+[46.全排列 II](https://leetcode-cn.com/problems/permutations-ii/)
+
+[78.子集](https://leetcode-cn.com/problems/subsets/)
+
+[90.子集 II](https://leetcode-cn.com/problems/subsets-ii/)
+
 ## 二叉树中和为某一值的路径
 
 ### 描述
