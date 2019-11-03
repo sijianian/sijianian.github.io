@@ -31,9 +31,57 @@ categories:
 
 [46.全排列](https://leetcode-cn.com/problems/permutations/)
 
+```js
+const backtrack = (result, tempList, nums) => {
+  if (tempList.length === nums.length) {
+    return result.push([...tempList])
+  }
+
+  for (let i = 0; i < nums.length; i++) {
+    if (tempList.includes(nums[i])) {
+      continue
+    }
+
+    tempList.push(nums[i])
+    backtrack(result, tempList, nums)
+    tempList.pop()
+  }
+}
+
+/**
+ * @param {number[]} nums
+ * @return {number[][]}
+ */
+const permute = nums => {
+  const result = []
+
+  backtrack(result, [], nums)
+
+  return result
+}
+```
+
 [46.全排列 II](https://leetcode-cn.com/problems/permutations-ii/)
 
 [78.子集](https://leetcode-cn.com/problems/subsets/)
+
+```js
+const backtrack = (list, tempList, nums, start) => {
+  list.push([...tempList])
+
+  for (let i = start; i < nums.length; i++) {
+    tempList.push(nums[i])
+    backtrack(list, tempList, nums, i + 1)
+    tempList.pop()
+  }
+}
+
+const subsets = nums => {
+  const list = []
+  backtrack(list, [], nums, 0)
+  return list
+}
+```
 
 [90.子集 II](https://leetcode-cn.com/problems/subsets-ii/)
 
