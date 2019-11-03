@@ -1,5 +1,6 @@
 ---
 title: 回溯算法
+date: 2019-11-01 10:59:17
 categories:
   - 算法
 ---
@@ -96,4 +97,94 @@ export const findPath = (root, expectNumber) => {
 
 ### 思路
 
+使用回溯法
+
+记录一个字符`temp`，用于存储当前需要进入排列的字符
+
+记录一个字符串`current`，用于记录当前已经排列好的字符
+
+记录一个队列`queue`，用于存储还未被排列的字符
+
+每次排列将 `temp` 添加到 `current`
+如果 `queue` 为空，则本次排列完成，将 `current` 加入到结果数组中，结束递归
+如果 `queue` 不为空，说明还有未排列的字符
+递归排列 `queue` 中剩余的字符
+为了不影响后续排列，每次递归完成，将当前递归的字符 `temp` 加回队列
+
 ### 代码
+
+```js
+const permutationCore = (queue, result, temp = '', current = '') => {
+  current += temp
+
+  if (queue.length === 0) {
+    result.push(current)
+    return
+  }
+
+  for (let i = 0; i < queue.length; i++) {
+    temp = queue.shift()
+    permutationCore(queue, result, temp, current)
+    queue.push(temp)
+  }
+}
+
+export const permutation = str => {
+  const result = []
+
+  if (str) {
+    queue = str.split('')
+    permutationCore(queue, result)
+  }
+
+  result.sort()
+  return [...new Set(result)]
+}
+```
+
+## 和为 sum 的 n 个数
+
+### 描述
+
+给定无序、不重复的数组 `data`，取出 `n` 个数，使其相加和为 `sum`
+
+### 思路
+
+基于上面字符串排列题目的变形，我们从 `array` 中取出 `n` 个数的全排列，在取的同时判断是否符合条件
+
+### 代码
+
+```js
+const getAll = (array, n, sum, temp) => {
+  if (temp.length === n) {
+    if (temp.reduce((t, c) => t + c) === sum) {
+      return temp
+    }
+
+    return
+  }
+
+  for (let i = 0; i < array.length; i++) {
+    const current = array.shift()
+    temp.push(current)
+    const result = getAll(array, n, sum, temp)
+    if (result) {
+      return result
+    }
+    temp.pop()
+    array.push(current)
+  }
+}
+
+const arr = [1, 2, 3, 4, 5, 6]
+
+console.log(getAll(arr, 3, 10, []))
+```
+
+## 矩阵中的路径
+
+## 机器人的运动范围
+
+## N 皇后的问题
+
+## N 皇后的问题 2
