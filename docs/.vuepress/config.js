@@ -78,6 +78,7 @@ module.exports = {
   plugins: [
     require('./plugins/router'),
     ['vuepress-plugin-code-copy', true],
+    ['vuepress-plugin-reading-progress'],
     ['@vuepress/back-to-top'],
     ['vuepress-plugin-viewer'],
     ['@vuepress/active-header-links'],

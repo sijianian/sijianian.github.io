@@ -22,6 +22,7 @@
     "vuepress-plugin-baidu-tongji": "^1.0.1",
     "vuepress-plugin-code-copy": "^1.0.4-alpha",
     "vuepress-plugin-comment": "^0.7.0-beta.1",
+    "vuepress-plugin-reading-progress": "^1.0.7",
     "vuepress-plugin-viewer": "^1.0.0",
     "vuepress-theme-reco": "^1.1.0"
   }
