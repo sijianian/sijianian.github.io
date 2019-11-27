@@ -15,11 +15,11 @@ categories:
 
 ### 前序遍历
 
-> [144. https://leetcode-cn.com/problems/binary-tree-preorder-traversal/](https://leetcode-cn.com/problems/binary-tree-preorder-traversal/)
+[144. https://leetcode-cn.com/problems/binary-tree-preorder-traversal/](https://leetcode-cn.com/problems/binary-tree-preorder-traversal/)
 
 ```js
 // 递归实现
-export const preorderTraversal = (root, array = []) => {
+const preorderTraversal = (root, array = []) => {
   if (!root) {
     return array
   }
@@ -32,7 +32,7 @@ export const preorderTraversal = (root, array = []) => {
 }
 
 // 非递归实现
-export const preorderTraversal2 = root => {
+const preorderTraversal2 = root => {
   const result = []
   const stack = []
 
@@ -55,11 +55,11 @@ export const preorderTraversal2 = root => {
 
 ### 中序遍历
 
-> [94. https://leetcode-cn.com/problems/binary-tree-inorder-traversal/](https://leetcode-cn.com/problems/binary-tree-inorder-traversal/)
+[94. https://leetcode-cn.com/problems/binary-tree-inorder-traversal/](https://leetcode-cn.com/problems/binary-tree-inorder-traversal/)
 
 ```js
 // 递归实现
-export const inorderTraversal1 = (root, array = []) => {
+const inorderTraversal1 = (root, array = []) => {
   if (!root) {
     return array
   }
@@ -72,7 +72,7 @@ export const inorderTraversal1 = (root, array = []) => {
 }
 
 // 非递归实现
-export const inorderTraversal2 = root => {
+const inorderTraversal2 = root => {
   const stack = []
   const result = []
 
@@ -95,7 +95,7 @@ export const inorderTraversal2 = root => {
 
 ### 后序遍历
 
-> [145. https://leetcode-cn.com/problems/binary-tree-postorder-traversal/](https://leetcode-cn.com/problems/binary-tree-postorder-traversal/)
+[145. https://leetcode-cn.com/problems/binary-tree-postorder-traversal/](https://leetcode-cn.com/problems/binary-tree-postorder-traversal/)
 
 #### 思路
 
@@ -106,7 +106,7 @@ export const inorderTraversal2 = root => {
 
 ```js
 // 递归实现
-export const postorderTraversal1 = (root, array) => {
+const postorderTraversal1 = (root, array) => {
   if (!root) {
     return array
   }
@@ -119,7 +119,7 @@ export const postorderTraversal1 = (root, array) => {
 }
 
 // 非递归实现
-export const postorderTraversal2 = root => {
+const postorderTraversal2 = root => {
   const result = []
   const stack = []
 
@@ -148,10 +148,10 @@ export const postorderTraversal2 = root => {
 
 ### 层次遍历
 
-> [102. https://leetcode-cn.com/problems/binary-tree-level-order-traversal/](https://leetcode-cn.com/problems/binary-tree-level-order-traversal/)
+[102. https://leetcode-cn.com/problems/binary-tree-level-order-traversal/](https://leetcode-cn.com/problems/binary-tree-level-order-traversal/)
 
 ```js
-export const levelOrder = root => {
+const levelOrder = root => {
   if (!root) {
     return []
   }
@@ -188,38 +188,38 @@ export const levelOrder = root => {
 
 ### 二叉树的最大深度
 
-> [104. https://leetcode-cn.com/problems/maximum-depth-of-binary-tree/](https://leetcode-cn.com/problems/maximum-depth-of-binary-tree/)
+[104. https://leetcode-cn.com/problems/maximum-depth-of-binary-tree/](https://leetcode-cn.com/problems/maximum-depth-of-binary-tree/)
 
 ### 对称二叉树
 
-> [101. https://leetcode-cn.com/problems/symmetric-tree/](https://leetcode-cn.com/problems/symmetric-tree/)
+[101. https://leetcode-cn.com/problems/symmetric-tree/](https://leetcode-cn.com/problems/symmetric-tree/)
 
 ### 路径总和
 
-> [112. https://leetcode-cn.com/problems/path-sum/](https://leetcode-cn.com/problems/path-sum/)
+[112. https://leetcode-cn.com/problems/path-sum/](https://leetcode-cn.com/problems/path-sum/)
 
 ## 进阶
 
 ### 从中序与后序遍历序列构造二叉树
 
-> [106. https://leetcode-cn.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/](https://leetcode-cn.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/)
+[106. https://leetcode-cn.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/](https://leetcode-cn.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/)
 
 ### 从前序与中序遍历序列构造二叉树
 
-> [105. https://leetcode-cn.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/](https://leetcode-cn.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/)
+[105. https://leetcode-cn.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/](https://leetcode-cn.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/)
 
 ### 填充每个节点的下一个右侧节点指针
 
-> [116. https://leetcode-cn.com/problems/populating-next-right-pointers-in-each-node/](https://leetcode-cn.com/problems/populating-next-right-pointers-in-each-node/)
+[116. https://leetcode-cn.com/problems/populating-next-right-pointers-in-each-node/](https://leetcode-cn.com/problems/populating-next-right-pointers-in-each-node/)
 
 ### 填充每个节点的下一个右侧节点指针 II
 
-> [117. https://leetcode-cn.com/problems/populating-next-right-pointers-in-each-node-ii/](https://leetcode-cn.com/problems/populating-next-right-pointers-in-each-node-ii/)
+[117. https://leetcode-cn.com/problems/populating-next-right-pointers-in-each-node-ii/](https://leetcode-cn.com/problems/populating-next-right-pointers-in-each-node-ii/)
 
 ### 二叉树的最近公共祖先
 
-> [236. https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-tree/](https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-tree/)
+[236. https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-tree/](https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-tree/)
 
 ### 二叉树的序列化与反序列化
 
-> [297. https://leetcode-cn.com/problems/serialize-and-deserialize-binary-tree/](https://leetcode-cn.com/problems/serialize-and-deserialize-binary-tree/)
+[297. https://leetcode-cn.com/problems/serialize-and-deserialize-binary-tree/](https://leetcode-cn.com/problems/serialize-and-deserialize-binary-tree/)
