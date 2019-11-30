@@ -2,7 +2,7 @@
 title: 探索二叉树
 date: 2019-11-27 02:45:17
 categories:
-  - 算法
+  - 数据结构
 ---
 
 `树`是一种经常用到的数据结构，用来模拟具有树状结构性质的数据集合
@@ -15,7 +15,7 @@ categories:
 
 ### 前序遍历
 
-[144. https://leetcode-cn.com/problems/binary-tree-preorder-traversal/](https://leetcode-cn.com/problems/binary-tree-preorder-traversal/)
+[[144] 二叉树的前序遍历](https://leetcode-cn.com/problems/binary-tree-preorder-traversal/)
 
 ```js
 // 递归实现
@@ -55,11 +55,11 @@ const preorderTraversal2 = root => {
 
 ### 中序遍历
 
-[94. https://leetcode-cn.com/problems/binary-tree-inorder-traversal/](https://leetcode-cn.com/problems/binary-tree-inorder-traversal/)
+[[94] 二叉树的中序遍历](https://leetcode-cn.com/problems/binary-tree-inorder-traversal/)
 
 ```js
 // 递归实现
-const inorderTraversal1 = (root, array = []) => {
+const inorderTraversal = (root, array = []) => {
   if (!root) {
     return array
   }
@@ -95,7 +95,7 @@ const inorderTraversal2 = root => {
 
 ### 后序遍历
 
-[145. https://leetcode-cn.com/problems/binary-tree-postorder-traversal/](https://leetcode-cn.com/problems/binary-tree-postorder-traversal/)
+[[145] 二叉树的后序遍历](https://leetcode-cn.com/problems/binary-tree-postorder-traversal/)
 
 #### 思路
 
@@ -106,7 +106,7 @@ const inorderTraversal2 = root => {
 
 ```js
 // 递归实现
-const postorderTraversal1 = (root, array) => {
+const postorderTraversal = (root, array = []) => {
   if (!root) {
     return array
   }
@@ -148,7 +148,7 @@ const postorderTraversal2 = root => {
 
 ### 层次遍历
 
-[102. https://leetcode-cn.com/problems/binary-tree-level-order-traversal/](https://leetcode-cn.com/problems/binary-tree-level-order-traversal/)
+[[102] 二叉树的层次遍历](https://leetcode-cn.com/problems/binary-tree-level-order-traversal/)
 
 ```js
 const levelOrder = root => {

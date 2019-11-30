@@ -6,6 +6,10 @@ tags:
   - leetcode
 ---
 
+## 仓库地址
+
+[https://github.com/sijianian/leetcode](https://github.com/sijianian/leetcode)
+
 ## [1] 两数之和
 
 ```js
