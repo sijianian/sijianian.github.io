@@ -8,6 +8,7 @@ branches:
     - master
 
 install:
+  - sudo rm -rf node_modules
   - npm install
 
 script:
