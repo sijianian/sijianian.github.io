@@ -87,16 +87,16 @@ module.exports = {
         hm: '96aa37ccd951cae93b8933a2366c5470',
       },
     ],
-    [
-      '@vuepress/pwa',
-      {
-        serviceWorker: true,
-        updatePopup: {
-          message: '发现页面有新内容',
-          buttonText: '刷新',
-        },
-      },
-    ],
+    // [
+    //   '@vuepress/pwa',
+    //   {
+    //     serviceWorker: true,
+    //     updatePopup: {
+    //       message: '发现页面有新内容',
+    //       buttonText: '刷新',
+    //     },
+    //   },
+    // ],
     [
       'vuepress-plugin-comment',
       {

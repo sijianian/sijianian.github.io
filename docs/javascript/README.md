@@ -1,6 +1,5 @@
 ---
 title: JavaScript 专题
-sidebar: false
 ---
 
 - [工具函数](./tool.md)
