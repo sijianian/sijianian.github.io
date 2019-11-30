@@ -185,7 +185,7 @@ const detectCycle = head => {
 
 ### 相交链表
 
-[https://leetcode-cn.com/problems/intersection-of-two-linked-lists/description/](https://leetcode-cn.com/problems/intersection-of-two-linked-lists/description/)
+[[160] 相交链表](https://leetcode-cn.com/problems/intersection-of-two-linked-lists/description/)
 
 ```js
 const getIntersectionNode = function(headA, headB) {

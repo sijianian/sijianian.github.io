@@ -7,6 +7,10 @@ categories:
   - 博客
 ---
 
+> SLIDES
+
+[https://slides.com/moke/deck-1#/](https://slides.com/moke/deck-1#/)
+
 ## JavaScript 是单线程?
 
 - JS 引擎中负责解释和执行 JS 代码的线程只有一个（主）
