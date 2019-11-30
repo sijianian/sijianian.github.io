@@ -23,6 +23,6 @@
     "vuepress-plugin-code-copy": "^1.0.4",
     "vuepress-plugin-comment": "^0.7.2",
     "vuepress-plugin-viewer": "^1.0.0",
-    "vuepress-theme-reco": "^1.2.0-alpha.1"
+    "vuepress-theme-reco": "^1.1.4"
   }
 }
