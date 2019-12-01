@@ -22,6 +22,7 @@
     "vuepress-plugin-baidu-tongji": "^1.0.1",
     "vuepress-plugin-code-copy": "^1.0.4",
     "vuepress-plugin-comment": "^0.7.2",
+    "vuepress-plugin-seo": "^0.1.2",
     "vuepress-theme-reco": "^1.1.4"
   }
 }

@@ -77,9 +77,10 @@ module.exports = {
     ],
   },
   plugins: [
-    require('./plugins/router'),
+    ['seo'],
     ['@vuepress/back-to-top'],
     ['vuepress-plugin-viewer'],
+    require('./plugins/router'),
     ['vuepress-plugin-code-copy'],
     ['@vuepress/active-header-links'],
     [
