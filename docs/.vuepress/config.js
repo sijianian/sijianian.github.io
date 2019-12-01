@@ -1,6 +1,7 @@
 module.exports = {
   title: "moke's blog",
   description: 'Write the code , Change the world',
+  theme: 'reco',
   head: [
     [
       'meta',
@@ -10,13 +11,13 @@ module.exports = {
       },
     ],
   ],
-  theme: 'reco',
   themeConfig: {
-    author: 'moke',
     type: 'blog',
+    author: 'moke',
+    sidebar: 'auto',
+    startYear: '2017',
     themePicker: false,
     GAID: 'UA-110022311-1',
-    sidebar: 'auto',
     blogConfig: {
       category: {
         location: 1,
@@ -27,11 +28,11 @@ module.exports = {
         text: '标签',
       },
     },
-    lastUpdated: '最后更新时间',
-    repo: 'sijianian',
     docsDir: 'docs',
-    docsBranch: 'vuepress',
     editLinks: true,
+    repo: 'sijianian',
+    docsBranch: 'vuepress',
+    lastUpdated: '最后更新时间',
     editLinkText: '在 GitHub 上编辑此页',
     nav: [
       {
@@ -77,9 +78,9 @@ module.exports = {
   },
   plugins: [
     require('./plugins/router'),
-    ['vuepress-plugin-code-copy', true],
     ['@vuepress/back-to-top'],
     ['vuepress-plugin-viewer'],
+    ['vuepress-plugin-code-copy'],
     ['@vuepress/active-header-links'],
     [
       'vuepress-plugin-baidu-tongji',
@@ -102,18 +103,18 @@ module.exports = {
       {
         choosen: 'gitalk',
         options: {
+          owner: 'sijianian',
+          admin: ['sijianian'],
+          distractionFreeMode: false,
+          repo: 'sijianian.github.io',
+          labels: ['Gitalk', 'Comment'],
+          clientSecret: process.env.GITALK_SECRET || '',
           id:
             '<%- frontmatter.commentId || frontmatter.permalink || window.location.pathname %>',
           title: '「Comment」<%- frontmatter.title %>',
           body:
             '<%- frontmatter.title %>：<%-window.location.origin %><%- frontmatter.to.path || window.location.pathname %>',
           clientID: '7f4f5de62697a83f9e4a',
-          clientSecret: process.env.GITALK_SECRET || '',
-          repo: 'sijianian.github.io',
-          owner: 'sijianian',
-          admin: ['sijianian'],
-          labels: ['Gitalk', 'Comment'],
-          distractionFreeMode: false,
         },
       },
     ],
