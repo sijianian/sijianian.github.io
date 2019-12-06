@@ -23,6 +23,26 @@ categories:
 
 > 回溯算法适合由多个步骤组成的问题，并且每个步骤都有多个选项
 
+## 解题模板
+
+```js
+const backtrack = (result, tempList, nums) => {
+  for (let i = 0; i < nums.length; i++) {
+    tempList.push(nums[i])
+    backtrack(result, tempList, nums)
+    tempList.pop()
+  }
+}
+
+const permute = nums => {
+  const result = []
+
+  backtrack(result, [], nums)
+
+  return result
+}
+```
+
 ## leetcode
 
 [39.组合总和](https://leetcode-cn.com/problems/combination-sum/)

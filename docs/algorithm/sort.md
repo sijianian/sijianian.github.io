@@ -1,5 +1,6 @@
 ---
 title: 排序
+date: 2019-9-16 10:59:17
 categories:
   - 算法
 ---
@@ -133,7 +134,7 @@ const quickSort = array => {
   const right = []
 
   const index = Math.floor(array.length / 2)
-  const mid = array[index]
+  const mid = array.splice(index, 1)[0]
 
   for (let i = 0; i < array.length; i++) {
     if (array[i] < mid) {
