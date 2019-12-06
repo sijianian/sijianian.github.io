@@ -65,3 +65,43 @@ const pivotIndex = function(nums) {
   return -1
 }
 ```
+
+### 至少是其他数字两倍的最大数
+
+[[747] 至少是其他数字两倍的最大数](https://leetcode-cn.com/problems/largest-number-at-least-twice-of-others/description/)
+
+#### 描述
+
+在一个给定的数组 nums 中，总是存在一个最大元素 。
+
+查找数组中的最大元素是否至少是数组中每个其他数字的两倍。
+
+如果是，则返回最大元素的索引，否则返回-1。
+
+#### 思路
+
+- 扫描数组找到唯一的最大元素 m，并记录它的索引 maxIndex。
+- 再次扫描数组，如果我们找到 x != m，m < 2\*x，我们应该返回 -1。
+- 否则返回 maxIndex
+
+#### 题解
+
+```js
+const dominantIndex = function(nums) {
+  let maxIndex = 0
+
+  for (let i = 0; i < nums.length; i++) {
+    if (nums[i] > nums[maxIndex]) {
+      maxIndex = i
+    }
+  }
+
+  for (let i = 0; i < nums.length; i++) {
+    if (maxIndex !== i && nums[maxIndex] < 2 * nums[i]) {
+      return -1
+    }
+  }
+
+  return maxIndex
+}
+```
