@@ -16,7 +16,7 @@ module.exports = [
   [
     '@vuepress/pwa',
     {
-      serviceWorker: true,
+      serviceWorker: false,
       updatePopup: {
         message: '发现页面有新内容',
         buttonText: '刷新',
