@@ -1,5 +1,6 @@
 ---
 title: 工具函数
+date: 2019-10-11 20:53:06
 categories:
   - JS 基础
 tags:
