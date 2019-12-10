@@ -1,6 +1,7 @@
 ---
 title: 浅谈 Web Components
 date: 2018-07-19 11:26:10
+sidebar: auto
 tags:
   - JavaScript
 categories:

@@ -1,6 +1,6 @@
 ---
 title: 手动实现 JSONP
-date: date: 2019-5-6 23:41:17
+date: 2019-5-6 23:41:17
 categories:
   - JS 基础
 tags:

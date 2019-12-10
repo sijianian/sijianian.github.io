@@ -1,6 +1,7 @@
 ---
 title: 深入理解 this
 date: 2018-06-11 20:53:06
+sidebar: auto
 tags:
   - JavaScript
 categories:

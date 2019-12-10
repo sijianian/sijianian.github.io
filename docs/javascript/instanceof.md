@@ -1,5 +1,6 @@
 ---
 title: Instanceof
+date: 2019-5-13 23:41:17
 categories:
   - JS 基础
 tags:

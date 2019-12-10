@@ -1,6 +1,7 @@
 ---
 title: 移动适配总结
 date: 2019-01-07 12:03:37
+sidebar: auto
 tags:
   - JavaScript
   - 移动端

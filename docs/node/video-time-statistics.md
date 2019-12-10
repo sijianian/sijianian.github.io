@@ -1,6 +1,7 @@
 ---
 title: 实现视频数量与时长统计小工具
 date: 2019-11-25 16:00:17
+sidebar: auto
 categories:
   - Node
 tags:

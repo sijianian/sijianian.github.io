@@ -4,7 +4,7 @@ categories:
   - JS 基础
 tags:
   - JavaScript
-sidebarDepth: 5
+sidebarDepth: 2
 ---
 
 - 第一部分：数组

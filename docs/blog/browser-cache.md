@@ -1,6 +1,7 @@
 ---
 title: 浅析浏览器缓存
 date: 2018-07-07 17:35:44
+sidebar: auto
 tags:
   - HTTP
   - WEB

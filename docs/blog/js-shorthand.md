@@ -1,6 +1,7 @@
 ---
 title: JS 简写技术
 date: 2018-07-22 22:21:25
+sidebar: auto
 tags:
   - JavaScript
 categories:

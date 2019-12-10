@@ -1,6 +1,7 @@
 ---
 title: 快速掌握 BFC 原理
 date: 2018-06-30 10:09:01
+sidebar: auto
 tags:
   - CSS
 categories:

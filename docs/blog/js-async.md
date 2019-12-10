@@ -1,6 +1,7 @@
 ---
 title: 浅谈 JavaScript 异步
 date: 2018-06-13 23:38:17
+sidebar: auto
 tags:
   - JavaScript
 categories:

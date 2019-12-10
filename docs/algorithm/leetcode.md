@@ -1,5 +1,6 @@
 ---
 title: leetcode
+date: 2019-11-03 10:59:17
 categories:
   - 算法
 tags:
@@ -9,6 +10,8 @@ tags:
 ## 仓库地址
 
 [https://github.com/sijianian/leetcode](https://github.com/sijianian/leetcode)
+
+正在总结中...^\_^
 
 ## [1] 两数之和
 
@@ -294,6 +297,4 @@ const longestCommonPrefix = strs => {
 }
 ```
 
-## 正在总结中...^_^
-
-不要着急
+## TODO

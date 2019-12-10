@@ -1,6 +1,7 @@
 ---
 title: 浅谈 flex 布局
 date: 2017-11-20 15:24:44
+sidebar: auto
 tags:
   - CSS
 categories:

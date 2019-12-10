@@ -1,5 +1,6 @@
 ---
 title: EventEmitter
+date: 2019-4-12 23:41:17
 categories:
   - JS 基础
 tags:

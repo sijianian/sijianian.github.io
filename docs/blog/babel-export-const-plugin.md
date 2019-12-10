@@ -1,6 +1,7 @@
 ---
 title: 使用 Babel 转换对象 为 export const
 date: 2019-12-02 15:24:44
+sidebar: auto
 tags:
   - Babel
   - Node

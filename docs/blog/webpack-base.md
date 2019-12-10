@@ -1,5 +1,6 @@
 ---
 title: webpack 简单整理
+sidebar: auto
 tags:
   - webpack
 categories:

@@ -1,5 +1,6 @@
 ---
 title: JavaScript 专题
+date: 2019-1-10 23:41:17
 ---
 
 - [工具函数](./tool.md)
@@ -13,3 +14,4 @@ title: JavaScript 专题
 - [前端继承](./inherit.md)
 - [前端路由](./router.md)
 - [函数柯里化](./curry.md)
+- [手动实现 JSONP](./jsonp.md)

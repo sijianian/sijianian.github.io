@@ -1,5 +1,6 @@
 ---
 title: 继承相关
+date: 2019-4-17 23:41:17
 categories:
   - JS 基础
 tags:

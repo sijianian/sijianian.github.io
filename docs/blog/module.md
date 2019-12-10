@@ -1,6 +1,7 @@
 ---
 title: 前端模块化
 date: 2018-06-17 12:25:39
+sidebar: auto
 tags:
   - JavaScript
 categories:

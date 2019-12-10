@@ -1,6 +1,7 @@
 ---
 title: JavaScript 内存管理浅谈
 date: 2018-06-22 11:24:57
+sidebar: auto
 tags:
   - JavaScript
   - 优化

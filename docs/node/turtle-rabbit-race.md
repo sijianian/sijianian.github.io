@@ -1,6 +1,7 @@
 ---
 title: 命令行实现龟兔赛跑
 date: 2019-11-03 23:59:17
+sidebar: auto
 categories:
   - Node
 tags:

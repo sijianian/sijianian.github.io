@@ -1,6 +1,7 @@
 ---
 title: 抽象语法树 Abstract syntax tree
 date: 2018-06-17 16:59:17
+sidebar: auto
 tags:
   - JavaScript
 categories:

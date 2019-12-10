@@ -1,5 +1,6 @@
 ---
 title: 手动实现 call、apply、bind
+date: 2019-2-13 23:41:17
 categories:
   - JS 基础
 tags:

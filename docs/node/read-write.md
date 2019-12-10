@@ -1,6 +1,7 @@
 ---
 title: Node 的文件操作能力
 date: 2019-12-01 12:05:00
+sidebar: auto
 categories:
   - Node
 tags:

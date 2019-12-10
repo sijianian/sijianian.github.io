@@ -1,6 +1,7 @@
 ---
 title: Facebook 应用审核
 date: 2019-05-14 14:30:05
+sidebar: auto
 tags:
   - 经验
   - Facebook

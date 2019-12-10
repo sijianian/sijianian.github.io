@@ -1,6 +1,8 @@
 ---
 title: 常见的 HTTP 头部
+sidebar: auto
 categories:
+  - HTTP
 tags:
   - HTTP
   - 博客

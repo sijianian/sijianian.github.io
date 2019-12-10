@@ -1,6 +1,7 @@
 ---
 title: LTS 查看工具
 date: 2019-11-29 15:33:17
+sidebar: auto
 categories:
   - Node
 tags:

@@ -1,6 +1,7 @@
 ---
 title: 函数去抖和函数节流
 date: 2018-06-28 23:19:56
+sidebar: auto
 tags:
   - JavaScript
 categories:

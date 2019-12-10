@@ -1,5 +1,6 @@
 ---
 title: 手动实现 Promise
+date: 2019-8-24 23:41:17
 categories:
   - JS 基础
 tags:

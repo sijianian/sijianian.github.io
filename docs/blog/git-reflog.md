@@ -1,6 +1,7 @@
 ---
 title: git reflog 命令总结
 date: 2019-03-07 17:35:44
+sidebar: auto
 tags:
   - Git
 ---
