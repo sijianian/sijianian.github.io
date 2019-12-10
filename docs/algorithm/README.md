@@ -1,6 +1,8 @@
 ---
 title: 算法专题
 date: 2019-10-03 10:59:17
+categories:
+  - 算法
 ---
 
 ## 算法类型
@@ -13,3 +15,4 @@ date: 2019-10-03 10:59:17
 - [递归与循环](./recursion-and-loop.md)
 - [排序](./sort.md)
 - [回溯](./backtracking.md)
+- [动态规划](./dynamic.md)
