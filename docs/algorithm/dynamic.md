@@ -7,8 +7,6 @@ categories:
 
 ![](https://static.skynian.cn/20191211222151.png)
 
-<!-- more -->
-
 ## 爬楼梯
 
 [[70] 爬楼梯](https://leetcode-cn.com/problems/climbing-stairs/description/)
