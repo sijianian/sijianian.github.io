@@ -3,6 +3,8 @@ title: JavaScript 专题
 date: 2019-1-10 23:41:17
 ---
 
+> 导航
+
 - [工具函数](./tool.md)
 - [手动实现 call、apply、bind](./manual-implementation-call-apply-bind.md)
 - [EventEmitter](./event-emitter.md)

@@ -5,7 +5,7 @@ categories:
   - 算法
 ---
 
-## 描述
+## 介绍
 
 简单来说，就是从多个解决问题的选项中找出一个可行的解决方案
 
@@ -43,13 +43,17 @@ const permute = nums => {
 }
 ```
 
-## leetcode
+## 组合总和
 
-[39.组合总和](https://leetcode-cn.com/problems/combination-sum/)
+[[39] 组合总和](https://leetcode-cn.com/problems/combination-sum/)
 
-[40.组合总和 II](https://leetcode-cn.com/problems/combination-sum-ii/)
+## 组合总和 II
 
-[46.全排列](https://leetcode-cn.com/problems/permutations/)
+[[40] 组合总和 II](https://leetcode-cn.com/problems/combination-sum-ii/)
+
+## 全排列
+
+[[46] 全排列](https://leetcode-cn.com/problems/permutations/)
 
 ```js
 const backtrack = (result, tempList, nums) => {
@@ -81,9 +85,13 @@ const permute = nums => {
 }
 ```
 
-[46.全排列 II](https://leetcode-cn.com/problems/permutations-ii/)
+## 全排列 II
 
-[78.子集](https://leetcode-cn.com/problems/subsets/)
+[[46] 全排列 II](https://leetcode-cn.com/problems/permutations-ii/)
+
+## 子集
+
+[[78] 子集](https://leetcode-cn.com/problems/subsets/)
 
 ```js
 const backtrack = (list, tempList, nums, start) => {
@@ -103,7 +111,9 @@ const subsets = nums => {
 }
 ```
 
-[90.子集 II](https://leetcode-cn.com/problems/subsets-ii/)
+## 子集 II
+
+[[90] 子集 II](https://leetcode-cn.com/problems/subsets-ii/)
 
 ## 二叉树中和为某一值的路径
 

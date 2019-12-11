@@ -1,5 +1,5 @@
 ---
-title: 排序
+title: 排序算法
 date: 2019-9-16 10:59:17
 categories:
   - 算法

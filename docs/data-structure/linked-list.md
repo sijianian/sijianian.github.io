@@ -1,11 +1,12 @@
 ---
 title: 探索链表
 date: 2019-11-30 18:35:17
+sidebarDepth: 2
 categories:
   - 数据结构
 ---
 
-## 介绍
+## 一、介绍
 
 与数组相似，链表也是一种线性数据结构。这里有一个例子：
 
@@ -17,7 +18,7 @@ categories:
 
 ![](https://static.skynian.cn/20191130183921.png)
 
-## 单链表
+## 二、单链表
 
 ### 设计链表
 
@@ -125,7 +126,7 @@ MyLinkedList.prototype.deleteAtIndex = function(index) {
 }
 ```
 
-## 双指针技巧
+## 三、双指针技巧
 
 让我们从一个经典问题开始：
 
@@ -244,7 +245,7 @@ const removeNthFromEnd = function(head, n) {
 }
 ```
 
-## 经典问题
+## 四、经典问题
 
 - 通过一些测试用例可以节省您的时间。
 
