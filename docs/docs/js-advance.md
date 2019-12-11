@@ -5,4 +5,6 @@ categories:
   - 文档
 ---
 
+> [幕布链接 https://mubu.com/doc/3gurdl28bM](https://mubu.com/doc/3gurdl28bM)
+
 ![](https://static.skynian.cn/20191018225309.png)
