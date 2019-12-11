@@ -4,7 +4,7 @@ module.exports = {
   docsDir: 'docs',
   editLinks: true,
   startYear: '2017',
-  repo: 'sijianian',
+  repo: 'sijianian/sijianian.github.io',
   themePicker: false,
   docsBranch: 'vuepress',
   GAID: 'UA-110022311-1',
