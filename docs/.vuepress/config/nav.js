@@ -9,6 +9,10 @@ module.exports = {
           link: '/docs/fe-system/',
         },
         {
+          text: '前端资料',
+          link: '/docs/front-data/',
+        },
+        {
           text: 'JavaScript 专题',
           link: '/javascript/',
         },
