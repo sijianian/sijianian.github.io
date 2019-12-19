@@ -24,6 +24,20 @@ categories:
 
 [[707] 设计链表](https://leetcode-cn.com/problems/design-linked-list/description/)
 
+#### 描述
+
+设计链表的实现。您可以选择使用单链表或双链表。单链表中的节点应该具有两个属性：val  和  next。val  是当前节点的值，next  是指向下一个节点的指针/引用。如果要使用双向链表，则还需要一个属性  prev  以指示链表中的上一个节点。假设链表中的所有节点都是 0-index 的。
+
+在链表类中实现这些功能：
+
+- get(index)：获取链表中第  index  个节点的值。如果索引无效，则返回-1。
+- addAtHead(val)：在链表的第一个元素之前添加一个值为  val  的节点。插入后，新节点将成为链表的第一个节点。
+- addAtTail(val)：将值为  val 的节点追加到链表的最后一个元素。
+- addAtIndex(index,val)：在链表中的第  index  个节点之前添加值为  val  的节点。如果  index  等于链表的长度，则该节点将附加到链表的末尾。如果 index 大于链表长度，则不会插入节点。如果 index 小于 0，则在头部插入节点。
+- deleteAtIndex(index)：如果索引  index 有效，则删除链表中的第  index 个节点。
+
+#### 题解
+
 ```js
 let Node = function(val) {
   this.val = val
@@ -145,6 +159,14 @@ MyLinkedList.prototype.deleteAtIndex = function(index) {
 
 [[141] 环形链表](https://leetcode-cn.com/problems/linked-list-cycle/description/)
 
+#### 描述
+
+给定一个链表，判断链表中是否有环。
+
+为了表示给定链表中的环，我们使用整数 pos 来表示链表尾连接到链表中的位置（索引从 0 开始）。 如果 pos 是 -1，则在该链表中没有环。
+
+#### 题解
+
 ```js
 const hasCycle = head => {
   let slow = head
@@ -167,6 +189,16 @@ const hasCycle = head => {
 
 [[142] 环形链表 II](https://leetcode-cn.com/problems/linked-list-cycle-ii/description/)
 
+#### 描述
+
+给定一个链表，返回链表开始入环的第一个节点。  如果链表无环，则返回  null。
+
+为了表示给定链表中的环，我们使用整数 pos 来表示链表尾连接到链表中的位置（索引从 0 开始）。 如果 pos 是 -1，则在该链表中没有环。
+
+说明：不允许修改给定的链表。
+
+#### 题解
+
 ```js
 const detectCycle = head => {
   const map = new WeakMap()
@@ -187,6 +219,18 @@ const detectCycle = head => {
 ### 相交链表
 
 [[160] 相交链表](https://leetcode-cn.com/problems/intersection-of-two-linked-lists/description/)
+
+#### 描述
+
+编写一个程序，找到两个单链表相交的起始节点。
+
+如下面的两个链表：
+
+![](https://static.skynian.cn/20191220001435.png)
+
+在节点 c1 开始相交
+
+#### 题解
 
 ```js
 const getIntersectionNode = function(headA, headB) {
@@ -210,7 +254,11 @@ const getIntersectionNode = function(headA, headB) {
 
 [[19] 删除链表的倒数第 N 个节点](https://leetcode-cn.com/problems/remove-nth-node-from-end-of-list/description/)
 
-思路
+#### 描述
+
+![](https://static.skynian.cn/20191220001435.png)
+
+#### 思路
 
 - 整体思路是让前面的指针先移动 n 步，之后前后指针共同移动直到前面的指针到尾部为止
 - 首先设立预先指针 pre，预先指针是一个小技巧，在第 2 题中进行了讲解
@@ -219,6 +267,8 @@ const getIntersectionNode = function(headA, headB) {
 - 因为要删除该节点，所以要移动到该节点的前一个才能删除，所以循环结束条件为 fast.next != null
 - 删除后返回 pre.next，为什么不直接返回 head 呢，因为 head 有可能是被删掉的点
 - 时间复杂度：O(n)O(n)
+
+#### 题解
 
 ```js
 const removeNthFromEnd = function(head, n) {
@@ -265,6 +315,12 @@ const removeNthFromEnd = function(head, n) {
 
 [[206] 反转链表](https://leetcode-cn.com/problems/reverse-linked-list/description/)
 
+#### 描述
+
+反转一个单链表。
+
+#### 题解
+
 ```js
 const reverseList = head => {
   if (head === null) {
@@ -288,6 +344,12 @@ const reverseList = head => {
 ### 移除链表元素
 
 [[203] 移除链表元素](https://leetcode-cn.com/problems/remove-linked-list-elements/description/)
+
+#### 描述
+
+删除链表中等于给定值 val 的所有节点。
+
+#### 题解
 
 ```js
 const removeElements = function(head, val) {
@@ -321,6 +383,14 @@ const removeElements = function(head, val) {
 
 [[328] 奇偶链表](https://leetcode-cn.com/problems/odd-even-linked-list/description/)
 
+#### 描述
+
+给定一个单链表，把所有的奇数节点和偶数节点分别排在一起。请注意，这里的奇数节点和偶数节点指的是节点编号的奇偶性，而不是节点的值的奇偶性。
+
+请尝试使用原地算法完成。你的算法的空间复杂度应为 O(1)，时间复杂度应为 O(nodes)，nodes 为节点总数。
+
+#### 题解
+
 ```js
 const oddEvenList = function(head) {
   if (!head) {
@@ -347,6 +417,12 @@ const oddEvenList = function(head) {
 ### 回文链表
 
 [[234] 回文链表](https://leetcode-cn.com/problems/palindrome-linked-list/description/)
+
+#### 描述
+
+请判断一个链表是否为回文链表。
+
+#### 题解
 
 ```js
 const isPalindrome = head => {
@@ -383,6 +459,12 @@ const isPalindrome = head => {
 
 [[21] 合并两个有序链表](https://leetcode-cn.com/problems/merge-two-sorted-lists/description/)
 
+#### 描述
+
+将两个有序链表合并为一个新的有序链表并返回。新链表是通过拼接给定的两个链表的所有节点组成的。
+
+#### 题解
+
 ```js
 const mergeTwoLists = (l1, l2) => {
   if (l1 === null) {
@@ -406,6 +488,16 @@ const mergeTwoLists = (l1, l2) => {
 ### 两数相加
 
 [[2] 两数相加](https://leetcode-cn.com/problems/add-two-numbers/description/)
+
+#### 描述
+
+给出两个非空 的链表用来表示两个非负的整数。其中，它们各自的位数是按照逆序的方式存储的，并且它们的每个节点只能存储一位数字。
+
+如果，我们将这两个数相加起来，则会返回一个新的链表来表示它们的和。
+
+您可以假设除了数字 0 之外，这两个数都不会以 0  开头。
+
+#### 题解
 
 ```js
 const addTwoNumbers = (l1, l2) => {
@@ -446,6 +538,12 @@ const addTwoNumbers = (l1, l2) => {
 
 [[61] 旋转链表](https://leetcode-cn.com/problems/rotate-list/description/)
 
+#### 描述
+
+给定一个链表，旋转链表，将链表每个节点向右移动 k 个位置，其中 k 是非负数。
+
+#### 题解
+
 ```js
 const rotateRight = (head, k) => {
   let target = head,
@@ -483,6 +581,14 @@ const rotateRight = (head, k) => {
 
 [[430] 扁平化多级双向链表](https://leetcode-cn.com/problems/flatten-a-multilevel-doubly-linked-list/description/)
 
+#### 描述
+
+您将获得一个双向链表，除了下一个和前一个指针之外，它还有一个子指针，可能指向单独的双向链表。这些子列表可能有一个或多个自己的子项，依此类推，生成多级数据结构，如下面的示例所示。
+
+扁平化列表，使所有结点出现在单级双链表中。您将获得列表第一级的头部。
+
+#### 题解
+
 ```js
 const flatten = function(head) {
   const arr = []
@@ -508,6 +614,14 @@ const flatten = function(head) {
 ### 复制带随机指针的链表
 
 [[138] 复制带随机指针的链表](https://leetcode-cn.com/problems/copy-list-with-random-pointer/description/)
+
+#### 描述
+
+给定一个链表，每个节点包含一个额外增加的随机指针，该指针可以指向链表中的任何节点或空节点。
+
+要求返回这个链表的深拷贝。
+
+#### 题解
 
 ```js
 const copyRandomList = function(head) {
