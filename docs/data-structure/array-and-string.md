@@ -16,9 +16,7 @@ sidebarDepth: 2
 
 在上面的例子中，数组 A 中有 6 个元素。也就是说，A 的长度是 6 。我们可以使用 A[0] 来表示数组中的第一个元素。因此，A[0] = 6 。类似地，A[1] = 3，A[2] = 8，依此类推。
 
-### 寻找数组的中心索引
-
-[[724] 寻找数组的中心索引](https://leetcode-cn.com/problems/find-pivot-index/description/)
+### [[724] 寻找数组的中心索引](https://leetcode-cn.com/problems/find-pivot-index/description/)
 
 #### 描述
 
@@ -75,9 +73,7 @@ const pivotIndex = function(nums) {
 }
 ```
 
-### 至少是其他数字两倍的最大数
-
-[[747] 至少是其他数字两倍的最大数](https://leetcode-cn.com/problems/largest-number-at-least-twice-of-others/description/)
+### [[747] 至少是其他数字两倍的最大数](https://leetcode-cn.com/problems/largest-number-at-least-twice-of-others/description/)
 
 #### 描述
 
@@ -115,9 +111,7 @@ const dominantIndex = function(nums) {
 }
 ```
 
-### 加一
-
-[[66] 加一](https://leetcode-cn.com/problems/plus-one/description/)
+### [[66] 加一](https://leetcode-cn.com/problems/plus-one/description/)
 
 #### 描述
 
@@ -149,9 +143,7 @@ const plusOne = function(digits, index = digits.length - 1) {
 
 ## 二、二维数组
 
-### 对角线遍历
-
-[[498] 对角线遍历](https://leetcode-cn.com/problems/diagonal-traverse/description/)
+### [[498] 对角线遍历](https://leetcode-cn.com/problems/diagonal-traverse/description/)
 
 #### 描述
 
@@ -206,9 +198,7 @@ const findDiagonalOrder = function(matrix) {
 }
 ```
 
-### 螺旋矩阵
-
-[[54] 螺旋矩阵](https://leetcode-cn.com/problems/spiral-matrix/description/)
+### [[54] 螺旋矩阵](https://leetcode-cn.com/problems/spiral-matrix/description/)
 
 #### 描述
 
@@ -250,9 +240,7 @@ const spiralOrder = function(matrix) {
 }
 ```
 
-### 杨辉三角
-
-[[118] 杨辉三角](https://leetcode-cn.com/problems/pascals-triangle/description/)
+### [[118] 杨辉三角](https://leetcode-cn.com/problems/pascals-triangle/description/)
 
 #### 描述
 
@@ -294,9 +282,7 @@ const generate = numRows => {
 
 然而，二者之间还是存在一些区别。在这篇文章中，我们将介绍一些在处理字符串时应该注意的问题。这些特性在不同的语言之间可能有很大不同。
 
-### 二进制求和
-
-[[67] 二进制求和](https://leetcode-cn.com/problems/add-binary/description/)
+### [[67] 二进制求和](https://leetcode-cn.com/problems/add-binary/description/)
 
 #### 描述
 
@@ -315,9 +301,7 @@ const addBinary = function(a, b) {
 }
 ```
 
-### 实现 strStr()
-
-[[28] 实现 strStr()](https://leetcode-cn.com/problems/implement-strstr/description/)
+### [[28] 实现 strStr()](https://leetcode-cn.com/problems/implement-strstr/description/)
 
 #### 描述
 
@@ -345,9 +329,7 @@ const strStr = (haystack, needle) => {
 }
 ```
 
-### 最长公共前缀
-
-[[14] 最长公共前缀](https://leetcode-cn.com/problems/longest-common-prefix/description/)
+### [[14] 最长公共前缀](https://leetcode-cn.com/problems/longest-common-prefix/description/)
 
 #### 描述
 
@@ -379,9 +361,7 @@ const longestCommonPrefix = strs => {
 
 在前面，我们通过迭代数组来解决一些问题。通常，我们只使用从第一个元素开始并在最后一个元素结束的一个指针来进行迭代。 但是，有时候，我们可能需要同时使用两个指针来进行迭代。
 
-### 反转字符串
-
-[[344] 反转字符串](https://leetcode-cn.com/problems/reverse-string/description/)
+### [[344] 反转字符串](https://leetcode-cn.com/problems/reverse-string/description/)
 
 #### 描述
 
@@ -416,9 +396,7 @@ const reverseString = s => {
 }
 ```
 
-### 数组拆分 I
-
-[[561] 数组拆分 I](https://leetcode-cn.com/problems/array-partition-i/description/)
+### [[561] 数组拆分 I](https://leetcode-cn.com/problems/array-partition-i/description/)
 
 #### 描述
 
@@ -436,9 +414,7 @@ const arrayPairSum = function(nums) {
 }
 ```
 
-### 两数之和 II - 输入有序数组
-
-[[167] 两数之和 II - 输入有序数组](https://leetcode-cn.com/problems/two-sum-ii-input-array-is-sorted/description/)
+### [[167] 两数之和 II - 输入有序数组](https://leetcode-cn.com/problems/two-sum-ii-input-array-is-sorted/description/)
 
 #### 描述
 
@@ -470,9 +446,7 @@ const twoSum = (numbers, target) => {
 }
 ```
 
-### 移除元素
-
-[[27] 移除元素](https://leetcode-cn.com/problems/remove-element/description/)
+### [[27] 移除元素](https://leetcode-cn.com/problems/remove-element/description/)
 
 #### 描述
 
@@ -504,9 +478,7 @@ const removeElement = function(nums, val) {
 }
 ```
 
-### 最大连续 1 的个数
-
-[[485] 最大连续 1 的个数](https://leetcode-cn.com/problems/max-consecutive-ones/description/)
+### [[485] 最大连续 1 的个数](https://leetcode-cn.com/problems/max-consecutive-ones/description/)
 
 #### 描述
 
@@ -531,9 +503,7 @@ const findMaxConsecutiveOnes = function(nums) {
 }
 ```
 
-### 长度最小的子数组
-
-[[209] 长度最小的子数组](https://leetcode-cn.com/problems/minimum-size-subarray-sum/description/)
+### [[209] 长度最小的子数组](https://leetcode-cn.com/problems/minimum-size-subarray-sum/description/)
 
 #### 描述
 
@@ -577,9 +547,7 @@ const minSubArrayLen = function(s, nums) {
 
 ## 五、小结
 
-### 旋转数组
-
-[[189] 旋转数组](https://leetcode-cn.com/problems/rotate-array/description/)
+### [[189] 旋转数组](https://leetcode-cn.com/problems/rotate-array/description/)
 
 #### 描述
 
@@ -610,9 +578,7 @@ const rotate = (nums, k) => {
 // 空间复杂度：O(1)O(1) 。没有额外空间被使用。
 ```
 
-### 杨辉三角 II
-
-[[119] 杨辉三角 II](https://leetcode-cn.com/problems/pascals-triangle-ii/description/)
+### [[119] 杨辉三角 II](https://leetcode-cn.com/problems/pascals-triangle-ii/description/)
 
 #### 描述
 
@@ -638,9 +604,7 @@ const getRow = function(rowIndex) {
 }
 ```
 
-### 翻转字符串中的单词
-
-[[151] 翻转字符串里的单词](https://leetcode-cn.com/problems/reverse-words-in-a-string/description/)
+### [[151] 翻转字符串里的单词](https://leetcode-cn.com/problems/reverse-words-in-a-string/description/)
 
 #### 描述
 
@@ -659,9 +623,7 @@ const reverseWords = function(s) {
 }
 ```
 
-### 反转字符串中的单词 III
-
-[[557] 反转字符串中的单词 III](https://leetcode-cn.com/problems/reverse-words-in-a-string-iii/description/)
+### [[557] 反转字符串中的单词 III](https://leetcode-cn.com/problems/reverse-words-in-a-string-iii/description/)
 
 #### 描述
 
@@ -682,9 +644,7 @@ const reverseWords = s =>
     .join(' ')
 ```
 
-### 删除排序数组中的重复项
-
-[[26] 删除排序数组中的重复项](https://leetcode-cn.com/problems/remove-duplicates-from-sorted-array/description/)
+### [[26] 删除排序数组中的重复项](https://leetcode-cn.com/problems/remove-duplicates-from-sorted-array/description/)
 
 #### 描述
 
@@ -705,9 +665,7 @@ const removeDuplicates = nums => {
 }
 ```
 
-### 移动零
-
-[[283] 移动零](https://leetcode-cn.com/problems/move-zeroes/description/)
+### [[283] 移动零](https://leetcode-cn.com/problems/move-zeroes/description/)
 
 #### 描述
 

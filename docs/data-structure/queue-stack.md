@@ -14,9 +14,7 @@ categories:
 
 ## 一、队列: 先入先出的数据结构
 
-### 设计循环队列
-
-[[622] 设计循环队列](https://leetcode-cn.com/problems/design-circular-queue/description/)
+### [[622] 设计循环队列](https://leetcode-cn.com/problems/design-circular-queue/description/)
 
 #### 描述
 
@@ -89,25 +87,17 @@ MyCircularQueue.prototype.isFull = function() {
 
 广度优先搜索（BFS）的一个常见应用是找出从根结点到目标结点的最短路径。在本文中，我们提供了一个示例来解释在 BFS 算法中是如何逐步应用队列的。
 
-### 岛屿数量
+### [[200] 岛屿数量](https://leetcode-cn.com/problems/number-of-islands/description/)
 
-[[200] 岛屿数量](https://leetcode-cn.com/problems/number-of-islands/description/)
+### [[752] 打开转盘锁](https://leetcode-cn.com/problems/open-the-lock/description/)
 
-### 打开转盘锁
-
-[[752] 打开转盘锁](https://leetcode-cn.com/problems/open-the-lock/description/)
-
-### 完全平方数
-
-[[279] 完全平方数](https://leetcode-cn.com/problems/perfect-squares/description/)
+### [[279] 完全平方数](https://leetcode-cn.com/problems/perfect-squares/description/)
 
 ## 三、栈：后入先出的数据结构
 
 ![](https://static.skynian.cn/20191130212234.png)
 
-### 最小栈
-
-[[155] 最小栈](https://leetcode-cn.com/problems/min-stack/description/)
+### [[155] 最小栈](https://leetcode-cn.com/problems/min-stack/description/)
 
 #### 描述
 
@@ -163,9 +153,7 @@ MinStack.prototype.getMin = function() {
 }
 ```
 
-### 有效的括号
-
-[[20] 有效的括号](https://leetcode-cn.com/problems/valid-parentheses/description/)
+### [[20] 有效的括号](https://leetcode-cn.com/problems/valid-parentheses/description/)
 
 #### 描述
 

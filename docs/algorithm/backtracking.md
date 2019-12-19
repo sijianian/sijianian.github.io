@@ -1,11 +1,12 @@
 ---
 title: 回溯算法
 date: 2019-11-01 10:59:17
+sidebarDepth: 2
 categories:
   - 算法
 ---
 
-## 介绍
+## 一、介绍
 
 简单来说，就是从多个解决问题的选项中找出一个可行的解决方案
 
@@ -23,7 +24,7 @@ categories:
 
 > 回溯算法适合由多个步骤组成的问题，并且每个步骤都有多个选项
 
-## 解题模板
+## 二、解题模板
 
 ```js
 const backtrack = (result, tempList, nums) => {
@@ -43,17 +44,57 @@ const permute = nums => {
 }
 ```
 
-## 组合总和
+## 三、经典题目
 
-[[39] 组合总和](https://leetcode-cn.com/problems/combination-sum/)
+### [[39] 组合总和](https://leetcode-cn.com/problems/combination-sum/)
 
-## 组合总和 II
+#### 描述
 
-[[40] 组合总和 II](https://leetcode-cn.com/problems/combination-sum-ii/)
+给定一个无重复元素的数组  candidates  和一个目标数  target ，找出  candidates  中所有可以使数字和为  target  的组合。
 
-## 全排列
+candidates  中的数字可以无限制重复被选取。
 
-[[46] 全排列](https://leetcode-cn.com/problems/permutations/)
+说明：
+
+所有数字（包括  target）都是正整数。
+解集不能包含重复的组合。
+
+#### 题解
+
+```js
+// TODO:
+```
+
+### [[40] 组合总和 II](https://leetcode-cn.com/problems/combination-sum-ii/)
+
+#### 描述
+
+给定一个数组  candidates  和一个目标数  target ，找出  candidates  中所有可以使数字和为  target  的组合。
+
+candidates  中的每个数字在每个组合中只能使用一次。
+
+说明：
+
+所有数字（包括目标数）都是正整数。
+解集不能包含重复的组合。
+
+#### 题解
+
+```js
+// TODO:
+```
+
+### [[46] 全排列](https://leetcode-cn.com/problems/permutations/)
+
+#### 描述
+
+给定一个没有重复数字的序列，返回其所有可能的全排列。
+
+示例:
+
+![](https://static.skynian.cn/20191220002631.png)
+
+#### 题解
 
 ```js
 const backtrack = (result, tempList, nums) => {
@@ -85,13 +126,11 @@ const permute = nums => {
 }
 ```
 
-## 全排列 II
+### [[47] 全排列 II](https://leetcode-cn.com/problems/permutations-ii/)
 
-[[46] 全排列 II](https://leetcode-cn.com/problems/permutations-ii/)
+### [[78] 子集](https://leetcode-cn.com/problems/subsets/)
 
-## 子集
-
-[[78] 子集](https://leetcode-cn.com/problems/subsets/)
+#### 题解
 
 ```js
 const backtrack = (list, tempList, nums, start) => {
@@ -111,19 +150,17 @@ const subsets = nums => {
 }
 ```
 
-## 子集 II
+### [[90] 子集 II](https://leetcode-cn.com/problems/subsets-ii/)
 
-[[90] 子集 II](https://leetcode-cn.com/problems/subsets-ii/)
+### 二叉树中和为某一值的路径
 
-## 二叉树中和为某一值的路径
-
-### 描述
+#### 描述
 
 输入一颗二叉树的跟节点和一个整数，打印出二叉树中结点值的和为输入整数的所有路径。路径定义为从树的根结点开始往下一直到叶结点所经过的结点形成一条路径。
 
 > `二叉树` `回溯`
 
-### 思路
+#### 思路
 
 套用回溯算法的思路
 
@@ -147,7 +184,7 @@ const subsets = nums => {
 
 - 若上述条件均不满足，或已经遍历过，将当前节点出栈，向上回溯
 
-### 代码
+#### 代码
 
 ```js
 const findPathCore = (node, expectNumber, stack, sum, result) => {
@@ -181,13 +218,13 @@ export const findPath = (root, expectNumber) => {
 }
 ```
 
-## 字符串的排列
+### 字符串的排列
 
-### 描述
+#### 描述
 
 输入一个字符串,按字典序打印出该字符串中字符的所有排列。例如输入字符串 `abc`,则打印出由字符 `a,b,c` 所能排列出来的所有字符串 `abc,acb,bac,bca,cab`和 `cba`。
 
-### 思路
+#### 思路
 
 使用回溯法
 
@@ -203,7 +240,7 @@ export const findPath = (root, expectNumber) => {
 递归排列 `queue` 中剩余的字符
 为了不影响后续排列，每次递归完成，将当前递归的字符 `temp` 加回队列
 
-### 代码
+#### 代码
 
 ```js
 const permutationCore = (queue, result, temp = '', current = '') => {
@@ -234,17 +271,17 @@ export const permutation = str => {
 }
 ```
 
-## 和为 sum 的 n 个数
+### 和为 sum 的 n 个数
 
-### 描述
+#### 描述
 
 给定无序、不重复的数组 `data`，取出 `n` 个数，使其相加和为 `sum`
 
-### 思路
+#### 思路
 
 基于上面字符串排列题目的变形，我们从 `array` 中取出 `n` 个数的全排列，在取的同时判断是否符合条件
 
-### 代码
+#### 代码
 
 ```js
 const getAll = (array, n, sum, temp) => {
@@ -273,10 +310,10 @@ const arr = [1, 2, 3, 4, 5, 6]
 console.log(getAll(arr, 3, 10, []))
 ```
 
-## 矩阵中的路径
+### 矩阵中的路径
 
-## 机器人的运动范围
+### 机器人的运动范围
 
-## N 皇后的问题
+### N 皇后的问题
 
-## N 皇后的问题 2
+### N 皇后的问题 2

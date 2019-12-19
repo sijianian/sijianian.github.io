@@ -14,9 +14,7 @@ categories:
 
 ## 一、树的遍历
 
-### 前序遍历
-
-[[144] 二叉树的前序遍历](https://leetcode-cn.com/problems/binary-tree-preorder-traversal/)
+### [[144] 二叉树的前序遍历](https://leetcode-cn.com/problems/binary-tree-preorder-traversal/)
 
 #### 题解
 
@@ -56,9 +54,7 @@ const preorderTraversal2 = root => {
 }
 ```
 
-### 中序遍历
-
-[[94] 二叉树的中序遍历](https://leetcode-cn.com/problems/binary-tree-inorder-traversal/)
+### [[94] 二叉树的中序遍历](https://leetcode-cn.com/problems/binary-tree-inorder-traversal/)
 
 #### 题解
 
@@ -98,9 +94,7 @@ const inorderTraversal2 = root => {
 }
 ```
 
-### 后序遍历
-
-[[145] 二叉树的后序遍历](https://leetcode-cn.com/problems/binary-tree-postorder-traversal/)
+### [[145] 二叉树的后序遍历](https://leetcode-cn.com/problems/binary-tree-postorder-traversal/)
 
 #### 思路
 
@@ -153,9 +147,7 @@ const postorderTraversal2 = root => {
 }
 ```
 
-### 层次遍历
-
-[[102] 二叉树的层次遍历](https://leetcode-cn.com/problems/binary-tree-level-order-traversal/)
+### [[102] 二叉树的层次遍历](https://leetcode-cn.com/problems/binary-tree-level-order-traversal/)
 
 #### 题解
 
@@ -195,9 +187,7 @@ const levelOrder = root => {
 
 ## 二、运用递归解决问题
 
-### 二叉树的最大深度
-
-[[104] https://leetcode-cn.com/problems/maximum-depth-of-binary-tree/](https://leetcode-cn.com/problems/maximum-depth-of-binary-tree/)
+### [[104] 二叉树的最大深度](https://leetcode-cn.com/problems/maximum-depth-of-binary-tree/)
 
 #### 题解
 
@@ -207,9 +197,7 @@ const maxDepth = root => {
 }
 ```
 
-### 对称二叉树
-
-[[101] https://leetcode-cn.com/problems/symmetric-tree/](https://leetcode-cn.com/problems/symmetric-tree/)
+### [[101] 对称二叉树](https://leetcode-cn.com/problems/symmetric-tree/)
 
 #### 描述
 
@@ -246,9 +234,7 @@ const isSymmetric = root => {
 }
 ```
 
-### 路径总和
-
-[[112] https://leetcode-cn.com/problems/path-sum/](https://leetcode-cn.com/problems/path-sum/)
+### [[112] 路径总和](https://leetcode-cn.com/problems/path-sum/)
 
 #### 描述
 
@@ -289,26 +275,14 @@ const hasPathSum = (root, sum) => {
 
 ## 三、进阶
 
-### 从中序与后序遍历序列构造二叉树
+### [[106] 从中序与后序遍历序列构造二叉树](https://leetcode-cn.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/)
 
-[[106] https://leetcode-cn.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/](https://leetcode-cn.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/)
+### [[105] 从前序与中序遍历序列构造二叉树](https://leetcode-cn.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/)
 
-### 从前序与中序遍历序列构造二叉树
+### [[116] 填充每个节点的下一个右侧节点指针](https://leetcode-cn.com/problems/populating-next-right-pointers-in-each-node/)
 
-[[105] https://leetcode-cn.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/](https://leetcode-cn.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/)
+### [[117] 填充每个节点的下一个右侧节点指针 II](https://leetcode-cn.com/problems/populating-next-right-pointers-in-each-node-ii/)
 
-### 填充每个节点的下一个右侧节点指针
+### [[236]二叉树的最近公共祖先](https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-tree/)
 
-[[116] https://leetcode-cn.com/problems/populating-next-right-pointers-in-each-node/](https://leetcode-cn.com/problems/populating-next-right-pointers-in-each-node/)
-
-### 填充每个节点的下一个右侧节点指针 II
-
-[[117] https://leetcode-cn.com/problems/populating-next-right-pointers-in-each-node-ii/](https://leetcode-cn.com/problems/populating-next-right-pointers-in-each-node-ii/)
-
-### 二叉树的最近公共祖先
-
-[[236] https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-tree/](https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-tree/)
-
-### 二叉树的序列化与反序列化
-
-[[297] https://leetcode-cn.com/problems/serialize-and-deserialize-binary-tree/](https://leetcode-cn.com/problems/serialize-and-deserialize-binary-tree/)
+### [[297] 二叉树的序列化与反序列化](https://leetcode-cn.com/problems/serialize-and-deserialize-binary-tree/)

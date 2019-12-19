@@ -20,9 +20,7 @@ categories:
 
 ## 二、单链表
 
-### 设计链表
-
-[[707] 设计链表](https://leetcode-cn.com/problems/design-linked-list/description/)
+### [[707] 设计链表](https://leetcode-cn.com/problems/design-linked-list/description/)
 
 #### 描述
 
@@ -155,9 +153,7 @@ MyLinkedList.prototype.deleteAtIndex = function(index) {
 1. 如果没有环，快指针将停在链表的末尾
 2. 如果有环，快指针最终将于慢指针相遇
 
-### 环形链表
-
-[[141] 环形链表](https://leetcode-cn.com/problems/linked-list-cycle/description/)
+### [[141] 环形链表](https://leetcode-cn.com/problems/linked-list-cycle/description/)
 
 #### 描述
 
@@ -185,9 +181,7 @@ const hasCycle = head => {
 }
 ```
 
-### 环形链表 II
-
-[[142] 环形链表 II](https://leetcode-cn.com/problems/linked-list-cycle-ii/description/)
+### [[142] 环形链表 II](https://leetcode-cn.com/problems/linked-list-cycle-ii/description/)
 
 #### 描述
 
@@ -216,9 +210,7 @@ const detectCycle = head => {
 }
 ```
 
-### 相交链表
-
-[[160] 相交链表](https://leetcode-cn.com/problems/intersection-of-two-linked-lists/description/)
+### [[160] 相交链表](https://leetcode-cn.com/problems/intersection-of-two-linked-lists/description/)
 
 #### 描述
 
@@ -250,9 +242,7 @@ const getIntersectionNode = function(headA, headB) {
 }
 ```
 
-### 删除链表的倒数第 n 个节点
-
-[[19] 删除链表的倒数第 N 个节点](https://leetcode-cn.com/problems/remove-nth-node-from-end-of-list/description/)
+### [[19] 删除链表的倒数第 N 个节点](https://leetcode-cn.com/problems/remove-nth-node-from-end-of-list/description/)
 
 #### 描述
 
@@ -311,9 +301,7 @@ const removeNthFromEnd = function(head, n) {
 
 你无法追溯单链表中的前一个结点。因此，您不仅要存储当前结点，还要存储前一个结点。这在双链表中是不同的，我们将在后面的章节中介绍。
 
-### 反转链表
-
-[[206] 反转链表](https://leetcode-cn.com/problems/reverse-linked-list/description/)
+### [[206] 反转链表](https://leetcode-cn.com/problems/reverse-linked-list/description/)
 
 #### 描述
 
@@ -341,9 +329,7 @@ const reverseList = head => {
 }
 ```
 
-### 移除链表元素
-
-[[203] 移除链表元素](https://leetcode-cn.com/problems/remove-linked-list-elements/description/)
+### [[203] 移除链表元素](https://leetcode-cn.com/problems/remove-linked-list-elements/description/)
 
 #### 描述
 
@@ -379,9 +365,7 @@ const removeElements = function(head, val) {
 }
 ```
 
-### 奇偶链表
-
-[[328] 奇偶链表](https://leetcode-cn.com/problems/odd-even-linked-list/description/)
+### [[328] 奇偶链表](https://leetcode-cn.com/problems/odd-even-linked-list/description/)
 
 #### 描述
 
@@ -414,9 +398,7 @@ const oddEvenList = function(head) {
 }
 ```
 
-### 回文链表
-
-[[234] 回文链表](https://leetcode-cn.com/problems/palindrome-linked-list/description/)
+### [[234] 回文链表](https://leetcode-cn.com/problems/palindrome-linked-list/description/)
 
 #### 描述
 
@@ -455,9 +437,7 @@ const isPalindrome = head => {
 }
 ```
 
-### 合并两个有序链表
-
-[[21] 合并两个有序链表](https://leetcode-cn.com/problems/merge-two-sorted-lists/description/)
+### [[21] 合并两个有序链表](https://leetcode-cn.com/problems/merge-two-sorted-lists/description/)
 
 #### 描述
 
@@ -485,9 +465,7 @@ const mergeTwoLists = (l1, l2) => {
 }
 ```
 
-### 两数相加
-
-[[2] 两数相加](https://leetcode-cn.com/problems/add-two-numbers/description/)
+### [[2] 两数相加](https://leetcode-cn.com/problems/add-two-numbers/description/)
 
 #### 描述
 
@@ -534,9 +512,7 @@ const addTwoNumbers = (l1, l2) => {
 }
 ```
 
-### 旋转链表
-
-[[61] 旋转链表](https://leetcode-cn.com/problems/rotate-list/description/)
+### [[61] 旋转链表](https://leetcode-cn.com/problems/rotate-list/description/)
 
 #### 描述
 
@@ -577,9 +553,7 @@ const rotateRight = (head, k) => {
 }
 ```
 
-### 扁平化多级双向链表
-
-[[430] 扁平化多级双向链表](https://leetcode-cn.com/problems/flatten-a-multilevel-doubly-linked-list/description/)
+### [[430] 扁平化多级双向链表](https://leetcode-cn.com/problems/flatten-a-multilevel-doubly-linked-list/description/)
 
 #### 描述
 
@@ -611,9 +585,7 @@ const flatten = function(head) {
 }
 ```
 
-### 复制带随机指针的链表
-
-[[138] 复制带随机指针的链表](https://leetcode-cn.com/problems/copy-list-with-random-pointer/description/)
+### [[138] 复制带随机指针的链表](https://leetcode-cn.com/problems/copy-list-with-random-pointer/description/)
 
 #### 描述
 
