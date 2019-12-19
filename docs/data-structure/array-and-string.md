@@ -533,13 +533,131 @@ const findMaxConsecutiveOnes = function(nums) {
 
 ### 长度最小的子数组
 
+[[209] 长度最小的子数组](https://leetcode-cn.com/problems/minimum-size-subarray-sum/description/)
+
+#### 描述
+
+给定一个含有  n  个正整数的数组和一个正整数  s ，找出该数组中满足其和 ≥ s 的长度最小的连续子数组。如果不存在符合条件的连续子数组，返回 0。
+
+#### 思路
+
+- 初始化 left 指向 0 且初始化 sum 为 0
+- 遍历 nums 数组：
+  - 将 nums[i] 添加到 sum
+  - 当 sum 大于等于 s 时
+    - 更新 ans = min(ans, i + 1 - left)，其中 i + 1 - left 是当前子数组的长度
+    - 然后我们可以移动左端点，因为以它为开头的满足 sum >= s 条件的最短数组已经求出来了
+    - 将 sum 减去 nums[left] 然后增加 left
+
+#### 题解
+
+```js
+const minSubArrayLen = function(s, nums) {
+  let min = Infinity
+  let left = 0
+  let sum = 0
+
+  for (let i = 0; i < nums.length; i++) {
+    sum += nums[i]
+    while (sum >= s) {
+      min = Math.min(min, i + 1 - left)
+      sum -= nums[left++]
+    }
+  }
+
+  return min === Infinity ? 0 : min
+}
+```
+
+#### 复杂度分析
+
+- 时间复杂度：O(n)O(n) 。每个指针移动都需要 O(n)O(n) 的时间。
+  - 每个元素至多被访问两次，一次被右端点访问，一次被左端点访问。
+- 空间复杂度：O(1)O(1) 。left，sum，ans 以及 i 这些变量只需要常数个空间。
+
 ## 五、小结
 
 ### 旋转数组
 
+[[189] 旋转数组](https://leetcode-cn.com/problems/rotate-array/description/)
+
+#### 描述
+
+给定一个数组，将数组中的元素向右移动 k 个位置，其中 k 是非负数。
+
+#### 思路
+
+最简单的方法是旋转 k 次，每次将数组旋转 1 个元素。
+
+#### 题解
+
+```js
+const rotate = (nums, k) => {
+  let temp
+  let prev
+
+  for (let i = 0; i < k; i++) {
+    prev = nums[nums.length - 1]
+
+    for (let j = 0; j < nums.length; j++) {
+      temp = nums[j]
+      nums[j] = prev
+      prev = temp
+    }
+  }
+}
+// 时间复杂度：O(n*k)O(n∗k) 。每个元素都被移动 1 步（O(n)O(n)） k次（O(k)O(k)） 。
+// 空间复杂度：O(1)O(1) 。没有额外空间被使用。
+```
+
 ### 杨辉三角 II
 
+[[119] 杨辉三角 II](https://leetcode-cn.com/problems/pascals-triangle-ii/description/)
+
+#### 描述
+
+给定一个非负索引  k，其中 k ≤ 33，返回杨辉三角的第 k 行。
+
+#### 题解
+
+```js
+const getRow = function(rowIndex) {
+  let row = [1]
+
+  for (let i = 1; i <= rowIndex; i++) {
+    for (let j = i; j > 0; j--) {
+      if (j === i) {
+        row[j] = 1
+      } else {
+        row[j] = row[j - 1] + row[j]
+      }
+    }
+  }
+
+  return row
+}
+```
+
 ### 翻转字符串中的单词
+
+[[151] 翻转字符串里的单词](https://leetcode-cn.com/problems/reverse-words-in-a-string/description/)
+
+#### 描述
+
+给定一个字符串，逐个翻转字符串中的每个单词。
+
+#### 题解
+
+```js
+const reverseWords = function(s) {
+  return s
+    .trim()
+    .split(' ')
+    .filter(item => item)
+    .reverse()
+    .join(' ')
+}
+```
 
 ### 反转字符串中的单词 III
 
@@ -588,3 +706,22 @@ const removeDuplicates = nums => {
 ```
 
 ### 移动零
+
+[[283] 移动零](https://leetcode-cn.com/problems/move-zeroes/description/)
+
+#### 描述
+
+给定一个数组 nums，编写一个函数将所有 0 移动到数组的末尾，同时保持非零元素的相对顺序。
+
+#### 题解
+
+```js
+const moveZeroes = function(nums) {
+  for (let i = nums.length - 1; i >= 0; i--) {
+    if (nums[i] === 0) {
+      nums.splice(i, 1)
+      nums.push(0)
+    }
+  }
+}
+```
