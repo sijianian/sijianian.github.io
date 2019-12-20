@@ -40,7 +40,7 @@ module.exports = {
       ],
     },
     {
-      text: '安利',
+      text: '推荐',
       link: '/reprint/',
       icon: 'reco-other',
     },
