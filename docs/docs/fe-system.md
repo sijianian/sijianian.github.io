@@ -10,11 +10,9 @@ categories:
 
 非常感谢 @Conardli 大大的自检清单，自己尝试进行回顾和解答 🤙
 
-对部分问题进行解答
+> [个人回顾和解答幕布链接：https://mubu.com/doc/347X3KU6aM](https://mubu.com/doc/347X3KU6aM)
 
 ![](https://static.skynian.cn/20191024212653.png)
-
-> [幕布链接：https://mubu.com/doc/347X3KU6aM](https://mubu.com/doc/347X3KU6aM)
 
 ## 一、JavaScript 基础
 
