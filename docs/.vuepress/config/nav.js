@@ -1,6 +1,6 @@
 module.exports = {
   nav: [
-    { text: '博客', link: '/categories/博客/', icon: 'reco-blog' },
+    // { text: '博客', link: '/categories/博客/', icon: 'reco-blog' },
     {
       text: '前端',
       items: [
@@ -38,6 +38,11 @@ module.exports = {
           link: '/data-structure/',
         },
       ],
+    },
+    {
+      text: '安利',
+      link: '/reprint/',
+      icon: 'reco-other',
     },
     {
       text: 'TimeLine',

@@ -31,5 +31,6 @@ module.exports = {
       '/data-structure/linked-list',
       '/data-structure/binary-tree',
     ],
+    '/reprint/': ['/reprint/'],
   },
 }
