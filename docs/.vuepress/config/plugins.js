@@ -3,7 +3,6 @@ const router = require('../plugins/router')
 module.exports = [
   ['seo'],
   router,
-  ['@vuepress/back-to-top'],
   ['vuepress-plugin-viewer'],
   ['vuepress-plugin-code-copy'],
   ['@vuepress/active-header-links'],

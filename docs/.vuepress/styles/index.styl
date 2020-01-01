@@ -16,6 +16,11 @@ html, body, #app {
   text-shadow: none;
 }
 
-h4 {
-  color: blue;
+.hero {
+  .mask {
+    background-size: auto !important;
+    &:after {
+      background: var(--background-color) !important;
+    }
+  }
 }
