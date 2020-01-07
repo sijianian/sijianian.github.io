@@ -1,4 +1,4 @@
-![](https://static.skynian.cn/18-12-25/2092366.jpg)
+![](https://mubu.com/document_image/d8ef7ebb-3d02-4631-959f-ff1056717c06-676462.jpg)
 
 <div align="center" class="show-in-github">
   <a href="https://skynian.com/">
