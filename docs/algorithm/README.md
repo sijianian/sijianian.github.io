@@ -7,7 +7,7 @@ categories:
 
 > 算法类型
 
-![](https://static.skynian.cn/20191103155946.png)
+![](https://mubu.com/document_image/c1208df8-d664-44f9-8cfa-c1ad44255840-676462.jpg)
 
 > 导航
 
