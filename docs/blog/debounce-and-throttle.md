@@ -97,4 +97,4 @@ document.querySelector('#panel').addEventListener('mousemove', mousemove)
 
 >  函数抖动和节流视图
 
-![debounce-and-throttle-2018628233717](https://static.skynian.cn/debounce-and-throttle-2018628233717.png)
+![debounce-and-throttle-2018628233717](http://q3roqx7vi.bkt.clouddn.com/debounce-and-throttle-2018628233717.png)

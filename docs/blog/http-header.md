@@ -11,8 +11,8 @@ tags:
 
 ## Request Header
 
-![](https://static.skynian.cn/20191030222619.png)
+![](http://q3roqx7vi.bkt.clouddn.com/20191030222619.png)
 
 ## Response Header
 
-![](https://static.skynian.cn/20191030222638.png)
+![](http://q3roqx7vi.bkt.clouddn.com/20191030222638.png)

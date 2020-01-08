@@ -5,7 +5,7 @@ categories:
   - 算法
 ---
 
-![](https://static.skynian.cn/20191211222151.png)
+![](http://q3roqx7vi.bkt.clouddn.com/20191211222151.png)
 
 ## [[70] 爬楼梯](https://leetcode-cn.com/problems/climbing-stairs/description/)
 

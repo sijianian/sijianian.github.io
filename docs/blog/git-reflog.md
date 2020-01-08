@@ -34,4 +34,4 @@ git reflog
 get reset --hard xxxxxx
 ```
 
-![](https://static.skynian.cn/20190315143010.png)
+![](http://q3roqx7vi.bkt.clouddn.com/20190315143010.png)

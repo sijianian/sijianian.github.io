@@ -6,7 +6,7 @@ categories:
   - 数据结构
 ---
 
-![](https://static.skynian.cn/20191130211217.png)
+![](http://q3roqx7vi.bkt.clouddn.com/20191130211217.png)
 
 在 `FIFO` 数据结构中，将`首先处理添加到队列中的第一个元素`。
 
@@ -95,7 +95,7 @@ MyCircularQueue.prototype.isFull = function() {
 
 ## 三、栈：后入先出的数据结构
 
-![](https://static.skynian.cn/20191130212234.png)
+![](http://q3roqx7vi.bkt.clouddn.com/20191130212234.png)
 
 ### [[155] 最小栈](https://leetcode-cn.com/problems/min-stack/description/)
 

@@ -12,11 +12,11 @@ tags:
 
 ## 前言
 
-![](https://static.skynian.cn/20191102113824.png)
+![](http://q3roqx7vi.bkt.clouddn.com/20191102113824.png)
 
 [chalk-animation](https://github.com/bokub/chalk-animation)是一个非常有意思的 Node 命令行动画库，如下所示
 
-![](https://static.skynian.cn/20191102235655.gif)
+![](http://q3roqx7vi.bkt.clouddn.com/20191102235655.gif)
 
 看起来非常的花里胡哨，但是我喜欢！_(:з」∠)_
 
@@ -133,7 +133,7 @@ Proxy 用于修改某些操作的默认行为，等同于在语言层面做出�
 
 ## 实现效果
 
-![](https://static.skynian.cn/20191102114152.gif)
+![](http://q3roqx7vi.bkt.clouddn.com/20191102114152.gif)
 
 ## 详细代码
 

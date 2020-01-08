@@ -10,7 +10,7 @@ categories:
 
 > [个人总结 幕布链接：https://mubu.com/doc/347X3KU6aM](https://mubu.com/doc/347X3KU6aM)
 
-![](https://static.skynian.cn/20191024212653.png)
+![](http://q3roqx7vi.bkt.clouddn.com/20191024212653.png)
 
 ## 一、JavaScript 基础
 

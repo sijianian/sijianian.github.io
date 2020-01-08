@@ -18,7 +18,7 @@ const swap = (array, left, right) => {
 
 ## 冒泡排序
 
-![](https://static.skynian.cn/20191021221826)
+![](http://q3roqx7vi.bkt.clouddn.com/20191021221826)
 
 ```js
 const bubble = array => {
@@ -36,7 +36,7 @@ const bubble = array => {
 
 ## 插入排序
 
-![](https://static.skynian.cn/20191021221827)
+![](http://q3roqx7vi.bkt.clouddn.com/20191021221827)
 
 ```js
 const insertion = array => {
@@ -52,7 +52,7 @@ const insertion = array => {
 
 ## 选择排序
 
-![](https://static.skynian.cn/20191021221828)
+![](http://q3roqx7vi.bkt.clouddn.com/20191021221828)
 
 ```js
 const selection = array => {
@@ -71,7 +71,7 @@ const selection = array => {
 
 ## 归并排序
 
-![](https://static.skynian.cn/20191021222141)
+![](http://q3roqx7vi.bkt.clouddn.com/20191021222141)
 
 ```js
 function sort(array) {
@@ -126,7 +126,7 @@ function mergeSort(array, left, right) {
 
 ## 快速排序
 
-![](https://static.skynian.cn/20191021222105)
+![](http://q3roqx7vi.bkt.clouddn.com/20191021222105)
 
 ```js
 const quickSort = array => {

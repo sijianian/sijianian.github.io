@@ -20,7 +20,7 @@ categories:
 
 如图：
 
-![](https://static.skynian.cn/Abstract-syntax-tree-2018617171212.jpg)
+![](http://q3roqx7vi.bkt.clouddn.com/Abstract-syntax-tree-2018617171212.jpg)
 
 如上图中的变量声明语句，转化成 AST 之后就是有图的样子
 

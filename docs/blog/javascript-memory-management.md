@@ -23,7 +23,7 @@ JavaScript 中的内存管理，给我的感觉可能一种偏科。我们平时
 
 ## 内存生命周期
 
-![内存生命周期](https://static.skynian.cn/javascript-memory-management-201862211342.jpg)
+![内存生命周期](http://q3roqx7vi.bkt.clouddn.com/javascript-memory-management-201862211342.jpg)
 
 上图的流程是：
 
@@ -87,7 +87,7 @@ IE 6, 7 使用引用计数方式对 DOM 对象进行垃圾回收. 该方式常�
 
 到目前为止，IE、Firefox、Opera、Chrome、Safari 的 js 实现使用的都是标记清除的垃圾回收策略或类似的策略，只不过垃圾收集的时间间隔互不相同。
 
-![标记-清除算法](https://static.skynian.cn/javascript-memory-management-20186221499.jpg)
+![标记-清除算法](http://q3roqx7vi.bkt.clouddn.com/javascript-memory-management-20186221499.jpg)
 
 ## 自动 GC 的问题
 

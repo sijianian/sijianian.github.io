@@ -33,7 +33,7 @@ categories:
 
 主线程从“任务队列”中读取事件，不断循环
 
-![](https://static.skynian.cn/js-async-201861401039.jpg)
+![](http://q3roqx7vi.bkt.clouddn.com/js-async-201861401039.jpg)
 
 ## Macrotask 和 Microtask
 
@@ -49,7 +49,7 @@ categories:
 
 第二步会执行整个 Microtask 队列中的所有任务。
 
-![](https://static.skynian.cn/js-async-2018614020.png)
+![](http://q3roqx7vi.bkt.clouddn.com/js-async-2018614020.png)
 
 > 接下来，我们用代码来感受
 
@@ -87,7 +87,7 @@ timeout1
 
 [地址](https://jakearchibald.com/2015/tasks-microtasks-queues-and-schedules/)
 
-![](https://static.skynian.cn/js-async-20186140952.png)
+![](http://q3roqx7vi.bkt.clouddn.com/js-async-20186140952.png)
 
 ## 作用
 

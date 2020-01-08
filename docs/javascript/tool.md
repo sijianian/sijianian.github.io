@@ -343,9 +343,9 @@ const comments = [
 const nestedComments = nest(comments) // [{ id: 1, parent_id: null, children: [...] }]
 ```
 
-![](https://static.skynian.cn/20191022232102.png)
+![](http://q3roqx7vi.bkt.clouddn.com/20191022232102.png)
 
-![](https://static.skynian.cn/20191022232111.png)
+![](http://q3roqx7vi.bkt.clouddn.com/20191022232111.png)
 
 ## 函数
 
@@ -1098,4 +1098,4 @@ const escapeHTML = str =>
 escapeHTML('<a href="#">Me & you</a>') // '&lt;a href=&quot;#&quot;&gt;Me &amp; you&lt;/a&gt;'
 ```
 
-![](https://static.skynian.cn/20191023004553.png)
+![](http://q3roqx7vi.bkt.clouddn.com/20191023004553.png)

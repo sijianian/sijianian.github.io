@@ -10,13 +10,13 @@ categories:
 
 与数组相似，链表也是一种线性数据结构。这里有一个例子：
 
-![](https://static.skynian.cn/20191130183814.png)
+![](http://q3roqx7vi.bkt.clouddn.com/20191130183814.png)
 
 正如你看到的，链表中的每个元素实际上是一个单独的对象，而所有对象都通过每个元素中的引用字段链接在一起。
 
 链表有两种类型：单链表和双链表。上面给出的例子是一个单链表，这里有一个双链表的例子：
 
-![](https://static.skynian.cn/20191130183921.png)
+![](http://q3roqx7vi.bkt.clouddn.com/20191130183921.png)
 
 ## 二、单链表
 
@@ -218,7 +218,7 @@ const detectCycle = head => {
 
 如下面的两个链表：
 
-![](https://static.skynian.cn/20191220001435.png)
+![](http://q3roqx7vi.bkt.clouddn.com/20191220001435.png)
 
 在节点 c1 开始相交
 
@@ -246,7 +246,7 @@ const getIntersectionNode = function(headA, headB) {
 
 #### 描述
 
-![](https://static.skynian.cn/20191220001435.png)
+![](http://q3roqx7vi.bkt.clouddn.com/20191220001435.png)
 
 #### 思路
 

@@ -20,7 +20,7 @@ categories:
 - 节点所有子节点均不满足条件，再回溯到上一个节点
 - 所有状态均不能满足条件，问题无解
 
-![](https://static.skynian.cn/20191103130058.png)
+![](http://q3roqx7vi.bkt.clouddn.com/20191103130058.png)
 
 > 回溯算法适合由多个步骤组成的问题，并且每个步骤都有多个选项
 
@@ -92,7 +92,7 @@ candidates  中的每个数字在每个组合中只能使用一次。
 
 示例:
 
-![](https://static.skynian.cn/20191220002631.png)
+![](http://q3roqx7vi.bkt.clouddn.com/20191220002631.png)
 
 #### 题解
 

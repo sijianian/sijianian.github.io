@@ -28,7 +28,7 @@ tags:
 
 ## 实现效果
 
-![](https://static.skynian.cn/20191129153908.png)
+![](http://q3roqx7vi.bkt.clouddn.com/20191129153908.png)
 
 ## 核心代码
 
