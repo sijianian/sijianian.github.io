@@ -7,10 +7,9 @@ categories:
 ---
 
 > 转载：[Conardli 前端知识体系](http://www.conardli.top/blog/article/%E7%BB%BC%E5%90%88/%E3%80%90%E8%87%AA%E6%A3%80%E3%80%91%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86%E6%B8%85%E5%8D%95.html) 非常感谢 @Conardli 大大的自检清单，自己尝试进行回顾和解答 🤙
-
 > [个人总结 幕布链接：https://mubu.com/doc/347X3KU6aM](https://mubu.com/doc/347X3KU6aM)
 
-![](http://q3roqx7vi.bkt.clouddn.com/20191024212653.png)
+![](https://i.loli.net/2020/01/12/QDaLXwU58PfJmpO.png)
 
 ## 一、JavaScript 基础
 
@@ -265,9 +264,7 @@ JavaScript 的类型分为两大类，一类是原始类型，一类是复杂(�
 我们需要理清语言和环境的关系：
 
 > `ECMAScript`描述了`JavaScript`语言的语法和基本对象规范
-
 > 浏览器作为`JavaScript`的一种运行环境，为它提供了：文档对象模型（`DOM`），描述处理网页内容的方法和接口、浏览器对象模型（`BOM`），描述与浏览器进行交互的方法和接口
-
 > Node 也是`JavaScript`的一种运行环境，为它提供了操作`I/O`、网络等`API`
 
 ### 浏览器 API
@@ -523,7 +520,6 @@ JavaScript 的类型分为两大类，一类是原始类型，一类是复杂(�
 - 3、坚持每天写自己的代码，前 10 年每天至少 6 个小时，不包含学习和工作的时间。
 
 > 上面几点可能有点难，第一点我就做不到，但是做到下面绩点还是比较容易的。
-
 > 关于写博客说明下，能给别人讲明白的知识会比自己学习掌握的要深刻许多
 
 - 1.拥有自己的技术博客，或者在一些博客平台上拥有自己的专栏

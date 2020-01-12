@@ -343,9 +343,9 @@ const comments = [
 const nestedComments = nest(comments) // [{ id: 1, parent_id: null, children: [...] }]
 ```
 
-![](http://q3roqx7vi.bkt.clouddn.com/20191022232102.png)
+![](https://i.loli.net/2020/01/12/WY3u856dUbjAZto.png)
 
-![](http://q3roqx7vi.bkt.clouddn.com/20191022232111.png)
+![](https://i.loli.net/2020/01/12/GivOSCoWd2zPFIn.png)
 
 ## 函数
 
@@ -1098,4 +1098,4 @@ const escapeHTML = str =>
 escapeHTML('<a href="#">Me & you</a>') // '&lt;a href=&quot;#&quot;&gt;Me &amp; you&lt;/a&gt;'
 ```
 
-![](http://q3roqx7vi.bkt.clouddn.com/20191023004553.png)
+![](https://i.loli.net/2020/01/12/BhLoI8wv9zprYb5.png)

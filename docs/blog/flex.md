@@ -22,7 +22,7 @@ Flex 布局，可以简便、完整、响应式地实现各种页面布局。目
 
 以下是实例页面：
 
-![](http://q3roqx7vi.bkt.clouddn.com/flex-2018531202637.gif)
+![flex-2018531202637.gif](https://i.loli.net/2020/01/12/GdVT2yZcYCEa7wh.gif)
 
 我们可以看到，在灰色的容器中，包含了 4 种不同颜色与大小的 div 元素，每个元素都默认 display:block ，因此每个立方体都占据了一行的整个宽度。
 
@@ -35,13 +35,13 @@ Flex 布局，可以简便、完整、响应式地实现各种页面布局。目
 }
 ```
 
-![](http://q3roqx7vi.bkt.clouddn.com/flex-2018531204333.gif)
+![flex-2018531204333.gif](https://i.loli.net/2020/01/12/hGHwtovUefVYgxP.gif)
 
 ## 属性 2：Flex Direction
 
 Flexbox 容器有两根轴：主轴和垂直的交叉轴，默认情况如下：
 
-![](http://q3roqx7vi.bkt.clouddn.com/flex-2018531204418.gif)
+![flex-2018531204418.gif](https://i.loli.net/2020/01/12/tiCId2BZSO9cUXs.png)
 
 **项目默认是由主轴（从左到右）排列的**，这就是你使用 display:flex 后，四方体以水平线排列的原因
 
@@ -54,7 +54,7 @@ Flexbox 容器有两根轴：主轴和垂直的交叉轴，默认情况如下：
 }
 ```
 
-![](http://q3roqx7vi.bkt.clouddn.com/flex-2018531204454.gif)
+![flex-2018531204454.gif](https://i.loli.net/2020/01/12/Nx5KQhTmeXS1HCB.gif)
 
 **这里有一个重要的区别：** flex-direction:column
 
@@ -62,7 +62,7 @@ Flexbox 容器有两根轴：主轴和垂直的交叉轴，默认情况如下：
 
 而 flex-direction 还有一些其他的值供你选择，例如：row-reverse 与 column-reverse
 
-![](http://q3roqx7vi.bkt.clouddn.com/flex-2018531204544.gif)
+![flex-2018531204544.gif](https://i.loli.net/2020/01/12/ruQsTePAvoOBhZY.gif)
 
 ## 属性 3：Justify Content
 
@@ -92,7 +92,7 @@ Space-between
 Space-around
 ```
 
-![](http://q3roqx7vi.bkt.clouddn.com/flex-2018531204619.gif)
+![flex-2018531204619.gif](https://i.loli.net/2020/01/12/8vNuFhKcM5otilx.gif)
 
 Space-around 与 Space-between 是两个不容易直观理解的值。Space-between 实现了两端对齐，而四方体之间的间隔都是相等的。
 Space-around 使四方体两侧的间隔相等，这意味着四方体之间的间隔比最外边四方体与边框的间隔要大一倍。（每个四方体贡献了不重叠的等量余量，从而使空间翻倍）
@@ -105,7 +105,7 @@ Space-around 使四方体两侧的间隔相等，这意味着四方体之间的�
 
 justify-content 定义了项目在主轴的对齐方式，而 align-items 属性则定义了项目在交叉轴上是如何对齐的。
 
-![](http://q3roqx7vi.bkt.clouddn.com/flex-2018531204650.gif)
+![](https://i.loli.net/2020/01/12/7S1AOL6Erb4z5PG.png)
 
 当我们将 flex-direction 属性值重置为 row 后，我们的轴看上去就与上图一致。那么，让我们深入的了解下 Align Items 属性有哪些值：
 
@@ -127,19 +127,19 @@ baseline
 
 Stretch 指的是如果项目未设置高度或设为 auto，项目将占满整个容器。而 baseline 是指项目将与段落标签的底部对齐。
 
-![](http://q3roqx7vi.bkt.clouddn.com/flex-2018531204725.gif)
+![flex-2018531204725.gif](https://i.loli.net/2020/01/12/ZpchzrqnakwBXFQ.gif)
 
 （请注意，对于 align-items：stretch，我不得不将四方体的高度设置为 auto，否则 height 属性将覆盖该 stretch）
 
 对于 baseline，如果你去掉段落标签，它则会对齐四方形的底部，如下图所示：
 
-![](http://q3roqx7vi.bkt.clouddn.com/flex-2018531204754.gif)
+![flex-2018531204754.gif](https://i.loli.net/2020/01/12/CV9pw1FvPI3ueYa.png)
 
 为了更好地演示主轴和交叉轴的表现，在基于 justify-content 属性和 align-items 属性的值为 center 的情况下，让我们看看赋予 flex-direction 属性两个不同值后，它的表现如何：
 
 我们可以看到，对于 row 值，四方体沿着与主轴水平方向排列，而对于 column 值，它们则沿着与主轴垂直的方向排列。
 
-![](http://q3roqx7vi.bkt.clouddn.com/flex-2018531204835.gif)
+![flex-2018531204835.gif](https://i.loli.net/2020/01/12/SglQNTmiMpLdnkP.gif)
 
 ## 属性 5：Align Self
 
@@ -156,7 +156,7 @@ align-self 属性允许你对特定的项目有与其他项目不一样的对齐
 
 我们将在四个四方体上应用 align-self 属性，而其余的四方体则应用 align-items:center 与 flex-direction:row，让我们看看会发生什么
 
-![](http://q3roqx7vi.bkt.clouddn.com/flex-2018531204920.gif)
+![](https://i.loli.net/2020/01/12/DflZ2opug6yMTO4.png)
 
 ## 结论
 

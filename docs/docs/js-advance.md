@@ -7,4 +7,4 @@ categories:
 
 > [幕布链接 https://mubu.com/doc/3gurdl28bM](https://mubu.com/doc/3gurdl28bM)
 
-![](http://q3roqx7vi.bkt.clouddn.com/20191018225309.png)
+![](https://i.loli.net/2020/01/12/Zf4bjdihxut1SPY.png)

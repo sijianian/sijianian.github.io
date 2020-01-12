@@ -5,7 +5,7 @@ categories:
   - 算法
 ---
 
-![](http://q3roqx7vi.bkt.clouddn.com/20191211222151.png)
+![](https://i.loli.net/2020/01/12/vCMPncA6tNXrY9y.png)
 
 ## [[70] 爬楼梯](https://leetcode-cn.com/problems/climbing-stairs/description/)
 

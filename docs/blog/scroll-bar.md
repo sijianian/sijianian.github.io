@@ -55,11 +55,11 @@ margin: 0 auto; 主体元素就会做偏移，用户就会很明显感受到屏�
 
 既然讲到了滚动条，后面自己也查阅的不少资料， 可以  了解一些相关历史。
 
-![](http://q3roqx7vi.bkt.clouddn.com/scroll-bar-2018618175358.png)
+![](https://i.loli.net/2020/01/12/zMEhjDKZcHF8iya.png)
 
 （windows 上面的滚动条变化历程）
 
-![](http://q3roqx7vi.bkt.clouddn.com/scroll-bar-2018618175513.png)
+![](https://i.loli.net/2020/01/12/yANPOhWjM8tTkro.png)
 
 （Mac 上面的滚动条）
 
@@ -73,7 +73,7 @@ margin: 0 auto; 主体元素就会做偏移，用户就会很明显感受到屏�
 
 ## 滚动条宽度
 
-![](http://q3roqx7vi.bkt.clouddn.com/scroll-bar-201861818333.png)
+![](https://i.loli.net/2020/01/12/8j2zGNxFpsRMnPf.png)
 
 （“百花齐放”的宽度）
 

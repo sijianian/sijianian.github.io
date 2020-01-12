@@ -106,7 +106,7 @@ console.log(newObj)
 
 如果你有这么一个循环引用对象，你会发现并不能通过该方法实现深拷贝
 
-![](http://q3roqx7vi.bkt.clouddn.com/19-1-2/38398019.jpg)
+![](https://i.loli.net/2020/01/12/9JemhaVG3XyAbYI.png)
 
 在遇到函数、**undefined** 或者 **symbol** 的时候，该对象也不能正常的序列化
 

@@ -58,7 +58,7 @@ document.querySelector('input').addEventListener('input', validate)
 
 其他应用场合：提交按钮的点击事件。
 
-## 再看节流，throttle。
+## 再看节流，throttle
 
 节流的概念可以想象一下水坝，你建了水坝在河道中，不能让水流动不了，你只能让水流慢些。换言之，你不能让用户的方法都不执行。如果这样干，就是 debounce 了。为了让用户的方法在某个时间段内只执行一次，我们需要保存上次执行的时间点与定时器。
 
@@ -97,4 +97,4 @@ document.querySelector('#panel').addEventListener('mousemove', mousemove)
 
 >  函数抖动和节流视图
 
-![debounce-and-throttle-2018628233717](http://q3roqx7vi.bkt.clouddn.com/debounce-and-throttle-2018628233717.png)
+![](https://i.loli.net/2020/01/12/akuhzDIyRq7nw2b.png)

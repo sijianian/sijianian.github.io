@@ -12,7 +12,7 @@ categories:
 
 [https://slides.com/moke/deck-1#/](https://slides.com/moke/deck-1#/)
 
-## JavaScript 是单线程?
+## JavaScript 是单线程
 
 - JS 引擎中负责解释和执行 JS 代码的线程只有一个（主）
 - AJAX 、处理 DOM 、定时器、读写......（工作线程）
@@ -33,7 +33,7 @@ categories:
 
 主线程从“任务队列”中读取事件，不断循环
 
-![](http://q3roqx7vi.bkt.clouddn.com/js-async-201861401039.jpg)
+![](https://i.loli.net/2020/01/12/NCg5TPYxrdyMQ3z.png)
 
 ## Macrotask 和 Microtask
 
@@ -49,7 +49,7 @@ categories:
 
 第二步会执行整个 Microtask 队列中的所有任务。
 
-![](http://q3roqx7vi.bkt.clouddn.com/js-async-2018614020.png)
+![](https://i.loli.net/2020/01/12/f5KrYnCsLBihcv7.png)
 
 > 接下来，我们用代码来感受
 
@@ -87,7 +87,7 @@ timeout1
 
 [地址](https://jakearchibald.com/2015/tasks-microtasks-queues-and-schedules/)
 
-![](http://q3roqx7vi.bkt.clouddn.com/js-async-20186140952.png)
+![](https://i.loli.net/2020/01/12/ZypH7Q21aogKdOP.png)
 
 ## 作用
 

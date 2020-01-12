@@ -12,11 +12,11 @@ tags:
 
 ## 前言
 
-![](http://q3roqx7vi.bkt.clouddn.com/20191102113824.png)
+![](https://i.loli.net/2020/01/12/dc9rQ5Imt1KsxjJ.png)
 
 [chalk-animation](https://github.com/bokub/chalk-animation)是一个非常有意思的 Node 命令行动画库，如下所示
 
-![](http://q3roqx7vi.bkt.clouddn.com/20191102235655.gif)
+![20191102235655.gif](https://i.loli.net/2020/01/12/lGHWnP7qmMgE1Iu.gif)
 
 看起来非常的花里胡哨，但是我喜欢！_(:з」∠)_
 
@@ -25,7 +25,7 @@ tags:
 ## 使用到的 ES6 语法特性
 
 > [Mozilla文档](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/New_in_JavaScript/ECMAScript_6_support_in_Mozilla)
-> [ECMAScript 6 ](http://es6.ruanyifeng.com/#docs/intro)
+> [ECMAScript 6](http://es6.ruanyifeng.com/#docs/intro)
 
 ### 变量声明
 
@@ -133,7 +133,7 @@ Proxy 用于修改某些操作的默认行为，等同于在语言层面做出�
 
 ## 实现效果
 
-![](http://q3roqx7vi.bkt.clouddn.com/20191102114152.gif)
+![20191102114152 _1_.gif](https://i.loli.net/2020/01/12/xrqtyiC7UvWT4RZ.gif)
 
 ## 详细代码
 

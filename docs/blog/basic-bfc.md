@@ -80,7 +80,7 @@ Formatting context(格式化上下文) 是 W3C CSS2.1 规范中的一个概念�
 </body>
 ```
 
-![](http://q3roqx7vi.bkt.clouddn.com/BFC-2018630102818.jpg)
+![](https://i.loli.net/2020/01/12/TEk4I85zOS1Zrcp.png)
 
 从效果上看，因为两个 div 元素都处于同一个 BFC 容器下 (这里指 body 元素) 所以第一个 div 的下边距和第二个 div 的上边距发生了重叠，所以两个盒子之间距离只有 100px，而不是 200px。
 
@@ -103,7 +103,7 @@ p {
 }
 ```
 
-![](http://q3roqx7vi.bkt.clouddn.com/BFC-2018630102853.jpg)
+![](https://i.loli.net/2020/01/12/CEVYWSaA4BzUxIb.png)
 
 2. BFC 可以包含浮动的元素（清除浮动）
 
@@ -115,7 +115,7 @@ p {
 </div>
 ```
 
-![](http://q3roqx7vi.bkt.clouddn.com/BFC-2018630102917.jpg)
+![](https://i.loli.net/2020/01/12/4c7JQtqlG58fiKd.png)
 
 由于容器内元素浮动，脱离了文档流，所以容器只剩下 2px 的边距高度。如果使触发容器的 BFC，那么容器将会包裹着浮动元素。
 
@@ -125,13 +125,13 @@ p {
 </div>
 ```
 
-![](http://q3roqx7vi.bkt.clouddn.com/BFC-2018630102941.jpg)
+![](https://i.loli.net/2020/01/12/cYU9HTMi4POwjev.png)
 
 3. BFC 可以阻止元素被浮动元素覆盖
 
 先来看一个文字环绕效果：
 
-![](http://q3roqx7vi.bkt.clouddn.com/BFC-201863010303.jpg)
+![](https://i.loli.net/2020/01/12/5a7G6cN1ytofnmK.png)
 
 ```html
 <div style="height: 100px;width: 100px;float: left;background: lightblue">
@@ -144,7 +144,5 @@ p {
 ```
 
 这时候其实第二个元素有部分被浮动元素所覆盖，(但是文本信息不会被浮动元素所覆盖) 如果想避免元素被覆盖，可触第二个元素的 BFC 特性，在第二个元素中加入 overflow: hidden，就会变成：
-
-![](http://q3roqx7vi.bkt.clouddn.com/BFC-2018630103021.jpg)
 
 这个方法可以用来实现两列自适应布局，效果不错，这时候左边的宽度固定，右边的内容自适应宽度(去掉上面右边内容的宽度)。

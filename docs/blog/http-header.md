@@ -11,8 +11,8 @@ tags:
 
 ## Request Header
 
-![](http://q3roqx7vi.bkt.clouddn.com/20191030222619.png)
+![](https://i.loli.net/2020/01/12/lEvOT57AHbuNLjG.png)
 
 ## Response Header
 
-![](http://q3roqx7vi.bkt.clouddn.com/20191030222638.png)
+![](https://i.loli.net/2020/01/12/uGxSfv1zZ42Y9h6.png)

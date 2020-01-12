@@ -18,7 +18,7 @@ const swap = (array, left, right) => {
 
 ## 冒泡排序
 
-![](http://q3roqx7vi.bkt.clouddn.com/20191021221826)
+![](https://i.loli.net/2020/01/12/pgKSwRhZkQrqsAD.png)
 
 ```js
 const bubble = array => {
@@ -36,7 +36,7 @@ const bubble = array => {
 
 ## 插入排序
 
-![](http://q3roqx7vi.bkt.clouddn.com/20191021221827)
+![](https://i.loli.net/2020/01/12/gzmBpvdr58FhMq7.png)
 
 ```js
 const insertion = array => {
@@ -52,7 +52,7 @@ const insertion = array => {
 
 ## 选择排序
 
-![](http://q3roqx7vi.bkt.clouddn.com/20191021221828)
+![](https://i.loli.net/2020/01/12/YmUWDgFBzAjxHCt.png)
 
 ```js
 const selection = array => {
@@ -71,7 +71,7 @@ const selection = array => {
 
 ## 归并排序
 
-![](http://q3roqx7vi.bkt.clouddn.com/20191021222141)
+![](https://i.loli.net/2020/01/12/vFE2CTXsgeYPlV6.png)
 
 ```js
 function sort(array) {
@@ -126,7 +126,7 @@ function mergeSort(array, left, right) {
 
 ## 快速排序
 
-![](http://q3roqx7vi.bkt.clouddn.com/20191021222105)
+![](https://i.loli.net/2020/01/12/KwGL4WQRV1FOUb3.png)
 
 ```js
 const quickSort = array => {

@@ -13,7 +13,7 @@ categories:
 
 [小满营销](https://crm.xiaoman.cn/marketing)有一个社交发件箱的功能，作用是整合几个社交平台，统一管理社交动态。
 
-![](http://q3roqx7vi.bkt.clouddn.com/20190513151408.png)
+![](https://i.loli.net/2020/01/12/tFBpoe7xrcmuk2z.png)
 
 由于 Facebook 平台 Api 机制的更新，[https://developers.facebook.com/docs/apps/review/](https://note.youdao.com/)，导致在小满营销中无法发布 Facebook 个人内容。
 
@@ -23,8 +23,8 @@ categories:
 
 ## 需要申请的权限
 
-![](http://q3roqx7vi.bkt.clouddn.com/20190513152832.png)
-![](http://q3roqx7vi.bkt.clouddn.com/20190513152910.png)
+![](https://i.loli.net/2020/01/12/5i6gU3O9arKEfeh.png)
+![](https://i.loli.net/2020/01/12/mIrkva4UHch1T6g.png)
 
 我们的申请操作主要在 [Facebook 开发者平台](https://note.youdao.com/) 进行。
 
@@ -34,7 +34,7 @@ categories:
 
 ## 审核标准
 
-![](http://q3roqx7vi.bkt.clouddn.com/20190513154016.png)
+![](https://i.loli.net/2020/01/12/rSLYJE6RGcuvBCq.png)
 
 Facebook 的审核标准其实写得很清晰，如果严格按照上面的标准，理论上都能够成功。
 
@@ -56,11 +56,11 @@ Facebook 的审核标准其实写得很清晰，如果严格按照上面的标�
 
 这里我们的处理是，用户在绑定 Facebook 账号的过程中，会弹窗显示权限内容和作用。
 
-![](http://q3roqx7vi.bkt.clouddn.com/20190513155801.png)
+![](https://i.loli.net/2020/01/12/vMbztnGqiK3F918.png)
 
 ## 审核材料
 
-![](http://q3roqx7vi.bkt.clouddn.com/20190513160315.png)
+![](https://i.loli.net/2020/01/12/Xo18HSxqyTct5rG.png)
 
 从上图中我们可以看到，我们需要准备的信息有：
 
@@ -85,15 +85,15 @@ Facebook 的审核标准其实写得很清晰，如果严格按照上面的标�
 
 ### 创建测试应用
 
-![](http://q3roqx7vi.bkt.clouddn.com/20190513163711.png)
+![](https://i.loli.net/2020/01/12/gEiz3BJ1ls2e4XV.png)
 
 ### 管理员管理
 
-![](http://q3roqx7vi.bkt.clouddn.com/20190513163813.png)
+![](https://i.loli.net/2020/01/12/bN84FBSfsHRZxo5.png)
 
 ### 账号管理
 
-![](http://q3roqx7vi.bkt.clouddn.com/20190513163856.png)
+![](https://i.loli.net/2020/01/12/NzqKGJ7PxIXTFU9.png)
 
 ## 审核反馈
 
@@ -101,7 +101,7 @@ Facebook 的审核标准其实写得很清晰，如果严格按照上面的标�
 
 如果对审核的建议的内容不清楚的话，可以进行提问。
 
-![](http://q3roqx7vi.bkt.clouddn.com/20190513164209.png)
+![](https://i.loli.net/2020/01/12/JbClZxNuDMYVi8Q.png)
 
 但是因为 Facebook 工作人员反馈比较慢，所以建议还是不要依赖这个。
 

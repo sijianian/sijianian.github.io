@@ -26,9 +26,9 @@ Web Components 是一套不同的技术，允许您创建可重用的定制元�
 
 [https://github.com/wiredjs/wired-elements](https://github.com/wiredjs/wired-elements)
 
-![image](http://q3roqx7vi.bkt.clouddn.com/18-7-19/73652975.jpg)
+![](https://i.loli.net/2020/01/12/S9YKMmgLPEiyzG8.png)
 
-## What?
+## What
 
 Web Components are a new browser feature that provides a standard component model for the Web, consisting of several pieces: Shadow DOM, Custom Elements, HTML Imports and HTML Templates.
 
@@ -58,7 +58,7 @@ Web Components are a new browser feature that provides a standard component mode
 - 核心是 组件封装
 - video、input 相当于浏览器的内置组件，组件视图结构及默认样式藏在 Shadow DOM 里，组件逻辑被彻底藏了起来，仅暴露出 autoplay，oninput 等状态 / 行为 Hook 与外界通信
 
-![](http://q3roqx7vi.bkt.clouddn.com/18-7-21/60213309.jpg)
+![](https://i.loli.net/2020/01/12/SwB3abV2Myr7iYC.png)
 
 ## Shadom DOM
 
@@ -96,7 +96,7 @@ Shadow DOM 这款工具旨在构建基于组件的应用。因此，可为网络
 
 Shadow Dom 对于事件通过在冒泡阶段 target 的重定向来封装事件，然后一些可能对页面造成影响的事件，Shadow Dom 就会影藏掉这些事件，也就是在冒泡到主页面的过程中被挡住了。
 
-![](http://q3roqx7vi.bkt.clouddn.com/18-7-21/1188753.jpg)
+![](https://i.loli.net/2020/01/12/r4V2IvTLgZ6Cnfm.png)
 
 ## 创建流程
 
@@ -109,7 +109,7 @@ Shadow Dom 对于事件通过在冒泡阶段 target 的重定向来封装事件�
 
 ## 兼容性
 
-![](http://q3roqx7vi.bkt.clouddn.com/18-7-21/78737181.jpg)
+![](https://i.loli.net/2020/01/12/br6yltnPuzJGBLF.png)
 
 ## 常见封装类库
 
