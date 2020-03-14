@@ -22,6 +22,7 @@ module.exports = {
       '/algorithm/backtracking',
       '/algorithm/recursion-and-loop',
       '/algorithm/dynamic',
+      '/algorithm/binary-search',
       '/algorithm/leetcode',
     ],
     '/data-structure/': [

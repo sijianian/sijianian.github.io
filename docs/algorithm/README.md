@@ -16,3 +16,4 @@ categories:
 - [排序](./sort.md)
 - [回溯](./backtracking.md)
 - [动态规划](./dynamic.md)
+- [二分查找]('./binary-search.md)
