@@ -15,7 +15,7 @@
     "dayjs": "^1.8.17",
     "js-md5": "^0.7.3",
     "node-sass": "^4.13.0",
-    "prettier": "^1.19.1",
+    "prettier": "2.0.2",
     "sass-loader": "^8.0.0",
     "vuepress": "^1.2.0",
     "vuepress-plugin-baidu-tongji": "^1.0.1",
