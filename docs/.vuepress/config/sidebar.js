@@ -31,6 +31,7 @@ module.exports = {
       '/data-structure/queue-stack',
       '/data-structure/linked-list',
       '/data-structure/binary-tree',
+      '/data-structure/binary-search-tree',
     ],
     '/reprint/': ['/reprint/'],
   },
