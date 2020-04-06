@@ -165,7 +165,7 @@ const deleteNode = function (root, key) {
 - 即使在最坏的情况下，也允许你在 `O(h)` 的时间复杂度内执行所有的搜索、插入、删除操作
 - 通常来说，如果需要有序着存储或者需要同时执行搜索、插入、删除等多步操作，二叉搜索树这个数据结构是一个很好的选择
 
-### [703. 数据流中的第 K 大元素](https://leetcode-cn.com/problems/kth-largest-element-in-a-stream/description/)
+### [[703] 数据流中的第 K 大元素](https://leetcode-cn.com/problems/kth-largest-element-in-a-stream/description/)
 
 ### [[235] 二叉搜索树的最近公共祖先](https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-search-tree/description/)
 
@@ -234,5 +234,30 @@ const balanced = node => {
   }
 
   return Math.max(left, right) + 1
+}
+```
+
+### [[108] 将有序数组转换为二叉搜索树](https://leetcode-cn.com/problems/convert-sorted-array-to-binary-search-tree/)
+
+#### 思路
+
+- 中序遍历
+
+#### 题解
+
+```js
+const sortedArrayToBST = function (nums) {
+  if (nums.length === 0) {
+    return null
+  }
+
+  let mid = Math.floor(nums.length / 2)
+
+  const node = new TreeNode(nums[mid])
+
+  node.left = sortedArrayToBST(nums.slice(0, mid))
+  node.right = sortedArrayToBST(nums.slice(mid + 1))
+
+  return node
 }
 ```
