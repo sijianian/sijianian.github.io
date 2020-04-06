@@ -56,7 +56,7 @@ export const deepClone = (parent, hash = new WeakMap()) => {
       if (hash.has(parent)) {
         return hash.get(parent)
       }
-      child = new ConFn()
+      child = new ConFn(parent)
       hash.set(parent, child)
       break
   }
