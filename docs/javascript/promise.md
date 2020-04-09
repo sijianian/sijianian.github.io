@@ -69,7 +69,7 @@ export class MyPromise {
         if (this.state === PENDING) {
           this.value = value
           this.state = FULFILLED
-          this.onFulfilledCallbacks.forEach(fn => fn())
+          this.onFulfilledCallbacks.map(fn => fn(this.value))
         }
       })
     }
@@ -79,7 +79,7 @@ export class MyPromise {
         if (this.state === PENDING) {
           this.value = value
           this.state = REJECTED
-          this.onRejectedCallbacks.forEach(fn => fn())
+          this.onRejectedCallbacks.map(fn => fn(this.value))
         }
       })
     }
