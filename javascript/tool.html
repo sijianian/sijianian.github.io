@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>工具函数 | moke&#39;s blog</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="icon" href="/favicon.ico">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="description" content="Write the code , Change the world">
+    <meta property="article:published_time" content="2019-10-11T20:53:06.000Z">
+    <meta property="article:modified_time" content="2020-01-12T13:25:02.000Z">
+    <meta property="og:site_name" content="moke's blog">
+    <meta property="og:title" content="工具函数">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="/javascript/tool.html">
+    <meta name="twitter:title" content="工具函数">
+    <meta name="twitter:url" content="/javascript/tool.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:label1" content="Written by">
+    <meta name="twitter:label2" content="Filed under">
+    <meta name="twitter:data2" content="JavaScript">
+    <meta property="article:tag" content="JavaScript">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <meta name="theme-color" content="#42b983">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="msapplication-TileColor" content="#000000">
+    
+    <link rel="preload" href="/assets/css/0.styles.6333ad3c.css" as="style"><link rel="preload" href="/assets/js/app.e22d1565.js" as="script"><link rel="preload" href="/assets/js/3.b358cb1a.js" as="script"><link rel="preload" href="/assets/js/1.e5294185.js" as="script"><link rel="preload" href="/assets/js/9.b38b99e8.js" as="script"><link rel="prefetch" href="/assets/js/10.f7071fa1.js"><link rel="prefetch" href="/assets/js/11.c3a370e7.js"><link rel="prefetch" href="/assets/js/12.c356e292.js"><link rel="prefetch" href="/assets/js/13.6b681818.js"><link rel="prefetch" href="/assets/js/14.c4e7486b.js"><link rel="prefetch" href="/assets/js/15.740417d4.js"><link rel="prefetch" href="/assets/js/16.f6616b4c.js"><link rel="prefetch" href="/assets/js/17.f37dfe18.js"><link rel="prefetch" href="/assets/js/18.c78a7af9.js"><link rel="prefetch" href="/assets/js/19.6550ffea.js"><link rel="prefetch" href="/assets/js/20.44ab3368.js"><link rel="prefetch" href="/assets/js/21.be3bdafb.js"><link rel="prefetch" href="/assets/js/22.8481e7c8.js"><link rel="prefetch" href="/assets/js/23.f0a68bd1.js"><link rel="prefetch" href="/assets/js/24.79019773.js"><link rel="prefetch" href="/assets/js/25.b1223a78.js"><link rel="prefetch" href="/assets/js/26.c1cc808f.js"><link rel="prefetch" href="/assets/js/27.f51b1f1b.js"><link rel="prefetch" href="/assets/js/28.656b1369.js"><link rel="prefetch" href="/assets/js/29.3a68e80a.js"><link rel="prefetch" href="/assets/js/30.319eeb1b.js"><link rel="prefetch" href="/assets/js/31.0189d594.js"><link rel="prefetch" href="/assets/js/32.c763bd0d.js"><link rel="prefetch" href="/assets/js/33.41424040.js"><link rel="prefetch" href="/assets/js/34.1ecd5346.js"><link rel="prefetch" href="/assets/js/35.9365db26.js"><link rel="prefetch" href="/assets/js/36.da5a2f21.js"><link rel="prefetch" href="/assets/js/37.579b2ca4.js"><link rel="prefetch" href="/assets/js/38.72934d5a.js"><link rel="prefetch" href="/assets/js/39.26d24581.js"><link rel="prefetch" href="/assets/js/4.b0881afe.js"><link rel="prefetch" href="/assets/js/40.07888e8d.js"><link rel="prefetch" href="/assets/js/41.84a467db.js"><link rel="prefetch" href="/assets/js/42.89b84106.js"><link rel="prefetch" href="/assets/js/43.bbbe3ad8.js"><link rel="prefetch" href="/assets/js/44.314a5cfc.js"><link rel="prefetch" href="/assets/js/45.885fff2e.js"><link rel="prefetch" href="/assets/js/46.00481f27.js"><link rel="prefetch" href="/assets/js/47.8534860b.js"><link rel="prefetch" href="/assets/js/48.10f65f5a.js"><link rel="prefetch" href="/assets/js/49.f4f52620.js"><link rel="prefetch" href="/assets/js/5.edc27452.js"><link rel="prefetch" href="/assets/js/50.0f0f8322.js"><link rel="prefetch" href="/assets/js/51.7192fd8f.js"><link rel="prefetch" href="/assets/js/52.ac32b2c6.js"><link rel="prefetch" href="/assets/js/53.ca2df4eb.js"><link rel="prefetch" href="/assets/js/54.db8dbcbb.js"><link rel="prefetch" href="/assets/js/55.1c7fa0e6.js"><link rel="prefetch" href="/assets/js/56.6fc1141e.js"><link rel="prefetch" href="/assets/js/57.100204d5.js"><link rel="prefetch" href="/assets/js/58.13f2cfd6.js"><link rel="prefetch" href="/assets/js/59.e8dbd2a1.js"><link rel="prefetch" href="/assets/js/6.0dd2308e.js"><link rel="prefetch" href="/assets/js/60.996f66f8.js"><link rel="prefetch" href="/assets/js/61.721b5f4e.js"><link rel="prefetch" href="/assets/js/62.77718464.js"><link rel="prefetch" href="/assets/js/63.6319de6d.js"><link rel="prefetch" href="/assets/js/64.98e1adfd.js"><link rel="prefetch" href="/assets/js/65.09c338c3.js"><link rel="prefetch" href="/assets/js/66.a9a1cac6.js"><link rel="prefetch" href="/assets/js/67.6d9690c5.js"><link rel="prefetch" href="/assets/js/68.b596eed7.js"><link rel="prefetch" href="/assets/js/69.c2644b65.js"><link rel="prefetch" href="/assets/js/7.cf81dca3.js"><link rel="prefetch" href="/assets/js/70.afb079e4.js"><link rel="prefetch" href="/assets/js/71.ac249382.js"><link rel="prefetch" href="/assets/js/72.2a6884bd.js"><link rel="prefetch" href="/assets/js/73.9a38797c.js"><link rel="prefetch" href="/assets/js/74.f04febb5.js"><link rel="prefetch" href="/assets/js/75.d045a48c.js"><link rel="prefetch" href="/assets/js/8.9268dbb4.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.6333ad3c.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container" data-v-ed7af0ae><div data-v-ed7af0ae><div id="loader-wrapper" class="loading-wrapper" data-v-d48f4d20 data-v-ed7af0ae data-v-ed7af0ae><div class="loader-main" data-v-d48f4d20><div data-v-d48f4d20></div><div data-v-d48f4d20></div><div data-v-d48f4d20></div><div data-v-d48f4d20></div></div> <!----> <!----></div> <div class="password-shadow password-wrapper-out" style="display:none;" data-v-faa80d68 data-v-ed7af0ae data-v-ed7af0ae><h3 class="title" style="display:none;" data-v-faa80d68 data-v-faa80d68>moke's blog</h3> <!----> <label id="box" class="inputBox" style="display:none;" data-v-faa80d68 data-v-faa80d68><input type="password" value="" data-v-faa80d68> <span data-v-faa80d68>Konck! Knock!</span> <button data-v-faa80d68>OK</button></label> <div class="footer" style="display:none;" data-v-faa80d68 data-v-faa80d68><span data-v-faa80d68><i class="iconfont reco-theme" data-v-faa80d68></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-faa80d68>vuePress-theme-reco</a></span> <span data-v-faa80d68><i class="iconfont reco-copyright" data-v-faa80d68></i> <a data-v-faa80d68><span data-v-faa80d68>moke</span>
+            
+          <span data-v-faa80d68>2017 - </span>
+          2021
+        </a></span></div></div> <div class="hide" data-v-ed7af0ae><header class="navbar" data-v-ed7af0ae><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">moke's blog</span></a> <div class="links"><div class="color-picker"><a class="color-button"><i class="iconfont reco-color"></i></a> <div class="color-picker-menu" style="display:none;"><div class="mode-options"><h4 class="title">Choose mode</h4> <ul class="color-mode-options"><li class="dark">dark</li><li class="auto active">auto</li><li class="light">light</li></ul></div></div></div> <div class="search-box"><i class="iconfont reco-search"></i> <input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      分类
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/算法/" class="nav-link"><i class="undefined"></i>
+  算法
+</a></li><li class="dropdown-item"><!----> <a href="/categories/博客/" class="nav-link"><i class="undefined"></i>
+  博客
+</a></li><li class="dropdown-item"><!----> <a href="/categories/HTTP/" class="nav-link"><i class="undefined"></i>
+  HTTP
+</a></li><li class="dropdown-item"><!----> <a href="/categories/数据结构/" class="nav-link"><i class="undefined"></i>
+  数据结构
+</a></li><li class="dropdown-item"><!----> <a href="/categories/前端/" class="nav-link"><i class="undefined"></i>
+  前端
+</a></li><li class="dropdown-item"><!----> <a href="/categories/文档/" class="nav-link"><i class="undefined"></i>
+  文档
+</a></li><li class="dropdown-item"><!----> <a href="/categories/JS 基础/" class="nav-link"><i class="undefined"></i>
+  JS 基础
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Node/" class="nav-link"><i class="undefined"></i>
+  Node
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  标签
+</a></div><div class="nav-item"><a href="/categories/博客/" class="nav-link"><i class="iconfont reco-blog"></i>
+  博客
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      前端
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/docs/fe-system/" class="nav-link"><i class="undefined"></i>
+  知识体系
+</a></li><li class="dropdown-item"><!----> <a href="/docs/front-data/" class="nav-link"><i class="undefined"></i>
+  前端资料
+</a></li><li class="dropdown-item"><!----> <a href="/javascript/" class="nav-link router-link-active"><i class="undefined"></i>
+  JavaScript 专题
+</a></li><li class="dropdown-item"><!----> <a href="/docs/js-base/" class="nav-link"><i class="undefined"></i>
+  JavaScript 基础
+</a></li><li class="dropdown-item"><!----> <a href="/docs/js-advance/" class="nav-link"><i class="undefined"></i>
+  JavaScript 进阶
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      算法
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/algorithm/" class="nav-link"><i class="undefined"></i>
+  算法专题
+</a></li><li class="dropdown-item"><!----> <a href="/data-structure/" class="nav-link"><i class="undefined"></i>
+  数据结构
+</a></li></ul></div></div><div class="nav-item"><a href="/timeLine/" class="nav-link"><i class="iconfont reco-date"></i>
+  TimeLine
+</a></div> <a href="https://github.com/sijianian/sijianian.github.io" target="_blank" rel="noopener noreferrer" class="repo-link"><i class="iconfont reco-github"></i>
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask" data-v-ed7af0ae></div> <aside class="sidebar" data-v-ed7af0ae><div class="personal-info-wrapper" data-v-1f4c79ea data-v-ed7af0ae><img src="https://mubu.com/document_image/4432e085-fbd2-4e40-af81-70de6b566645-676462.jpg" alt="author-avatar" class="personal-img" data-v-1f4c79ea> <h3 class="name" data-v-1f4c79ea>
+    moke
+  </h3> <div class="num" data-v-1f4c79ea><div data-v-1f4c79ea><h3 data-v-1f4c79ea>56</h3> <h6 data-v-1f4c79ea>Article</h6></div> <div data-v-1f4c79ea><h3 data-v-1f4c79ea>17</h3> <h6 data-v-1f4c79ea>Tag</h6></div></div> <ul class="social-links" data-v-1f4c79ea></ul> <hr data-v-1f4c79ea></div> <nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      分类
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/算法/" class="nav-link"><i class="undefined"></i>
+  算法
+</a></li><li class="dropdown-item"><!----> <a href="/categories/博客/" class="nav-link"><i class="undefined"></i>
+  博客
+</a></li><li class="dropdown-item"><!----> <a href="/categories/HTTP/" class="nav-link"><i class="undefined"></i>
+  HTTP
+</a></li><li class="dropdown-item"><!----> <a href="/categories/数据结构/" class="nav-link"><i class="undefined"></i>
+  数据结构
+</a></li><li class="dropdown-item"><!----> <a href="/categories/前端/" class="nav-link"><i class="undefined"></i>
+  前端
+</a></li><li class="dropdown-item"><!----> <a href="/categories/文档/" class="nav-link"><i class="undefined"></i>
+  文档
+</a></li><li class="dropdown-item"><!----> <a href="/categories/JS 基础/" class="nav-link"><i class="undefined"></i>
+  JS 基础
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Node/" class="nav-link"><i class="undefined"></i>
+  Node
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  标签
+</a></div><div class="nav-item"><a href="/categories/博客/" class="nav-link"><i class="iconfont reco-blog"></i>
+  博客
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      前端
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/docs/fe-system/" class="nav-link"><i class="undefined"></i>
+  知识体系
+</a></li><li class="dropdown-item"><!----> <a href="/docs/front-data/" class="nav-link"><i class="undefined"></i>
+  前端资料
+</a></li><li class="dropdown-item"><!----> <a href="/javascript/" class="nav-link router-link-active"><i class="undefined"></i>
+  JavaScript 专题
+</a></li><li class="dropdown-item"><!----> <a href="/docs/js-base/" class="nav-link"><i class="undefined"></i>
+  JavaScript 基础
+</a></li><li class="dropdown-item"><!----> <a href="/docs/js-advance/" class="nav-link"><i class="undefined"></i>
+  JavaScript 进阶
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      算法
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/algorithm/" class="nav-link"><i class="undefined"></i>
+  算法专题
+</a></li><li class="dropdown-item"><!----> <a href="/data-structure/" class="nav-link"><i class="undefined"></i>
+  数据结构
+</a></li></ul></div></div><div class="nav-item"><a href="/timeLine/" class="nav-link"><i class="iconfont reco-date"></i>
+  TimeLine
+</a></div> <a href="https://github.com/sijianian/sijianian.github.io" target="_blank" rel="noopener noreferrer" class="repo-link"><i class="iconfont reco-github"></i>
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav> <ul class="sidebar-links"><li><a href="/javascript/" aria-current="page" class="sidebar-link">JavaScript 专题</a></li><li><a href="/javascript/manual-implementation-call-apply-bind.html" class="sidebar-link">手动实现 call、apply、bind</a></li><li><a href="/javascript/jsonp.html" class="sidebar-link">手动实现 JSONP</a></li><li><a href="/javascript/promise.html" class="sidebar-link">手动实现 Promise</a></li><li><a href="/javascript/event-emitter.html" class="sidebar-link">EventEmitter</a></li><li><a href="/javascript/debounce-throttle.html" class="sidebar-link">防抖与节流</a></li><li><a href="/javascript/deep-shallow-clone.html" class="sidebar-link">深浅拷贝</a></li><li><a href="/javascript/instanceof.html" class="sidebar-link">Instanceof</a></li><li><a href="/javascript/new.html" class="sidebar-link">New</a></li><li><a href="/javascript/inherit.html" class="sidebar-link">继承相关</a></li><li><a href="/javascript/router.html" class="sidebar-link">前端路由</a></li><li><a href="/javascript/curry.html" class="sidebar-link">Curry</a></li><li><a href="/javascript/tool.html" aria-current="page" class="active sidebar-link">工具函数</a></li></ul> </aside> <div class="password-shadow password-wrapper-in" style="display:none;" data-v-faa80d68 data-v-ed7af0ae><h3 class="title" style="display:none;" data-v-faa80d68 data-v-faa80d68>工具函数</h3> <!----> <label id="box" class="inputBox" style="display:none;" data-v-faa80d68 data-v-faa80d68><input type="password" value="" data-v-faa80d68> <span data-v-faa80d68>Konck! Knock!</span> <button data-v-faa80d68>OK</button></label> <div class="footer" style="display:none;" data-v-faa80d68 data-v-faa80d68><span data-v-faa80d68><i class="iconfont reco-theme" data-v-faa80d68></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-faa80d68>vuePress-theme-reco</a></span> <span data-v-faa80d68><i class="iconfont reco-copyright" data-v-faa80d68></i> <a data-v-faa80d68><span data-v-faa80d68>moke</span>
+            
+          <span data-v-faa80d68>2017 - </span>
+          2021
+        </a></span></div></div> <div data-v-ed7af0ae><main class="page" style="padding-right:0;"><!----> <!----> <!----> <!----> <!----> <!----></main> <!----></div></div></div></div><div class="global-ui"><div class="back-to-ceiling" style="right:1rem;bottom:6rem;width:2.5rem;height:2.5rem;border-radius:.25rem;line-height:2.5rem;display:none;" data-v-c6073ba8 data-v-c6073ba8><svg t="1574745035067" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5404" class="icon" data-v-c6073ba8><path d="M526.60727968 10.90185116a27.675 27.675 0 0 0-29.21455937 0c-131.36607665 82.28402758-218.69155461 228.01873535-218.69155402 394.07834331a462.20625001 462.20625001 0 0 0 5.36959153 69.94390903c1.00431239 6.55289093-0.34802892 13.13561351-3.76865779 18.80351572-32.63518765 54.11355614-51.75690182 118.55860487-51.7569018 187.94566865a371.06718723 371.06718723 0 0 0 11.50484808 91.98906777c6.53300375 25.50556257 41.68394495 28.14064038 52.69160883 4.22606766 17.37162448-37.73630017 42.14135425-72.50938081 72.80769204-103.21549295 2.18761121 3.04276886 4.15646224 6.24463696 6.40373557 9.22774369a1871.4375 1871.4375 0 0 0 140.04691725 5.34970492 1866.36093723 1866.36093723 0 0 0 140.04691723-5.34970492c2.24727335-2.98310674 4.21612437-6.18497483 6.3937923-9.2178004 30.66633723 30.70611158 55.4360664 65.4791928 72.80769147 103.21549355 11.00766384 23.91457269 46.15860503 21.27949489 52.69160879-4.22606768a371.15156223 371.15156223 0 0 0 11.514792-91.99901164c0-69.36717486-19.13165746-133.82216804-51.75690182-187.92578088-3.42062944-5.66790279-4.76302748-12.26056868-3.76865837-18.80351632a462.20625001 462.20625001 0 0 0 5.36959269-69.943909c-0.00994388-166.08943902-87.32547796-311.81420293-218.6915546-394.09823051zM605.93803103 357.87693858a93.93749974 93.93749974 0 1 1-187.89594924 6.1e-7 93.93749974 93.93749974 0 0 1 187.89594924-6.1e-7z" p-id="5405" data-v-c6073ba8></path><path d="M429.50777625 765.63860547C429.50777625 803.39355007 466.44236686 1000.39046097 512.00932183 1000.39046097c45.56695499 0 82.4922232-197.00623328 82.5015456-234.7518555 0-37.75494459-36.9345906-68.35043303-82.4922232-68.34111062-45.57627738-0.00932239-82.52019037 30.59548842-82.51086798 68.34111062z" p-id="5406" data-v-c6073ba8></path></svg></div><!----><div></div></div></div>
+    <script src="/assets/js/app.e22d1565.js" defer></script><script src="/assets/js/3.b358cb1a.js" defer></script><script src="/assets/js/1.e5294185.js" defer></script><script src="/assets/js/9.b38b99e8.js" defer></script>
+  </body>
+</html>
