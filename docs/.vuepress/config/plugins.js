@@ -9,7 +9,7 @@ module.exports = [
   [
     'vuepress-plugin-baidu-tongji',
     {
-      hm: '96aa37ccd951cae93b8933a2366c5470',
+      hm: '22b23eb5d33d6f77e51d576fe375f632',
     },
   ],
   [
